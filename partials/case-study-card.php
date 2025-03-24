@@ -24,7 +24,7 @@ if (empty($excerpt)) {
     <a href="<?php the_permalink(); ?>" class="block">
         <div class="case-study-thumbnail mb-24">
             <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('medium', ['class' => 'w-full']); ?>
+                <?php the_post_thumbnail('case-study', ['class' => 'w-full']); ?>
             <?php else : ?>
                 <div class="bg-dark-grey h-64"></div>
             <?php endif; ?>

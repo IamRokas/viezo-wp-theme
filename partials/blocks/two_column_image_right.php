@@ -24,7 +24,7 @@ if ($variant === 'full-screen-size') {
 	$image_wrap_classes .= " desktop:absolute desktop:inset-0 desktop:h-full";
 	$content_wrap_classes = "col-span-6 text-column px-24 desktop:px-140 py-44 desktop:py-0 text-left desktop:text-right";
 } elseif ($variant === 'classic-two-col') {
-	$block_classes .= "desktop:overflow-hidden";
+	$block_classes .= "desktop:overflow-hidden relative";
 	$container_classes .= " container desktop:gap-64";
 	$image_wrap_classes .= " desktop:relative px-24 desktop:px-0 py-44 desktop:py-0";
 	$content_wrap_classes = "desktop:col-span-6 text-column px-24 desktop:px-0 py-44 desktop:py-140 text-left desktop:text-left";

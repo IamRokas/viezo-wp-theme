@@ -14,7 +14,7 @@ if ($blocks && is_array($blocks)) :
 ?>
 	<div class="container py-64 desktop:py-104">
 		<h2 class=" pb-20 font-osp-din uppercase"><?= $title; ?></h2>
-		<div class="blocks-grid desktop:grid desktop:grid-cols-3 desktop:gap-24 gap-20">
+		<div class="blocks-grid flex flex-col desktop:grid desktop:grid-cols-3 desktop:gap-24 gap-20">
 			<?php foreach ($blocks as $index => $block) :
 				// Get block data
 				$title = $block['title'] ?? false;

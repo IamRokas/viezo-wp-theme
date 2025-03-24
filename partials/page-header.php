@@ -61,15 +61,15 @@ if (empty($background)) {
     ?>
 </header>
 <?php if ($subtitle_below && $subtitle): ?>
-    <div class="textblock container text-black py-58 grid grid-cols-1 md:grid-cols-5">
-        <div class="subtitle md:col-span-3">
+    <div class="textblock container text-black py-58 flex flex-col-reverse md:flex-row justify-between items-center">
+        <div class="subtitle md:col-span-3 max-w-lg">
             <div><?= $subtitle; ?></div>
             <?php if ($button): ?>
                 <a href="<?= $button['url']; ?>" class="button outline-black mt-28"><?= $button['title']; ?></a>
             <?php endif; ?>
         </div>
         <?php if ($side_image): ?>
-            <div class="image md:col-span-2 md:-mt-64">
+            <div class="image md:w-1/2 mb-24 md:-mt-64">
                 <?= wp_get_attachment_image($side_image, 'custom-image-style', false, ['class' => 'w-full h-auto']); ?>
             </div>
         <?php endif; ?>

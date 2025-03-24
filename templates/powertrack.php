@@ -1,5 +1,5 @@
 <?php
-require_once get_template_directory() . '/templates/sonora_timeline.php';
+
 /**
  * Template name: Powertrack
  */
@@ -13,37 +13,37 @@ $softwareBlock = null;
 
 <main id="main" class="site-main">
 
-    <?php get_template_part('partials/page-header'); ?>
+	<?php get_template_part('partials/page-header'); ?>
 
 
 
-    <?php //get_template_part( 'template-parts/content', get_post_format() ); 
+	<?php //get_template_part( 'template-parts/content', get_post_format() ); 
 	?>
 
-    <div class="page-content bg-white">
+	<div class="page-content bg-white">
 
-        <?php
+		<?php
 		if (function_exists('yoast_breadcrumb')) {
 			//yoast_breadcrumb( '<div class="big-container container breadcrumbs ">','</div>' );
 		}
 		?>
 
-        <?php foreach ($blocks as $counter => $block):
+		<?php foreach ($blocks as $counter => $block):
 			// if ($block['acf_fc_layout'] == 'image_grid') {
 			// 	$machinesBlock = $block;
 			// 	continue;
 			// } 
 		?>
-        <?php echo get_template_part('partials/blocks/' . $block['acf_fc_layout'], null, ['block' => $block, 'counter' => $counter]);
-			if ($counter === 0 && function_exists('get_field') && !empty(get_field('Element'))) {
-				display_timeline();
+			<?php echo get_template_part('partials/blocks/' . $block['acf_fc_layout'], null, ['block' => $block, 'counter' => $counter]);
+			if ($counter === 1) {
+				require_once get_template_directory() . '/templates/sonora_timeline.php';
 			}
 			?>
-        <?php endforeach; ?>
-    </div>
+		<?php endforeach; ?>
+	</div>
 
 
-    <?php //echo get_template_part('partials/blocks/image_grid', null, ['block' => $machinesBlock]);
+	<?php //echo get_template_part('partials/blocks/image_grid', null, ['block' => $machinesBlock]);
 	?>
 
 

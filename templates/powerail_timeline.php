@@ -7,16 +7,16 @@
  * @return void Outputs HTML directly
  */
 ?>
-<div class="bg-dark-grey">
+<div class="bg-dark-grey py-64 ">
     <div class="container text-white">
-        <div id="powerail-animation-container" class="mt-80 h-[600vh] desktop:h-[500vh] relative">
+        <div id="powerail-animation-container" class="h-[600vh] desktop:h-[500vh] relative">
             <div class="sticky top-0">
                 <div class="relative h-screen py-48">
                     <h2 class="text-center">POWERAIL</h2>
                     <div class="powerail-card h-[30vh]">
                         <div class="hidden desktop:block"></div>
                         <div class="h-full col-start-1 desktop:col-start-2">
-                            <img src="/1-01.png" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/anim-assets/1-01.png" />
                         </div>
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-3">
@@ -38,7 +38,7 @@
                                 64 G, making it ideal for high-vibration environments.</p>
                         </div>
                         <div class="h-full col-start-1 row-start-1 desktop:col-start-2">
-                            <img src="/2-01.png" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/anim-assets/2-01.png" />
                         </div>
                         <div class="hidden desktop:block"></div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="powerail-card h-[30vh]">
                         <div class="hidden desktop:block"></div>
                         <div class="h-full col-start-1 desktop:col-start-2">
-                            <img src="/3-01.png" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/anim-assets/3-01.png" />
                         </div>
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-3">
@@ -71,9 +71,9 @@
                         </div>
                         <div class="h-full col-start-1 row-start-1 desktop:col-start-2 grid grid-cols-1">
                             <img class="col-start-1 row-start-1 swap-image-1 transition-all duration-300"
-                                src="/4-01.png" />
+                                src="<?php echo get_template_directory_uri(); ?>/anim-assets/4-01.png" />
                             <img class="col-start-1 row-start-1 swap-image-2 transition-all duration-300 opacity-0"
-                                src="/4-02.png" />
+                                src="<?php echo get_template_directory_uri(); ?>/anim-assets/4-02.png" />
                         </div>
                         <div class="hidden desktop:block"></div>
                     </div>
@@ -81,7 +81,7 @@
                     <div class="powerail-card h-[30vh]">
                         <div class="hidden desktop:block"></div>
                         <div class="h-full col-start-1 desktop:col-start-2">
-                            <img src="/5-01.png" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/anim-assets/5-01.png" />
                         </div>
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-3">

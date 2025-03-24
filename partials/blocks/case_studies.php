@@ -27,8 +27,7 @@ if ($cases && is_array($cases)) :
 
 						<?php if (!empty($see_more_link)) : ?>
 							<div class="see-more-link mt-20 desktop:mt-32">
-								<a href="<?= esc_url($see_more_link['url'] ?? '#'); ?>"
-									class="button inline-block px-20 py-12 border border-white hover:bg-white hover:text-darkest-grey">
+								<a href="<?= esc_url($see_more_link['url'] ?? '#'); ?>" class="button outline-black">
 									<?= esc_html($see_more_link['title'] ?? 'See More'); ?>
 								</a>
 							</div>
@@ -64,7 +63,7 @@ if ($cases && is_array($cases)) :
 				<div class="text-center flex gap-12 items-center py-28 border-t border-white justify-center">
 					<p class="text-white mb-0"><?= esc_html($read_more_text); ?></p>
 					<a href="<?= esc_url($read_more_link['url'] ?? get_post_type_archive_link('case-study')); ?>"
-						class="button outline-white">
+						class="button outline-black">
 						<?= esc_html($read_more_link_text); ?>
 					</a>
 				</div>
@@ -73,7 +72,7 @@ if ($cases && is_array($cases)) :
 
 	<?php else : // Original Design 
 	?>
-		<div class="case-studies-block bg-darkest-grey text-white pt-40 md:pt-80">
+		<div class="case-studies-block bg-dark-grey text-white pt-40 md:pt-80">
 			<div class="container">
 				<h2 class="font-osp-din uppercase mb-48"><?= esc_html($block_title); ?></h2>
 

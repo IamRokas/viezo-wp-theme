@@ -130,16 +130,16 @@ module.exports = {
 			backgroundOpacity: {
 				10: '0.1',
 			},
-			// Add arbitrary value support for specific properties
-			height: {
-				// Additional custom heights
+			gridTemplateColumns: {
+				'2-3-2': 'minmax(0, 2fr) minmax(0, 3fr) minmax(0, 2fr)',
+
 			},
-			width: {
-				// Additional custom widths
+			transitionProperty: {
+				'animate-card': 'top 300ms ease, opacity 300ms ease',
 			},
-			spacing: {
-				// Additional spacing values
-			}
+			aspectRatio: {
+				'sonara-img': '0.5046923',
+			},
 		},
 	},
 	plugins: [

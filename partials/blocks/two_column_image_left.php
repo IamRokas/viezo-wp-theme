@@ -13,20 +13,21 @@ $counter = (isset($args['counter']) ? 'block-' . $args['counter'] : null);
 
 // Define classes based on variant
 $block_classes = "two-columns-block two-column-image-left {$variant} {$counter}";
-$container_classes = "px-0 items-center desktop:grid desktop:gap-18 desktop:grid-cols-12 mx-auto";
+$container_classes = "px-0 items-center desktop:flex desktop:gap-18 mx-auto";
 $image_column_classes = "desktop:col-span-6 relative image-column desktop:py-0 relative";
 $image_wrap_classes = "image-wrap relative";
 
 // Add specific classes for full-screen-size variant
 if ($variant === 'full-screen-size') {
-	$block_classes .= " min-h-screen flex items-center";
-	$image_column_classes .= " h-full desktop:h-screen";
-	$image_wrap_classes .= " desktop:absolute desktop:inset-0 desktop:h-full";
-	$content_wrap_classes = "col-span-6 text-column px-24 desktop:px-140 py-44 desktop:py-0 text-left desktop:text-right";
+	$block_classes .= " min-h-screen flex items-center relative";
+	$container_classes .= " big-container justify-end";
+	$image_column_classes .= " h-full desktop:h-screen desktop:absolute desktop:right-[50%] desktop:left-0 -mx-[1.5rem] desktop:mx-0";
+	$image_wrap_classes .= " desktop:h-full";
+	$content_wrap_classes = "desktop:w-1/2 text-column px-24 desktop:pl-140 py-44 desktop:py-0 text-left desktop:text-right";
 } elseif ($variant === 'classic-two-col') {
 	$block_classes .= "desktop:overflow-hidden";
 	$container_classes .= " container";
-	$image_wrap_classes .= " desktop:relative px-24 desktop:px-0 py-44 desktop:py-0";
+	$image_wrap_classes .= " desktop:relative px-24 desktop:px-0  py-44 desktop:py-0";
 	$content_wrap_classes = "desktop:col-span-6 text-column px-24 desktop:px-0 py-44 desktop:py-140 text-left desktop:text-right";
 } else {
 	// regular-size variant

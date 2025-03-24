@@ -34,7 +34,7 @@ $softwareBlock = null;
 			// } 
 		?>
         <?php echo get_template_part('partials/blocks/' . $block['acf_fc_layout'], null, ['block' => $block, 'counter' => $counter]);
-			if ($counter === 4 && function_exists('get_field') && !empty(get_field('Element'))) {
+			if ($counter === 0 && function_exists('get_field') && !empty(get_field('Element'))) {
 				require_once get_template_directory() . '/templates/powerail_timeline.php';
 			}
 			?>

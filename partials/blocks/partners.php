@@ -12,7 +12,7 @@ $block_id = 'partners-block-' . uniqid();
 
 if ($partners && is_array($partners)) :
 ?>
-    <div class="partners-block py-56 text-center">
+    <div class="partners-block py-56 md:py-92 text-center">
         <div class="">
             <h2 class="font-osp-din uppercase mb-56 text-darkest-grey">
                 <?= esc_html($block_title); ?></h2>

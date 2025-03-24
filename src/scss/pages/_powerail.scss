@@ -15,6 +15,34 @@ body.page-template-powerail {
 		}
 	}
 
+	.page-header {
+		+.textblock {
+			.image {
+				position: relative;
+
+				img {
+
+
+					@screen md {
+						position: absolute;
+						top: -240px;
+					}
+
+					@screen desktop {
+						top: -280px;
+					}
+
+					@screen desktopLarge {
+						top: -360px;
+					}
+
+
+				}
+			}
+		}
+	}
+
+
 	// Powerail mini
 	.two-column-image-left.classic-two-col {
 		.image-wrap {
@@ -24,9 +52,12 @@ body.page-template-powerail {
 
 		img {
 			max-height: 400px;
-			margin: 40px 0;
-			margin-top: 120px;
 			width: auto;
+
+			@screen md {
+				margin: 40px 0;
+				margin-top: 120px;
+			}
 		}
 	}
 

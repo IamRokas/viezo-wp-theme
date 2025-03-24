@@ -18,7 +18,8 @@ if ($blocks && is_array($blocks)) :
 	<div class="pt-40 desktop:pt-80 image-grid-with-logos">
 		<h2 class=" pb-56 font-osp-din text-center uppercase"><?= $title; ?></h2>
 		<div class="border-t border-black">
-			<div class="blocks-grid desktop:grid desktop:grid-cols-3 desktop:gap-24 gap-20 container ">
+			<div
+				class="blocks-grid flex flex-nowrap desktop:grid desktop:grid-cols-3 desktop:gap-24 gap-20 container overflow-x-scroll desktop:overflow-hidden">
 				<?php foreach ($blocks as $index => $block) :
 					// Get block data
 					$title = $block['title'] ?? false;
@@ -28,7 +29,7 @@ if ($blocks && is_array($blocks)) :
 					$counter = 'block-' . $index;
 
 					// Define the container class
-					$block_classes = "block-item relative p-64";
+					$block_classes = "block-item relative p-20 md:p-64 min-w-[260px]";
 				?>
 
 					<div class=" <?= $block_classes; ?>">
@@ -60,7 +61,7 @@ if ($blocks && is_array($blocks)) :
 			<div class="text-center flex gap-12 items-center py-28 border-t border-white justify-center bg-dark-grey">
 				<p class="text-white mb-0"><?= esc_html($read_more_text); ?></p>
 				<a href="<?= esc_url($read_more_link['url'] ?? get_post_type_archive_link('case-study')); ?>"
-					class="button inline-block px-20 py-12 border border-white hover:bg-white hover:text-darkest-grey">
+					class="button outline-white">
 					<?= esc_html($read_more_link_text); ?>
 				</a>
 			</div>

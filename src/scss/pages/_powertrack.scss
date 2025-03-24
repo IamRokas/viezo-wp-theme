@@ -1,5 +1,15 @@
 .page-template-powertrack {
 
+	.page-header {
+		+ .textblock {
+			.image {
+				@media screen and (min-width: 767px) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
 	.two-columns-block {
 		&.block-0 {
 			border-top: 1px solid black;
@@ -8,13 +18,6 @@
 
 	.page-header .bg {
 		background-position: center;
-	}
-
-	@screen desktop {
-		.two-columns-block .text {
-			font-size: 24px;
-			line-height: 36px;
-		}
 	}
 
 	@media screen and (max-width: 767px) {

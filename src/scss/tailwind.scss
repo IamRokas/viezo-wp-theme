@@ -27,7 +27,7 @@
 
 	.text-heading4 {
 		@apply font-osp-din uppercase text-black text-xl;
-		letter-spacing: 0.5px;
+		letter-spacing: 0.5p;
 
 		margin-bottom: 0;
 		font-weight: 500;
@@ -40,6 +40,10 @@
 }
 
 @layer utilities {
+	.grid-cols-2-3-2 {
+		grid-template-columns: 2fr 3fr 2fr;
+	}
+
 	.powerail-card {
 		@apply grid grid-cols-2 desktop:grid-cols-2-3-2 gap-10 desktop:gap-20 desktop:content-end opacity-0 absolute inset-x-0 top-0;
 		transition: top 300ms ease, opacity 300ms ease;
