@@ -1,11 +1,9 @@
-const plugin = require('tailwindcss/plugin');
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-	purge: {
-		content: ['./**/*.php', './src/js/**/*.js'],
-		layers: ['utilities'],
-		mode: 'layers',
-	},
+	content: [
+		'./**/*.php',
+		'./src/js/**/*.js'
+	],
 	theme: {
 		fontSize: {
 			'2xs': '0.75rem',
@@ -89,6 +87,11 @@ module.exports = {
 			104: '6.5rem',
 			140: '8.75rem',
 			192: '12rem',
+			// Additional custom heights that might be useful
+			'300': '300px',
+			'400': '400px',
+			'500': '500px',
+			'600': '600px',
 		},
 		screens: {
 			phone: '300px',
@@ -127,11 +130,20 @@ module.exports = {
 			backgroundOpacity: {
 				10: '0.1',
 			},
+			// Add arbitrary value support for specific properties
+			height: {
+				// Additional custom heights
+			},
+			width: {
+				// Additional custom widths
+			},
+			spacing: {
+				// Additional spacing values
+			}
 		},
 	},
-	variants: {},
 	plugins: [
-		plugin(function ({
+		function ({
 			addBase,
 			config
 		}) {
@@ -194,8 +206,8 @@ module.exports = {
 					overflow: 'auto',
 				},
 			});
-		}),
-		plugin(function ({
+		},
+		function ({
 			addComponents,
 			config
 		}) {
@@ -229,6 +241,10 @@ module.exports = {
 			addComponents(screenReaderText, {
 				variants: ['hover', 'active', 'focus'],
 			});
-		}),
+		},
+	],
+	safelist: [
+		// Add classes that might be generated dynamically
+		// or not detected by the purge process
 	],
 };

@@ -1,4 +1,6 @@
-const { merge } = require('webpack-merge');
+const {
+	merge
+} = require('webpack-merge');
 const common = require('./webpack.config.js');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
@@ -6,15 +8,11 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 /**
  * Webpack config (Production mode)
- *
- * @see https://webpack.js.org/guides/production/
  */
 module.exports = merge(common, {
 	plugins: [
 		/**
 		 * Uses Imagemin to compress source images.
-		 *
-		 * @see https://www.npmjs.com/package/imagemin-webpack-plugin
 		 */
 		new ImageminPlugin({
 			disable: false,
@@ -36,15 +34,15 @@ module.exports = merge(common, {
 		minimizer: [
 			/**
 			 * Minify CSS.
-			 *
-			 * @see https://www.npmjs.com/package/css-minimizer-webpack-plugin
 			 */
 			new CssMinimizerPlugin({
 				minimizerOptions: {
 					preset: [
 						'default',
 						{
-							discardComments: { removeAll: true },
+							discardComments: {
+								removeAll: true
+							},
 						},
 					],
 				},
