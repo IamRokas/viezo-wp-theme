@@ -1,0 +1,38 @@
+.vblock.software {
+
+	.bg {
+		background-image: url(../images/cpu-computer-chip-background-1.jpg);
+		background-size: cover;
+		position: absolute;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		&::after {
+			content: "";
+			background: #14497D;
+			opacity: 0.9;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+
+	.container {
+		z-index: 3;
+	}
+
+	.light-subtitle {
+		font-size: 18px;
+	}
+
+	@screen desktop {
+		.data-column {
+			max-width: 462px;
+		}
+	}
+}

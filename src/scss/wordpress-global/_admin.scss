@@ -1,0 +1,60 @@
+//--------------------------------------------------------------
+// Admin Overrides & Styles
+//--------------------------------------------------------------
+
+.block-editor-writing-flow {
+	@apply text-base leading-normal;
+}
+
+blockquote,
+.entry-content blockquote {
+	background: rgba(80, 207, 159, 0.08);
+	@apply p-24 italic text-dark-green font-light mx-auto text-center mb-40;
+	max-width: 462px;
+
+	p {
+		margin: 0;
+	}
+}
+
+.highlighted,
+.entry-content .highlighted {
+	@apply bg-light-grey p-24 rounded-sm text-primary-blue;
+
+	p {
+		margin: 0;
+	}
+}
+
+#tinymce.mce-content-body {
+	margin: 10px;
+
+	[class^="vicon-"] {
+		background: #333;
+	}
+}
+
+.site-main,
+.mce-content-body {
+
+	ul,
+	ol {
+		list-style-type: none;
+
+		li {
+			+li {
+				margin-top: 20px;
+			}
+
+			&:before {
+				content: "";
+				background: black;
+				width: 12px;
+				height: 12px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 24px;
+			}
+		}
+	}
+}

@@ -1,0 +1,102 @@
+//-----------------------------------------
+// Tailwind Files
+//-----------------------------------------
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.font-body-2 {
+
+		/* Typography/Body 2 */
+
+		font-style: normal;
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 1.43;
+
+		/* identical to box height, or 20px */
+	}
+
+	.font-body-1 {
+
+		/* Body 1 */
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 24px;
+
+		/* Darkest Grey */
+
+		color: #3A3A3A;
+	}
+
+	.text-heading4 {
+		@apply font-osp-din uppercase text-black text-xl;
+		letter-spacing: 0.5px;
+
+		margin-bottom: 0;
+		font-weight: 500;
+
+
+	}
+
+	.text-subtitle1, .light-subtitle {
+		@apply leading-7 text-lg text-darkest-grey;
+	}
+
+
+}
+
+@layer utilities {
+
+
+}
+
+
+@layer base {
+
+    @font-face {
+        font-family: OSP-DIN;
+        src: local(OSP-DIN),
+            url(../fonts/osp-din/osp-din-webfont.woff2) format('woff2'),
+            url(../fonts/osp-din/osp-din-webfont.woff) format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+	@font-face {
+		font-family: 'Saira ExtraCondensed';
+		src: url('../fonts/saira/saira-extra-condensed-v9-latin-ext_latin-600.woff2') format('woff2'),
+			url('../fonts/saira/saira-extra-condensed-v9-latin-ext_latin-600.woff') format('woff');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Saira ExtraCondensed';
+		src: url('../fonts/saira/saira-extra-condensed-v9-latin-ext_latin-regular.woff2') format('woff2'),
+			url('../fonts/saira/saira-extra-condensed-v9-latin-ext_latin-regular.woff') format('woff');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+
+	@font-face {
+		font-family: 'Hiragino Sans';
+		font-weight: 200;
+		src: local('HiraginoSans-W1');
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Hiragino Sans';
+		font-weight: 400;
+		src: local('HiraginoSans-W3');
+		font-display: swap;
+	}
+
+
+}

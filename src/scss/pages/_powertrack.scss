@@ -1,0 +1,35 @@
+.page-template-powertrack {
+
+	.two-columns-block {
+		&.block-0 {
+			border-top: 1px solid black;
+		}
+	}
+
+	.page-header .bg {
+		background-position: center;
+	}
+
+	@screen desktop {
+		.two-columns-block .text {
+			font-size: 24px;
+			line-height: 36px;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		.two-column-image-right {
+			padding-top: 0;
+
+			.container {
+				flex-direction: column-reverse;
+			}
+
+			.text-column {
+				padding-top: 0;
+				text-align: left;
+			}
+
+		}
+	}
+}

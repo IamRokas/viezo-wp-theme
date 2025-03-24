@@ -1,0 +1,22 @@
+{
+	"name": "rokas/viezo",
+	"description": "Viezo",
+	"type": "wordpress-theme",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Rokas",
+			"email": "rokas@padarom.lt"
+		}
+	],
+	"config": {
+		"platform": {
+			"php": "7.4"
+		}
+	},
+	"require": {
+		"drewm/mailchimp-api": "^2.5"
+	},
+	"require-dev": {},
+	"scripts": {}
+}

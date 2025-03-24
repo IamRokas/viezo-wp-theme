@@ -1,0 +1,10 @@
+// Nothing just a test
+.two-column-image-left {
+	border-bottom: 1px solid #000;
+}
+
+.two-columns-block {
+	&.classic-two-col {
+		border-bottom: 0;
+	}
+}

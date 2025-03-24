@@ -1,0 +1,79 @@
+.contacts-page {
+	div[role="form"] {
+		width: 100%;
+
+		input {
+			@apply text-black;
+		}
+
+		label .text-white {
+			font-weight: 400;
+			font-size: 17px;
+		}
+
+		@screen md {
+			label .text-white {
+				font-weight: 500;
+				font-size: 18px;
+			}
+		}
+
+
+	}
+
+	h2 {
+		margin-bottom: 32px;
+	}
+
+	.col-1 {
+		.page-content {
+			background: linear-gradient(143.17deg, #E5EAEF 7.36%, #F9FFFF 122.25%);
+			overflow: hidden;
+		}
+		ul {
+			padding-left: 0px;
+			margin-bottom: 32px;
+			li {
+				margin-bottom: 8px;
+				font-weight: 500;
+				font-size: 18px;
+				i {
+					filter: invert(1);
+					vertical-align: middle;
+					margin-right: 5px;
+					width: 20px;
+				}
+			}
+		}
+	}
+
+	.button {
+		padding-left: 32px;
+		padding-right: 32px;
+		font-size: 20px;
+		width: 100%;
+	}
+
+	@screen md {
+		.button {
+			width: auto;
+			padding-left: 64px;
+			padding-right: 64px;
+		}
+	}
+
+	#map {
+		margin-left: -46px;
+		bottom: 5px;
+		margin-bottom: -43px;
+		width: calc(100% + 90px);
+		position: relative;
+		overflow: hidden;
+		height: 65%;
+		min-height: 150px;
+
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+	}
+}

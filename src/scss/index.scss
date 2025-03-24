@@ -1,0 +1,25 @@
+// @layer base {
+// // Custom base styles if necessary.
+// // See https://tailwindcss.com/docs/adding-base-styles.
+// }
+
+//----------------------------------------
+// Theme Styles.
+//----------------------------------------
+@import 'sprites.scss';
+@import 'global/_mixins.scss';
+
+@import 'template-tags/index.scss';
+@import 'templates/index.scss';
+@import 'blocks/index.scss';
+
+@import 'global/_global.scss';
+@import 'global/_wpcf7.scss';
+@import 'wordpress-global/index.scss';
+@import 'pages/home';
+@import 'pages/powerail';
+@import 'pages/about-us';
+@import 'pages/technology';
+@import 'pages/eu';
+@import 'pages/powertrack';
+@import 'pages/contacts';

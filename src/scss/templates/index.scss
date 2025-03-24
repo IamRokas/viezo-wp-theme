@@ -1,0 +1,21 @@
+//----------------------------------------
+// Template Styles
+//
+// Import partials for WordPress templates and template parts.
+// See https://developer.wordpress.org/themes/basics/template-files/.
+//----------------------------------------
+
+@import "footer";
+@import "header";
+@import "posts";
+
+.single-case-study,
+.post-type-archive-case-study,
+.tax-case-study-type,
+body.blog {
+	background: #222;
+}
+
+.big-container {
+	@apply px-24 desktop:px-16 desktopLarge:px-0;
+}

@@ -1,0 +1,27 @@
+body.home {
+
+	@media screen and (max-width: 768px) {
+		.page-header .bg-shadow {
+			background: linear-gradient(180deg, rgba(10, 37, 52, 0.3) 0%, rgba(10, 37, 52, 0.9) 100%);
+		}
+
+		.page-header .textblock {
+			top: 42vh;
+		}
+	}
+
+	.page-content {
+		overflow: hidden;
+		background: #fff;
+		padding-top: 0;
+	}
+
+	@screen desktop {
+
+		.two-column-image-right {
+			// padding-bottom: 120px;
+
+		}
+
+	}
+}

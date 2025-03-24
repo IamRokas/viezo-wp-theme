@@ -1,0 +1,199 @@
+//--------------------------------------------------------------
+// Global Site Header
+//--------------------------------------------------------------
+.site-header {
+	@apply bg-transparent;
+	padding-left: 30px;
+	padding-right: 30px;
+
+	height: 72px;
+	transition: background-color 0.2s ease-in-out;
+
+	>.container {
+		@apply flex justify-between my-0 items-center;
+	}
+
+
+	.site-branding {
+
+		a {
+			vertical-align: middle;
+			display: inline-block;
+
+			img {
+				height: 24px;
+			}
+		}
+	}
+
+	.mobile-right-menu {
+		right: 14px;
+		top: 8;
+
+		i {
+			display: inline-block;
+		}
+
+		.client-area i {
+			background: url(../images/icons/PersonOutline.svg ) center no-repeat transparent;
+			background-size: 24px 24px;
+		}
+
+		.contacts i {
+			background: url(../images/icons/LocalPostOffice.svg ) center no-repeat transparent;
+			background-size: 24px 24px;
+		}
+	}
+
+
+
+}
+
+.menu-cta-button a {
+	padding: 8px 16px;
+	@apply bg-primary-blue rounded-sm uppercase text-white font-osp-din;
+
+	letter-spacing: 1.5px;
+	font-size: 18px;
+	line-height: 21px;
+	font-weight: 500;
+
+	transition: background-color 0.2s;
+
+	&:hover,
+	&:focus {
+		@apply bg-button-hover-blue;
+	}
+}
+
+body.scrolled .site-header {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.page-header {
+	position: relative;
+	margin-top: -70px;
+	height: 315px;
+
+	.bg-shadow {
+		// background: linear-gradient(180deg, rgba(10, 37, 52, 0) 0%, rgba(10, 37, 52, 0.4) 100%);
+		background: rgba(0, 0, 0, 0.62);
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(10, 37, 52, 0.3);
+		}
+	}
+
+	.subtitle {
+		line-height: 1.4;
+	}
+
+	.bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		background-size: cover;
+		background-position: bottom;
+
+
+	}
+
+	.textblock {
+		position: absolute;
+		bottom: 10vh;
+		z-index: 3;
+		min-height: 24vh;
+
+		h1 {
+			margin-bottom: 22px;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		}
+
+		.subtitle {
+			font-size: 20px;
+			line-height: 28px;
+			max-width: 555px;
+		}
+
+		@media screen and (max-width: 768px) {
+			h1 {
+				font-size: 52px;
+			}
+
+			.subtitle {
+				@apply text-base leading-6;
+			}
+		}
+
+		.button {
+			margin-top: 40px;
+			box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 5px rgba(0, 0, 0, 0.12);
+		}
+	}
+
+
+	@media screen and (max-height: 680px) and (min-width: 1024px) {
+		.textblock {
+			top: 45vh;
+		}
+	}
+
+	&.header-huge {
+		height: 100vh;
+	}
+
+	&.header-big {
+		height: 100vh;
+		max-height: 491px;
+
+		.textblock {
+			bottom: 60px;
+			top: auto;
+			min-height: unset;
+		}
+	}
+
+	&.header-small {
+		height: 100vh;
+		max-height: 315px;
+
+		h1 {
+			margin-bottom: 0;
+		}
+
+		.textblock {
+			bottom: 60px;
+			top: auto;
+			min-height: unset;
+		}
+	}
+
+	&.header-tiny {
+		height: 100vh;
+		max-height: 165px;
+
+		.textblock {
+			bottom: 0;
+			top: auto;
+
+			h1 {
+				font-size: 36px;
+			}
+		}
+	}
+}

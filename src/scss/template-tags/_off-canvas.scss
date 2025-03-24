@@ -1,0 +1,98 @@
+//--------------------------------------------------------------
+// Off-Canvas Elements and Overlays
+//--------------------------------------------------------------
+.off-canvas {
+
+	&-container {
+		@apply bg-primary-blue inset-y-0 h-full fixed text-white;
+
+		overflow-y: auto;
+		left: -100%;
+		transition: left 0.6s ease-in-out;
+		width: 75%;
+		z-index: 9998;
+
+		@screen md {
+			width: 35vw;
+		}
+
+		&.is-visible {
+			@apply left-0;
+		}
+
+		.admin-bar & {
+			@apply pt-64;
+		}
+	}
+
+	&-open {
+		@apply block h-44 p-0 w-44 absolute;
+		top: 8px;
+		left: 14px;
+
+		background: url( ../images/icons/hamburger.svg ) center no-repeat
+			transparent;
+		background-size: 24px 24px;
+		z-index: 9999;
+
+		@screen tablet-landscape {
+			display: none;
+		}
+
+		.admin-bar & {
+			@apply absolute;
+
+			top: theme( 'spacing.48' );
+		}
+
+		&:focus,
+		&:hover {
+			//outline: 1px solid theme( 'colors.white' );
+		}
+
+		&.is-visible {
+
+		}
+	}
+
+	&-close {
+		@apply block h-44 p-0 w-44 absolute;
+		top: 8px;
+		left: 14px;
+		background-image: url( ../images/icons/close.svg );
+		background-size: 22px 22px;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	&-screen {
+		@apply bg-black bg-opacity-25 inset-0 fixed invisible;
+
+		z-index: 9996;
+
+		&.is-visible {
+			@apply visible;
+		}
+	}
+
+	&-content {
+		@apply hidden mt-68 p-24 font-osp-din uppercase text-lg leading-6;
+		background-image: url( ../images/graphicLines.svg );
+		background-repeat: no-repeat;
+		background-position: bottom 20px left;
+
+		.is-visible & {
+			@apply block;
+		}
+
+		.menu-cta-button a {
+			@apply bg-primary-green text-black text-center block mb-48;
+			width: 184px;
+
+			transition: background-color 0.2s;
+			&:hover, &:focus {
+				@apply bg-button-hover-green;
+			}
+		}
+	}
+}

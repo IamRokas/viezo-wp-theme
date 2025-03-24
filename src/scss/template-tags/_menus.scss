@@ -1,0 +1,132 @@
+//--------------------------------------------------------------
+// Menus and Sub-Menus
+//--------------------------------------------------------------
+.navigation-menu {
+	@apply hidden;
+
+	@screen tablet-landscape {
+		@apply block;
+	}
+
+	.menu {
+		@apply flex;
+
+
+		> li {
+
+			@screen md {
+				&:not( :last-child ) {
+					margin-right: 2px;
+				}
+			}
+			@screen desktop {
+				&:not( :last-child ) {
+					margin-right: 15px;
+				}
+			}
+
+			transition: background-color 0.2s;
+			&:hover {
+				background-color: rgba(249, 249, 249, 0.1);
+			}
+
+			&.customer-portal {
+				margin-right: 22px;
+			}
+		}
+
+		a {
+			display: inline-block;
+			line-height: 1.25;
+			text-decoration: none;
+			padding: 6px 16px;
+			font-weight: 500;
+			letter-spacing: 1px;
+			font-feature-settings: 'salt' on, 'liga' off;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+			@screen md {
+				padding: 6px 10px;
+			}
+			@screen desktop {
+				padding: 6px 16px;
+			}
+		}
+	}
+
+
+
+	.sub-menu {
+		@apply bg-white py-8 absolute shadow-shad;
+
+		left: -999em;
+		top: theme( 'spacing.24' );
+		z-index: 99999;
+
+		li {
+			@apply px-24 py-8;
+		}
+
+		.menu-item-has-children {
+
+			&:hover,
+			&.focus {
+
+				> .sub-menu {
+					left: 100%;
+				}
+			}
+		}
+	}
+}
+
+//-----------------------------------------
+// Menu Items With Children
+//-----------------------------------------
+.menu-item-has-children {
+	@apply relative;
+
+	&:hover,
+	&.focus {
+
+		> .sub-menu {
+			@apply left-0;
+		}
+	}
+}
+
+//-----------------------------------------
+// Dropdown Styles
+//-----------------------------------------
+.dropdown {
+
+	ul {
+
+		li {
+			@apply w-full;
+		}
+
+		a {
+			@apply block w-full;
+
+			min-width: theme( 'width.192' );
+		}
+	}
+}
+
+//-----------------------------------------
+// The Down Caret
+//-----------------------------------------
+.caret-down {
+	@apply block float-right h-full ml-8;
+
+	background: url( ../images/icons/caret-down.svg ) 50% 50% no-repeat;
+	background-size: 100%;
+	width: theme( 'spacing.8' );
+}
+
+
+
+#primary-menu .current-menu-item, #primary-menu .current_page_parent, #site-mobile-menu .current-menu-item, #site-mobile-menu .current_page_parent {
+	background-color: rgba(249, 249, 249, 0.1);
+}

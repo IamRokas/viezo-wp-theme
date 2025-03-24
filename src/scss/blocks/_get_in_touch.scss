@@ -1,0 +1,63 @@
+.get-in-touch {
+	background: linear-gradient(143.17deg, #E5EAEF 7.36%, #F9FFFF 122.25%);
+
+	.subtitle {
+
+		margin-bottom: 0;
+
+		@screen md {
+			max-width: 460px;
+		}
+	}
+
+	div.wpcf7 {
+		max-width: 460px;
+		margin: 0 auto;
+
+		@screen md {
+			margin: 0;
+		}
+	}
+
+	.form-input {
+		width: 100%;
+		outline: none;
+		margin-right: -10px;
+		padding-right: 15px;
+	}
+
+	button {
+		@apply font-osp-din text-darkest-grey;
+		font-size: 18px;
+		line-height: 1;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+
+		padding: 8px 16px 7px 16px;
+		text-decoration: none;
+		display: inline-block;
+
+		margin-top: 16px;
+		width: 100%;
+		@apply bg-transparent border-solid border-white text-white border;
+
+		border-width: 3px;
+		outline: none;
+		transition: background-color 0.2s;
+
+		&:hover,
+		&:focus {
+			@apply bg-white text-black;
+		}
+	}
+
+	.wpcf7-not-valid-tip {
+		position: absolute;
+		left: 10px;
+		margin-top: 5px;
+	}
+
+	.wpcf7 form .wpcf7-response-output {
+		margin-top: 40px;
+	}
+}

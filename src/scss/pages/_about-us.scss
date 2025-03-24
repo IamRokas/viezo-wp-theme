@@ -1,0 +1,97 @@
+.timeline {
+
+
+	.track {
+		width: 4px;
+		background: black;
+		bottom: 200px;
+		top: 58px;
+	}
+
+	.dot {
+		display: block;
+		width: 40px;
+		height: 40px;
+		background: black;
+		position: absolute;
+		bottom: 0;
+		left: 2px;
+		transform: translateX(-50%);
+		border-radius: 100%;
+	}
+
+	.green-line {
+		background-image: url(../images/icons/black-line.svg);
+		height: 12px;
+		top: 58px;
+		left: -150px;
+	}
+
+
+
+	.timeline-item {
+
+		//opacity: 0;
+		//transition: all 1s;
+		&.in-view {
+			//opacity: 1;
+
+			.green-line {
+				width: 130px;
+			}
+		}
+	}
+
+
+}
+
+.about-us-page .timeline {
+
+	.image {
+		max-width: 80px;
+	}
+
+
+	@media screen and (max-width: 768px) {
+		.green-line {
+			left: auto;
+			right: 0;
+		}
+
+		.timeline-item {
+			padding-bottom: 40px;
+		}
+	}
+
+	@screen desktop {
+
+		.left-side {
+			.green-line {
+				left: auto;
+				transform: rotate(180deg);
+				transform-origin: center;
+			}
+		}
+
+		.left-side {
+			.image {
+				margin-left: auto;
+			}
+
+			.green-line {
+				right: -150px;
+			}
+		}
+
+		.right-side {
+			.image {
+				margin-right: auto;
+			}
+
+		}
+
+		.image {
+			max-width: 120px;
+		}
+	}
+}
