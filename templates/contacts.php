@@ -25,7 +25,7 @@ $blocks = get_field('blocks');
 		<div class="desktop:flex mb-48 mt-32">
 			<div class="col-1 mb-48 desktop:mb-0 desktop:w-1/2 overflow-hidden">
 				<div
-					class=" border-primary-blue h-full border-2 rounded-xl desktop:rounded-r-none px-24 desktop:px-44 pt-32 desktop:pt-48 pb-32 desktop:pb-40 page-content">
+					class=" border-dark-grey h-full border-2 rounded-xl desktop:rounded-r-none px-24 desktop:px-44 pt-32 desktop:pt-48 pb-32 desktop:pb-40 page-content">
 					<?php
 
 					the_content(
@@ -50,7 +50,7 @@ $blocks = get_field('blocks');
 			</div>
 			<div class="col-2 desktop:w-1/2">
 				<div
-					class="text-white z-10 bg-primary-blue py-32 desktop:py-48 px-24 desktop:px-44 rounded-xl desktop:rounded-l-none">
+					class="text-white z-10 bg-dark-grey py-32 desktop:py-48 px-24 desktop:px-44 rounded-xl desktop:rounded-l-none">
 					<h2>Contact us</h2>
 					<div class="flex">
 						<?php echo do_shortcode(get_field('contact_form')); ?>

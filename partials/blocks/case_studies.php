@@ -18,7 +18,7 @@ if ($cases && is_array($cases)) :
 ?>
 	<?php if ($alternative_design) : // Alternative Design 
 	?>
-		<div class="case-studies-block-alt bg-white text-darkest-grey">
+		<div class="case-studies-block-alt bg-white text-darkest-grey overflow-hidden">
 			<div class="desktop:flex desktop:flex-row desktop:items-stretch w-full">
 				<!-- Left Column - Title and See More -->
 				<div class="desktop:w-1/2 desktop:flex desktop:flex-col desktop:justify-center py-40 md:py-80">
@@ -76,7 +76,7 @@ if ($cases && is_array($cases)) :
 			<div class="container">
 				<h2 class="font-osp-din uppercase mb-48"><?= esc_html($block_title); ?></h2>
 
-				<div class="case-studies-grid desktop:grid desktop:grid-cols-3 gap-24">
+				<div class="case-studies-grid desktop:grid desktop:grid-cols-3 gap-24 overflow-hidden">
 					<?php
 					foreach ($cases as $case_id) :
 						// Setup the post data to make template tags work

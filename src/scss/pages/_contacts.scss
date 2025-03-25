@@ -6,13 +6,13 @@
 			@apply text-black;
 		}
 
-		label .text-white {
+		label {
 			font-weight: 400;
 			font-size: 17px;
 		}
 
 		@screen md {
-			label .text-white {
+			label {
 				font-weight: 500;
 				font-size: 18px;
 			}
@@ -30,13 +30,16 @@
 			background: linear-gradient(143.17deg, #E5EAEF 7.36%, #F9FFFF 122.25%);
 			overflow: hidden;
 		}
+
 		ul {
 			padding-left: 0px;
 			margin-bottom: 32px;
+
 			li {
 				margin-bottom: 8px;
 				font-weight: 500;
 				font-size: 18px;
+
 				i {
 					filter: invert(1);
 					vertical-align: middle;
@@ -48,10 +51,25 @@
 	}
 
 	.button {
-		padding-left: 32px;
-		padding-right: 32px;
-		font-size: 20px;
-		width: 100%;
+		@apply font-osp-din text-darkest-grey;
+		font-size: 18px;
+		line-height: 1;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+
+		padding: 8px 16px 7px 16px;
+		text-decoration: none;
+		display: inline-block;
+		@apply bg-transparent border-solid border-white text-white border;
+
+		border-width: 3px;
+		outline: none;
+		transition: background-color 0.2s;
+
+		&:hover,
+		&:focus {
+			@apply bg-white text-black;
+		}
 	}
 
 	@screen md {

@@ -31,9 +31,9 @@ get_header(); ?>
 
 		<article <?php post_class('case-study-container'); ?>>
 			<!-- Hero section with dark background and featured image -->
-			<section class="text-white">
+			<section class="text-white relative overflow-hidden">
 				<div class="big-container mx-auto md:flex items-center">
-					<div class="md:w-1/2 py-56 pr-32">
+					<div class="md:w-1/2 py-56 pr-32 md:aspect-square flex flex-col justify-center">
 						<?php if (get_the_title()) : ?>
 							<?php
 							// Get study type terms
@@ -76,10 +76,10 @@ get_header(); ?>
 							</div>
 						<?php endif; ?>
 					</div>
-					<div class="md:w-1/2 desktop:mx-0 -mx-24">
+					<div class="md:w-1/2 desktop:mx-0 -mx-24 md:absolute md:left-50 md:right-0 md:top-0 md:bottom-0">
 						<?php if (has_post_thumbnail()) : ?>
-							<div class="featured-image">
-								<?php echo get_the_post_thumbnail(get_the_ID(), 'large', ['class' => 'w-full h-auto']); ?>
+							<div class="featured-image w-full h-full">
+								<?php echo get_the_post_thumbnail(get_the_ID(), 'large', ['class' => 'w-full h-full object-cover']); ?>
 							</div>
 						<?php endif; ?>
 					</div>

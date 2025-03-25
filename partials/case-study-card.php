@@ -22,9 +22,9 @@ if (empty($excerpt)) {
 
 <div class="case-study-card mb-32">
     <a href="<?php the_permalink(); ?>" class="block">
-        <div class="case-study-thumbnail mb-24">
+        <div class="case-study-thumbnail aspect-square mb-24">
             <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('case-study', ['class' => 'w-full']); ?>
+                <?php the_post_thumbnail('case-study', ['class' => 'w-full h-full object-cover']); ?>
             <?php else : ?>
                 <div class="bg-dark-grey h-64"></div>
             <?php endif; ?>

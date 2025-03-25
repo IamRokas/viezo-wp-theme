@@ -6,7 +6,35 @@ body.home {
 		}
 
 		.page-header .textblock {
-			top: 42vh;
+			top: unset;
+		}
+
+		.page-header {
+			.subtitle+div {
+
+				svg {
+					width: 40px;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	.blocks-grid {
+		.block-item {
+			@media screen and (max-width: 600px) {
+				min-height: 400px;
+			}
+		}
+
+		.block-content {
+			top: 50%;
+			transform: translateY(-50%);
+
+			@media screen and (max-width: 600px) {
+				top: unset;
+				transform: none;
+			}
 		}
 	}
 

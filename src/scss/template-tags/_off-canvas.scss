@@ -4,7 +4,7 @@
 .off-canvas {
 
 	&-container {
-		@apply bg-primary-blue inset-y-0 h-full fixed text-white;
+		@apply bg-dark-grey inset-y-0 h-full fixed text-white;
 
 		overflow-y: auto;
 		left: -100%;
@@ -30,8 +30,7 @@
 		top: 8px;
 		left: 14px;
 
-		background: url( ../images/icons/hamburger.svg ) center no-repeat
-			transparent;
+		background: url(../images/icons/hamburger.svg ) center no-repeat transparent;
 		background-size: 24px 24px;
 		z-index: 9999;
 
@@ -42,7 +41,7 @@
 		.admin-bar & {
 			@apply absolute;
 
-			top: theme( 'spacing.48' );
+			top: theme('spacing.48');
 		}
 
 		&:focus,
@@ -50,16 +49,14 @@
 			//outline: 1px solid theme( 'colors.white' );
 		}
 
-		&.is-visible {
-
-		}
+		&.is-visible {}
 	}
 
 	&-close {
 		@apply block h-44 p-0 w-44 absolute;
 		top: 8px;
 		left: 14px;
-		background-image: url( ../images/icons/close.svg );
+		background-image: url(../images/icons/close.svg );
 		background-size: 22px 22px;
 		background-repeat: no-repeat;
 		background-position: center center;
@@ -77,21 +74,31 @@
 
 	&-content {
 		@apply hidden mt-68 p-24 font-osp-din uppercase text-lg leading-6;
-		background-image: url( ../images/graphicLines.svg );
-		background-repeat: no-repeat;
-		background-position: bottom 20px left;
 
 		.is-visible & {
 			@apply block;
 		}
 
 		.menu-cta-button a {
-			@apply bg-primary-green text-black text-center block mb-48;
-			width: 184px;
+			@apply font-osp-din text-darkest-grey;
+			font-size: 18px;
+			line-height: 1;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			margin-left: 15px;
 
+			padding: 8px 16px 7px 16px;
+			text-decoration: none;
+			display: inline-block;
+			@apply bg-transparent border-solid border-white text-white border;
+
+			border-width: 3px;
+			outline: none;
 			transition: background-color 0.2s;
-			&:hover, &:focus {
-				@apply bg-button-hover-green;
+
+			&:hover,
+			&:focus {
+				@apply bg-white text-black;
 			}
 		}
 	}

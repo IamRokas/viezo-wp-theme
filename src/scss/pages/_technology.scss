@@ -8,6 +8,18 @@
 		}
 	}
 
+
+	.page-header {
+		+.textblock {
+			.image {
+				@media screen and (min-width: 767px) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+
 	.two-columns-block {
 		&:first-of-type {
 			border-top: 1px solid black;

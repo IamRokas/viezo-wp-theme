@@ -1,9 +1,10 @@
  <div class="bg-dark-grey pt-20">
  	<div class="container text-white">
  		<div id="sonora-animation-container" class="h-[600vh] desktop:h-[500vh] relative">
+ 			<h2 class="text-center py-48">SONORA</h2>
  			<div class="sticky top-0">
- 				<div class="relative h-screen py-48">
- 					<h2 class="text-center mb-48">SONORA</h2>
+
+ 				<div class="relative h-screen pb-48 pt-104">
  					<div
  						class="h-full desktop:h-auto grid grid-cols-2 desktop:grid-cols-8 desktop:grid-rows-8 gap-10 desktop:gap-48">
  						<div

@@ -10,10 +10,10 @@
 <div class="bg-dark-grey py-64 ">
     <div class="container text-white">
         <div id="powerail-animation-container" class="h-[600vh] desktop:h-[500vh] relative">
+            <h2 class="text-center py-48">POWERAIL</h2>
             <div class="sticky top-0">
-                <div class="relative h-screen py-48">
-                    <h2 class="text-center">POWERAIL</h2>
-                    <div class="powerail-card h-[30vh]">
+                <div class="relative h-screen pb-48 pt-104">
+                    <div class="powerail-card h-[30vh] z-[10]">
                         <div class="hidden desktop:block"></div>
                         <div class="h-full col-start-1 desktop:col-start-2">
                             <img src="<?php echo get_template_directory_uri(); ?>/anim-assets/1-01.png" />
@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <div class="powerail-card h-[30vh]">
+                    <div class="powerail-card h-[30vh] z-[50]">
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-1">
                             <h3 class="text-xl desktop:text-2xl mb-20">Sensor</h3>
@@ -43,7 +43,7 @@
                         <div class="hidden desktop:block"></div>
                     </div>
 
-                    <div class="powerail-card h-[30vh]">
+                    <div class="powerail-card h-[30vh] z-[30]">
                         <div class="hidden desktop:block"></div>
                         <div class="h-full col-start-1 desktop:col-start-2">
                             <img src="<?php echo get_template_directory_uri(); ?>/anim-assets/3-01.png" />
@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="powerail-card h-[30vh]">
+                    <div class="powerail-card h-[30vh] z-[20]">
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-1">
                             <h3 class="text-xl desktop:text-2xl mb-20">Supercapacitor</h3>
@@ -78,7 +78,7 @@
                         <div class="hidden desktop:block"></div>
                     </div>
 
-                    <div class="powerail-card h-[30vh]">
+                    <div class="powerail-card h-[30vh] z-[50]">
                         <div class="hidden desktop:block"></div>
                         <div class="h-full col-start-1 desktop:col-start-2">
                             <img src="<?php echo get_template_directory_uri(); ?>/anim-assets/5-01.png" />

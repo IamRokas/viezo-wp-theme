@@ -19,7 +19,7 @@ $image_wrap_classes = "image-wrap relative";
 
 // Add specific classes for full-screen-size variant
 if ($variant === 'full-screen-size') {
-	$block_classes .= " min-h-screen flex items-center relative";
+	$block_classes .= " desktop:min-h-screen flex items-center relative";
 	$container_classes .= " big-container justify-end";
 	$image_column_classes .= " h-full desktop:h-screen desktop:absolute desktop:right-[50%] desktop:left-0 -mx-[1.5rem] desktop:mx-0";
 	$image_wrap_classes .= " desktop:h-full";
