@@ -38,7 +38,8 @@ if (empty($background)) {
                 <div class="subtitle mx-auto"><?= $subtitle; ?></div>
 
                 <?php if (is_front_page()): ?>
-                    <div class="mt-68 text-center flex justify-center">
+                    <div
+                        class="mt-68 text-center flex justify-center arrow-down transition-all hover:top-[5px] top-0 relative cursor-pointer">
                         <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="41" cy="40.9899" r="40.3375" stroke="white" />
                             <path
@@ -61,11 +62,12 @@ if (empty($background)) {
     ?>
 </header>
 <?php if ($subtitle_below && $subtitle): ?>
-    <div class="textblock container text-black py-58 flex flex-col-reverse md:flex-row justify-between items-center">
+    <div
+        class="textblock header-btn-scroll container text-black py-58 flex flex-col-reverse md:flex-row justify-between items-center">
         <div class="subtitle md:col-span-3 max-w-lg">
             <div><?= $subtitle; ?></div>
             <?php if ($button): ?>
-                <a href="<?= $button['url']; ?>" class="button outline-black mt-28"><?= $button['title']; ?></a>
+                <a href="<?= $button['url']; ?>" class="button header-btn outline-black mt-28"><?= $button['title']; ?></a>
             <?php endif; ?>
         </div>
         <?php if ($side_image): ?>

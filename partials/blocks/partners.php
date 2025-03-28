@@ -30,7 +30,7 @@ if ($partners && is_array($partners)) :
                     ?>
                                 <div class="partner-item flex-shrink-0 px-16 md:px-32">
                                     <?php if ($logo) : ?>
-                                        <div class="partner-logo h-[97px] flex items-center justify-center">
+                                        <div class="partner-logo h-[80px] flex items-center justify-center">
                                             <?php echo wp_get_attachment_image($logo, 'full', false, [
                                                 'class' => 'max-h-full w-auto',
                                                 'alt' => esc_attr($partner_title)

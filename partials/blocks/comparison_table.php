@@ -25,7 +25,7 @@ $min_column_width = 'min-w-[180px]';
 if (!empty($rows)) :
 ?>
     <div class="product-comparison-block py-40 md:py-80">
-        <div class="container overflow-x-auto pb-8">
+        <div class="container max-w-4xl overflow-x-auto pb-8">
             <div class="comparison-table min-w-max md:min-w-0">
                 <!-- Header Row -->
                 <div class="comparison-header flex border-b border-border-gray">

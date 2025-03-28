@@ -15,7 +15,7 @@
 			height: 60px;
 
 			@screen desktop {
-				height: 97px;
+				height: 76px;
 			}
 		}
 	}
@@ -47,6 +47,7 @@
 
 	.case-study-item {
 		width: 50%;
+		border-top: 0;
 
 		@screen desktop {
 			width: 100%;
@@ -62,6 +63,10 @@
 			border-left: 1px solid black;
 			margin-bottom: 0;
 
+			.border-white {
+				border-top: 0;
+			}
+
 			a {
 				display: flex;
 				flex-direction: column;
@@ -69,6 +74,14 @@
 
 				@screen desktop {
 					flex-direction: row-reverse;
+				}
+			}
+
+			.study-excerpt {
+				display: none;
+
+				@screen md {
+					display: block;
 				}
 			}
 

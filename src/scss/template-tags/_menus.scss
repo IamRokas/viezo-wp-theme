@@ -12,20 +12,22 @@
 		@apply flex;
 
 
-		> li {
+		>li {
 
 			@screen md {
-				&:not( :last-child ) {
+				&:not( :last-child) {
 					margin-right: 2px;
 				}
 			}
+
 			@screen desktop {
-				&:not( :last-child ) {
+				&:not( :last-child) {
 					margin-right: 15px;
 				}
 			}
 
 			transition: background-color 0.2s;
+
 			&:hover {
 				background-color: rgba(249, 249, 249, 0.1);
 			}
@@ -40,16 +42,18 @@
 			line-height: 1.25;
 			text-decoration: none;
 			padding: 6px 16px;
-			font-weight: 500;
+			// font-weight: 500;
 			letter-spacing: 1px;
-			font-feature-settings: 'salt' on, 'liga' off;
+			font-feature-settings: 'salt'on, 'liga'off;
 			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 			@screen md {
 				padding: 6px 10px;
 			}
+
 			@screen desktop {
 				padding: 6px 16px;
+				font-size: 14px;
 			}
 		}
 	}
@@ -60,7 +64,7 @@
 		@apply bg-white py-8 absolute shadow-shad;
 
 		left: -999em;
-		top: theme( 'spacing.24' );
+		top: theme('spacing.24');
 		z-index: 99999;
 
 		li {
@@ -72,7 +76,7 @@
 			&:hover,
 			&.focus {
 
-				> .sub-menu {
+				>.sub-menu {
 					left: 100%;
 				}
 			}
@@ -89,7 +93,7 @@
 	&:hover,
 	&.focus {
 
-		> .sub-menu {
+		>.sub-menu {
 			@apply left-0;
 		}
 	}
@@ -109,7 +113,7 @@
 		a {
 			@apply block w-full;
 
-			min-width: theme( 'width.192' );
+			min-width: theme('width.192');
 		}
 	}
 }
@@ -120,13 +124,16 @@
 .caret-down {
 	@apply block float-right h-full ml-8;
 
-	background: url( ../images/icons/caret-down.svg ) 50% 50% no-repeat;
+	background: url(../images/icons/caret-down.svg ) 50% 50% no-repeat;
 	background-size: 100%;
-	width: theme( 'spacing.8' );
+	width: theme('spacing.8');
 }
 
 
 
-#primary-menu .current-menu-item, #primary-menu .current_page_parent, #site-mobile-menu .current-menu-item, #site-mobile-menu .current_page_parent {
+#primary-menu .current-menu-item,
+#primary-menu .current_page_parent,
+#site-mobile-menu .current-menu-item,
+#site-mobile-menu .current_page_parent {
 	background-color: rgba(249, 249, 249, 0.1);
 }

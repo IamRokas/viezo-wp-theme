@@ -49,12 +49,12 @@ if ($blocks && is_array($blocks)) :
 			}
 
 			// Define the container class
-			$block_classes = "block-item flex {$variant} {$counter} {$col_span} relative min-h-[350px]";
+			$block_classes = "block-item flex {$variant} {$counter} {$col_span} relative min-h-[350px] desktop:min-h-[60vh]";
 		?>
 
 			<div class="<?= $block_classes; ?>">
 				<?php if ($image && isset($image['ID'])) : ?>
-					<div class="block-image relative w-full">
+					<div class="block-image absolute w-full inset-0">
 						<?php if (isset($image['type']) && $image['type'] == 'video') : ?>
 							<video autoplay muted loop playsinline class="w-full h-full object-cover">
 								<source src="<?= esc_url($image['url']); ?>" type="video/mp4">
@@ -65,9 +65,9 @@ if ($blocks && is_array($blocks)) :
 					</div>
 				<?php endif; ?>
 
-				<div class="block-content absolute left-0 right-0 bottom-0 desktop:top-[300px] p-24 desktop:p-104">
+				<div class="block-content relative p-24 desktop:p-104 w-full flex">
 					<div class="content-inner container flex items-center <?= $flex_alignment; ?>">
-						<div class="max-w-lg <?= $text_alignment;
+						<div class="max-w-xl <?= $text_alignment;
 												print $container_class; ?> text-white">
 							<?php if ($title) : ?>
 								<h2 class=" pb-20 font-osp-din uppercase"><?= $title; ?></h2>

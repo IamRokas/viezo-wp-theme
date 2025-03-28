@@ -81,7 +81,7 @@
 
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e('Skip to content', 'viezo'); ?></a>
 
-	<header class="site-header sticky top-0 z-50 px-30 py-8 tablet-landscape:py-16 text-sm border-b-[1px] border-white"
+	<header class="site-header backdrop-blur-md sticky top-0 z-50 px-30 py-8 tablet-landscape:py-16 text-sm"
 		style="border-bottom: 1px solid white;">
 
 		<div class=" big-container h-full flex items-center justify-center tablet-landscape:justify-between mx-auto">
@@ -108,7 +108,7 @@
 						class="w-full h-full inline-block"></i></a>
 			</div>
 
-			<nav id="site-navigation" class="main-navigation navigation-menu font-osp-din order-3"
+			<nav id="site-navigation" class="main-navigation navigation-menu font-hiragino-sans order-3"
 				aria-label="<?php esc_attr_e('Main Navigation', 'viezo'); ?>">
 				<?php
 				wp_nav_menu(
@@ -116,7 +116,7 @@
 						'fallback_cb'    => false,
 						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
-						'menu_class'     => 'menu dropdown  my-0 uppercase text-white grow flex items-center',
+						'menu_class'     => 'menu dropdown  my-0 text-white grow flex items-center text-sm',
 						'container'      => false,
 					]
 				);

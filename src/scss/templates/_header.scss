@@ -6,7 +6,7 @@
 	padding-left: 30px;
 	padding-right: 30px;
 
-	height: 72px;
+	height: 70px;
 	transition: background-color 0.2s ease-in-out;
 
 	>.container {
@@ -160,6 +160,10 @@ body.scrolled .site-header {
 	&.header-big {
 		height: 100vh;
 		max-height: 491px;
+
+		@media screen and (max-width: 768px) {
+			max-height: 45vh;
+		}
 
 		.textblock {
 			bottom: 60px;

@@ -19,7 +19,7 @@ if ($blocks && is_array($blocks)) :
 		<h2 class=" pb-56 font-osp-din text-center uppercase"><?= $title; ?></h2>
 		<div class="border-t border-black">
 			<div
-				class="blocks-grid flex flex-nowrap desktop:grid desktop:grid-cols-3 desktop:gap-24 gap-20 container overflow-x-scroll desktop:overflow-hidden">
+				class="blocks-grid-logos flex flex-nowrap desktop:grid desktop:grid-cols-3 desktop:gap-24 gap-20 container overflow-x-scroll desktop:overflow-hidden">
 				<?php foreach ($blocks as $index => $block) :
 					// Get block data
 					$title = $block['title'] ?? false;

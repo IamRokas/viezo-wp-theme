@@ -73,14 +73,14 @@
 	}
 
 	&-content {
-		@apply hidden mt-68 p-24 font-osp-din uppercase text-lg leading-6;
+		@apply hidden mt-68 p-24 font-hiragino-sans uppercase text-lg leading-6;
 
 		.is-visible & {
 			@apply block;
 		}
 
 		.menu-cta-button a {
-			@apply font-osp-din text-darkest-grey;
+			@apply font-hiragino-sans text-darkest-grey;
 			font-size: 18px;
 			line-height: 1;
 			letter-spacing: 1px;

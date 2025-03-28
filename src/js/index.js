@@ -19,14 +19,14 @@ const animatePowerail = (powerailBlock, scrollAmount, blocks, powerailStickyBloc
 		currentScrolledInto >= progressStep * 3 ? 100 : currentScrolledInto - progressStep * 2 <= 0 ? 0 : Math.floor((currentScrolledInto - progressStep * 2) * 100 / progressStep),
 		currentScrolledInto >= progressStep * 4 ? 100 : currentScrolledInto - progressStep * 3 <= 0 ? 0 : Math.floor((currentScrolledInto - progressStep * 3) * 100 / progressStep),
 		currentScrolledInto >= progressStep * 5 ? 100 : currentScrolledInto - progressStep * 4 <= 0 ? 0 : Math.floor((currentScrolledInto - progressStep * 4) * 100 / progressStep),
+		currentScrolledInto >= progressStep * 6 ? 100 : currentScrolledInto - progressStep * 5 <= 0 ? 0 : Math.floor((currentScrolledInto - progressStep * 5) * 100 / progressStep),
 	];
 
 	blocks.forEach((block, index) => {
 		const blockTextBlock = block.querySelector('.powerail-text');
 		const isMobile = window.innerWidth <= 1023;
-		const indexToAdd = isMobile ? 1 : 2;
-		if (progressArray[index + indexToAdd] !== undefined && progressArray[index + indexToAdd] !== 0) {
-			const opacity = 1 - (progressArray[index + indexToAdd] / 100);
+		if (progressArray[index + 1] !== undefined && progressArray[index + 1] !== 0) {
+			const opacity = 1 - (progressArray[index + 1] / 100);
 			blockTextBlock.style.opacity = `${opacity}`;
 		} else {
 			block.style.opacity = `${progressArray[index] / 100}`;
@@ -211,4 +211,50 @@ const initSonoraAnimation = () => {
 document.addEventListener('DOMContentLoaded', () => {
 	initPowerailAnimation();
 	initSonoraAnimation();
+
+	// Get all elements with arrow-down class
+	const arrowDownButtons = document.querySelectorAll('.arrow-down');
+	const headerButtons = document.querySelectorAll('.header-btn');
+
+	// Add click event listener to each arrow-down element
+	arrowDownButtons.forEach(function (button) {
+		button.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			// Find the page-header element
+			const pageHeader = document.querySelector('.page-header');
+
+			if (pageHeader) {
+				// Calculate the target scroll position (bottom of page-header minus 100px)
+				const targetPosition = pageHeader.offsetTop + pageHeader.offsetHeight - 100;
+
+				// Scroll to that position with smooth behavior
+				window.scrollTo({
+					top: targetPosition,
+					behavior: 'smooth'
+				});
+			}
+		});
+	});
+
+	// Add click event listener to each arrow-down element
+	headerButtons.forEach(function (button) {
+		button.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			// Find the page-header element
+			const pageHeader = document.querySelector('.header-btn-scroll');
+
+			if (pageHeader) {
+				// Calculate the target scroll position (bottom of page-header minus 100px)
+				const targetPosition = pageHeader.offsetTop + pageHeader.offsetHeight - 100;
+
+				// Scroll to that position with smooth behavior
+				window.scrollTo({
+					top: targetPosition,
+					behavior: 'smooth'
+				});
+			}
+		});
+	});
 })

@@ -48,7 +48,7 @@ if ($cases && is_array($cases)) :
 							// Add a border between cases
 							$border_class = ($index > 0) ? 'border-t border-white' : '';
 					?>
-							<div class="case-study-item <?= $border_class; ?>">
+							<div class="case-study-item flex <?= $border_class; ?>">
 								<?php get_template_part('partials/case-study-card'); ?>
 							</div>
 					<?php
