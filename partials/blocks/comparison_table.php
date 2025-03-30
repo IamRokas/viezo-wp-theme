@@ -25,14 +25,15 @@ $min_column_width = 'min-w-[180px]';
 if (!empty($rows)) :
 ?>
     <div class="product-comparison-block py-40 md:py-80">
-        <div class="container max-w-4xl overflow-x-auto pb-8">
+        <div class="container max-w-[800px] overflow-x-auto pb-8">
             <div class="comparison-table min-w-max md:min-w-0">
                 <!-- Header Row -->
                 <div class="comparison-header flex border-b border-border-gray">
                     <!-- First Column Header -->
                     <div
                         class="comparison-header-cell <?= $min_column_width; ?> text-lg md:text-xl w-1/3 p-12 md:p-16 font-osp-din uppercase text-darkest-grey text-sm md:text-base flex items-end">
-                        <?= esc_html($first_col_title); ?>
+                        <h3 class="font-osp-din uppercase text-darkest-grey text-lg md:text-lg">
+                            <?= esc_html($first_col_title); ?></h3>
                     </div>
 
                     <!-- Second Column Header -->
@@ -44,7 +45,7 @@ if (!empty($rows)) :
                                     <?= wp_get_attachment_image($second_col_image, 'medium', false, ['class' => '']); ?>
                                 </div>
                             <?php endif; ?>
-                            <h3 class="font-osp-din uppercase text-darkest-grey text-lg md:text-xl">
+                            <h3 class="font-osp-din uppercase text-darkest-grey text-lg md:text-lg">
                                 <?= esc_html($second_col_title); ?></h3>
                         </div>
                     <?php endif; ?>
@@ -58,7 +59,7 @@ if (!empty($rows)) :
                                     <?= wp_get_attachment_image($third_col_image, 'medium', false, ['class' => '']); ?>
                                 </div>
                             <?php endif; ?>
-                            <h3 class="font-osp-din uppercase text-darkest-grey text-lg md:text-xl">
+                            <h3 class="font-osp-din uppercase text-darkest-grey text-lg md:text-lg">
                                 <?= esc_html($third_col_title); ?></h3>
                         </div>
                     <?php endif; ?>
@@ -73,22 +74,20 @@ if (!empty($rows)) :
                     <div class="comparison-row flex border-b border-border-gray">
                         <!-- First Column Data -->
                         <div
-                            class="comparison-cell <?= $min_column_width; ?> w-1/3 p-12 md:p-16 text-darkest-grey text-sm md:text-base">
+                            class="comparison-cell <?= $min_column_width; ?> w-1/3 p-8 md:p-12 text-darkest-grey text-[0.9rem]">
                             <?= esc_html($first_col); ?>
                         </div>
 
                         <!-- Second Column Data -->
                         <?php if (!empty($second_col_title)) : ?>
-                            <div
-                                class="comparison-cell <?= $min_column_width; ?> w-1/3 p-12 md:p-16  text-center text-sm md:text-base">
+                            <div class="comparison-cell <?= $min_column_width; ?> w-1/3 p-8 md:p-12  text-center text-[0.9rem]">
                                 <?php echo $second_col; ?>
                             </div>
                         <?php endif; ?>
 
                         <!-- Third Column Data -->
                         <?php if (!empty($third_col_title)) : ?>
-                            <div
-                                class="comparison-cell <?= $min_column_width; ?> w-1/3 p-12 md:p-16  text-center text-sm md:text-base">
+                            <div class="comparison-cell <?= $min_column_width; ?> w-1/3 p-8 md:p-12  text-center text-[0.9rem]">
                                 <?php echo $third_col; ?>
                             </div>
                         <?php endif; ?>

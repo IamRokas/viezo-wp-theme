@@ -11,8 +11,8 @@ get_header(); ?>
 <main id="main" class="site-main text-white pb-56">
 
 	<section class="pt-56 pb-32">
-		<div class="big-container mx-auto">
-			<h1 class="text-4xl font-osp-din uppercase mb-32">CASE STUDIES</h1>
+		<div class="container mx-auto">
+			<h1 class="text-3xl desktop:text-4xl font-osp-din uppercase mb-32">CASE STUDIES</h1>
 
 			<?php
 			// Get all case study type terms
@@ -25,9 +25,9 @@ get_header(); ?>
 				$current_term = get_queried_object();
 				$is_archive_page = is_post_type_archive('case-study');
 			?>
-				<div class="case-study-filters flex gap-8 mb-32 md:mb-48">
+				<div class="case-study-filters flex gap-8 mb-32 md:mb-48 overflow-x-scroll no-scrollbar">
 					<a href="<?php echo esc_url(get_post_type_archive_link('case-study')); ?>"
-						class="p-8 text-sm border <?php echo $is_archive_page ? 'border-white bg-white bg-opacity-10' : 'border-transparent hover:bg-white hover:bg-opacity-10'; ?>">
+						class="text-nowrap p-8 text-sm border <?php echo $is_archive_page ? 'border-white bg-white bg-opacity-10' : 'border-transparent hover:bg-white hover:bg-opacity-10'; ?>">
 						All case studies
 					</a>
 
@@ -35,7 +35,7 @@ get_header(); ?>
 						$is_active = ($current_term && isset($current_term->term_id) && $current_term->term_id == $type->term_id);
 					?>
 						<a href="<?php echo esc_url(get_term_link($type)); ?>"
-							class="p-8 text-sm border <?php echo $is_active ? 'border-white bg-white bg-opacity-10' : 'border-transparent hover:bg-white hover:bg-opacity-10'; ?>">
+							class="text-nowrap p-8 text-sm border <?php echo $is_active ? 'border-white bg-white bg-opacity-10' : 'border-transparent hover:bg-white hover:bg-opacity-10'; ?>">
 							<?php echo esc_html($type->name); ?> case studies
 						</a>
 					<?php endforeach; ?>
@@ -66,7 +66,7 @@ get_header(); ?>
 			if ($type_query->have_posts()) :
 	?>
 				<div class="taxonomy-section pb-56">
-					<div class="big-container mx-auto">
+					<div class="container mx-auto">
 						<h2 class="text-2xl font-osp-din uppercase mb-32"><?php echo esc_html($type->name); ?></h2>
 
 						<div class="case-studies-grid desktop:grid grid-cols-3 gap-32">
@@ -87,7 +87,7 @@ get_header(); ?>
 		// If no taxonomies are found, display all case studies
 		if (have_posts()) :
 			?>
-			<div class="big-container mx-auto">
+			<div class="container mx-auto">
 				<div class="case-studies-grid desktop:grid grid-cols-3 gap-32">
 					<?php
 					while (have_posts()) :

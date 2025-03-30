@@ -1,25 +1,4 @@
 .contacts-page {
-	div[role="form"] {
-		width: 100%;
-
-		input {
-			@apply text-black;
-		}
-
-		label {
-			font-weight: 400;
-			font-size: 17px;
-		}
-
-		@screen md {
-			label {
-				font-weight: 500;
-				font-size: 18px;
-			}
-		}
-
-
-	}
 
 	h2 {
 		margin-bottom: 32px;
@@ -27,7 +6,7 @@
 
 	.col-1 {
 		.page-content {
-			background: linear-gradient(143.17deg, #E5EAEF 7.36%, #F9FFFF 122.25%);
+			background: transparent;
 			overflow: hidden;
 		}
 
@@ -48,27 +27,50 @@
 				}
 			}
 		}
+
+		a {
+			color: white;
+		}
 	}
 
-	.button {
-		@apply font-osp-din text-darkest-grey;
-		font-size: 18px;
-		line-height: 1;
-		letter-spacing: 1px;
-		text-transform: uppercase;
+	.wpforms-container {
+		margin: 0 !important;
 
-		padding: 8px 16px 7px 16px;
-		text-decoration: none;
-		display: inline-block;
-		@apply bg-transparent border-solid border-white text-white border;
+		.wpforms-field-label {
+			@apply text-white font-hiragino-sans font-light;
+		}
 
-		border-width: 3px;
-		outline: none;
-		transition: background-color 0.2s;
+		.wpforms-field {
+			padding-top: 0;
+			padding-bottom: 12px;
 
-		&:hover,
-		&:focus {
-			@apply bg-white text-black;
+			input {
+				width: 100%;
+				max-width: 100% !important;
+			}
+		}
+
+		.wpforms-submit {
+			@apply font-osp-din;
+			font-size: 18px;
+			line-height: 1;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+
+			padding: 8px 16px 7px 16px;
+			text-decoration: none;
+			display: inline-block;
+			@apply bg-transparent border-solid border-white text-white border;
+			background: transparent !important;
+			border-width: 3px;
+			outline: none;
+			transition: background-color 0.2s;
+
+			&:hover,
+			&:focus {
+				background: white !important;
+				@apply bg-white text-black;
+			}
 		}
 	}
 
@@ -94,4 +96,54 @@
 			display: none;
 		}
 	}
+}
+
+.get-in-touch {
+	.wpforms-container {
+		margin: 0 !important;
+		width: 100%;
+		max-width: 400px;
+
+		.wpforms-field-label {
+			@apply text-white font-hiragino-sans font-light;
+		}
+
+		.wpforms-field {
+			width: 100%;
+			padding: 0;
+
+			input {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		.wpforms-submit {
+			@apply font-osp-din;
+			font-size: 18px;
+			line-height: 1;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+
+			padding: 8px 16px 7px 16px;
+			text-decoration: none;
+			display: inline-block;
+			@apply bg-transparent border-solid border-white text-white border;
+			background: transparent !important;
+			border-width: 3px;
+			outline: none;
+			transition: background-color 0.2s;
+			width: 100%;
+
+			&:hover,
+			&:focus {
+				background: white !important;
+				@apply bg-white text-black;
+			}
+		}
+	}
+}
+
+.page-template-contacts {
+	@apply bg-dark-grey;
 }

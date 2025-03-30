@@ -21,7 +21,7 @@
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-3">
                             <h3 class="text-xl desktop:text-2xl mb-20">Holder</h3>
-                            <p class="text-[16px] desktop:text-lg font-hiragino-sans">The stainless steel Powerail
+                            <p class="text-[16px]  font-hiragino-sans">The stainless steel Powerail
                                 holder is
                                 designed to fit
                                 various axleboxes.</p>
@@ -32,7 +32,7 @@
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-1">
                             <h3 class="text-xl desktop:text-2xl mb-20">Sensor</h3>
-                            <p class=" text-[16px] desktop:text-lg font-hiragino-sans">The sensor measures three-axis
+                            <p class=" text-[16px]  font-hiragino-sans">The sensor measures three-axis
                                 vibrations at
                                 set
                                 intervals, transmitting data to a gateway. Its high-resolution MEMS accelerometer
@@ -53,7 +53,7 @@
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-3">
                             <h3 class="text-xl desktop:text-2xl mb-20">Energy harvester</h3>
-                            <p class="text-[16px] desktop:text-lg font-hiragino-sans">The vibration harvester uses a
+                            <p class="text-[16px]  font-hiragino-sans">The vibration harvester uses a
                                 unique
                                 piezoelectric
                                 PVDF polymer on a cantilever. As it vibrates, it generates electricity, which is stored
@@ -66,7 +66,7 @@
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-1">
                             <h3 class="text-xl desktop:text-2xl mb-20">Supercapacitor</h3>
-                            <p class="text-[16px] desktop:text-lg font-hiragino-sans">The supercapacitor has low
+                            <p class="text-[16px]  font-hiragino-sans">The supercapacitor has low
                                 self-discharge,
                                 high
                                 voltage, a wide temperature range, and high capacitance. It stores energy when unused
@@ -90,7 +90,7 @@
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-3">
                             <h3 class="text-xl desktop:text-2xl mb-20">Upper case</h3>
-                            <p class="text-[16px] desktop:text-lg font-hiragino-sans">The upper case is ABS with an IP66
+                            <p class="text-[16px]  font-hiragino-sans">The upper case is ABS with an IP66
                                 rating,
                                 featuring a
                                 heavy-duty 3.3 mm thick wall design. It is dustproof, waterproof, and flame retardant.

@@ -34,7 +34,7 @@ if ($variant === 'full-screen-size') {
 	$block_classes .= "desktop:overflow-hidden items-stretch justify-end relative";
 	$image_wrap_classes .= " desktop:absolute desktop:inset-0";
 	$image_column_classes .= "h-full desktop:absolute desktop:left-[50%] desktop:right-0 -mx-[1.5rem] desktop:mx-0";
-	$content_wrap_classes = "desktop:col-span-6 text-column py-44 desktop:py-140 text-left desktop:text-left px-24";
+	$content_wrap_classes = "desktop:col-span-6 text-column py-44 desktop:py-140 text-left desktop:text-left pr-24 desktop:px-0 desktop:pr-24";
 }
 ?>
 

@@ -10,9 +10,10 @@ the_post();
 $blocks = get_field('blocks');
 ?>
 
-<main id="main" class="site-main contacts-page">
+<main id="main" class="site-main contacts-page bg-dark-grey">
 
-	<?php get_template_part('partials/page-header'); ?>
+	<?php //get_template_part('partials/page-header'); 
+	?>
 
 	<?php
 	if (function_exists('yoast_breadcrumb')) {
@@ -22,10 +23,10 @@ $blocks = get_field('blocks');
 
 
 	<div class="container justify-center">
-		<div class="desktop:flex mb-48 mt-32">
+		<div class="desktop:flex mb-48 mt-32 border-white border">
 			<div class="col-1 mb-48 desktop:mb-0 desktop:w-1/2 overflow-hidden">
 				<div
-					class=" border-dark-grey h-full border-2 rounded-xl desktop:rounded-r-none px-24 desktop:px-44 pt-32 desktop:pt-48 pb-32 desktop:pb-40 page-content">
+					class="  text-white h-full text-lg uppercase desktop:border-r rounded-xl desktop:rounded-r-none px-24 desktop:px-44 pt-32 desktop:pt-48 pb-32 desktop:pb-40 page-content">
 					<?php
 
 					the_content(
@@ -45,7 +46,6 @@ $blocks = get_field('blocks');
 
 
 					?>
-					<div id="map"></div>
 				</div>
 			</div>
 			<div class="col-2 desktop:w-1/2">
@@ -58,7 +58,10 @@ $blocks = get_field('blocks');
 				</div>
 			</div>
 		</div>
+	</div>
 
+	<div>
+		<div id="map" class="hidden"></div>
 	</div>
 
 	<?php if (!empty($blocks)): foreach ($blocks as $block): ?>

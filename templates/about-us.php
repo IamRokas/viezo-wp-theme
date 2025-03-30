@@ -49,7 +49,7 @@ $softwareBlock = null;
 									class="image shadow-shad rounded-full" />
 								<div class="date text-darkest-grey text-xs desktop:text-base"><?= $date; ?></div>
 								<h3 class="font-medium text-xl desktop:text-2xl"><?= $title; ?></h3>
-								<p class="font-extralight text-xs desktop:text-base"><?= $text; ?></p>
+								<p class="font-extralight font-body-1"><?= $text; ?></p>
 							</div>
 						</div>
 					</div>

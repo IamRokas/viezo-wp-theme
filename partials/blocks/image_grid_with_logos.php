@@ -48,8 +48,9 @@ if ($blocks && is_array($blocks)) :
 								<h3 class="pb-24 mt-20 font-osp-din uppercase text-black"><?= $title; ?></h3>
 							<?php endif; ?>
 							<?php if ($text) : ?>
-								<?= $text; ?></h3>
-							<?php endif; ?>
+								<span class="font-body-1"><?= $text; ?>
+								<?php endif; ?>
+								</span>
 						</div>
 					</div>
 
@@ -59,7 +60,7 @@ if ($blocks && is_array($blocks)) :
 
 		<?php if (!empty($read_more_link) && !empty($read_more_text)) : ?>
 			<div class="text-center flex gap-12 items-center py-28 border-t border-white justify-center bg-dark-grey">
-				<p class="text-white mb-0"><?= esc_html($read_more_text); ?></p>
+				<p class="text-white mb-0 font-body-1"><?= esc_html($read_more_text); ?></p>
 				<a href="<?= esc_url($read_more_link['url'] ?? get_post_type_archive_link('case-study')); ?>"
 					class="button outline-white">
 					<?= esc_html($read_more_link_text); ?>

@@ -31,11 +31,11 @@ if (!empty($bg)) {
 	<div class="container flex flex-wrap gap-20 md:flex-nowrap items-center justify-between relative z-[100]">
 		<div class="w-full md:w-auto text-center md:text-left">
 			<h2 class="mb-28"><?= $title; ?></h2>
-			<div class="subtitle text-heading-sm font-extralight mb-48"><?= $subtitle; ?></div>
+			<div class="subtitle font-body-1 text-white font-extralight mb-48"><?= $subtitle; ?></div>
 		</div>
 
 
-		<?php echo do_shortcode('[contact-form-7 id="236" title="get-in-touch"]'); ?>
+		<?php echo do_shortcode('[wpforms id="3430" title="false"]'); ?>
 		<!--<form>
 			<div class="flex justify-center">
 				<input type="text" class="form-input flex-1" />

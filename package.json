@@ -50,5 +50,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production --config webpack.prod.js",
     "dev": "webpack --mode development --watch --progress"
+  },
+  "dependencies": {
+    "embla-carousel": "^8.5.2"
   }
 }

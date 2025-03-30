@@ -18,7 +18,7 @@ get_header(); ?>
 <main id="main" class="site-main text-white pb-56">
 
     <section class="pt-56 pb-32">
-        <div class="big-container mx-auto">
+        <div class="container mx-auto">
             <h1 class="text-4xl font-osp-din uppercase mb-32">News</h1>
 
             <?php
@@ -53,7 +53,7 @@ get_header(); ?>
     if (have_posts()) :
         /* Start the Loop */
     ?>
-        <div class="big-container mx-auto">
+        <div class="container mx-auto">
             <div class="case-studies-grid desktop:grid grid-cols-3 gap-32">
 
                 <?php

@@ -13,8 +13,9 @@ $taxonomy = get_queried_object();
 <main id="main" class="site-main text-white pb-56">
 
 	<section class="pt-56 pb-32">
-		<div class="big-container mx-auto">
-			<h1 class="text-4xl font-osp-din uppercase mb-32"><?php echo esc_html($taxonomy->name); ?> case studies</h1>
+		<div class="container mx-auto">
+			<h1 class="text-3xl desktop:text-4xl font-osp-din uppercase mb-32"><?php echo esc_html($taxonomy->name); ?>
+				case studies</h1>
 
 			<?php
 			// Get all case study type terms
@@ -27,9 +28,9 @@ $taxonomy = get_queried_object();
 				$current_term = get_queried_object();
 				$is_archive_page = is_post_type_archive('case-study');
 			?>
-				<div class="case-study-filters flex gap-8 mb-40">
+				<div class="case-study-filters overflow-x-scroll no-scrollbar flex gap-8 mb-40">
 					<a href="<?php echo esc_url(get_post_type_archive_link('case-study')); ?>"
-						class="p-8 text-sm border <?php echo $is_archive_page ? 'border-white bg-white bg-opacity-10' : 'border-transparent hover:bg-white hover:bg-opacity-10'; ?>">
+						class="p-8 text-sm text-nowrap border <?php echo $is_archive_page ? 'border-white bg-white bg-opacity-10' : 'border-transparent hover:bg-white hover:bg-opacity-10'; ?>">
 						All case studies
 					</a>
 
@@ -37,7 +38,7 @@ $taxonomy = get_queried_object();
 						$is_active = ($current_term && $current_term->term_id == $type->term_id);
 					?>
 						<a href="<?php echo esc_url(get_term_link($type)); ?>"
-							class="p-8 text-sm  border <?php echo $is_active ? 'border-white bg-white bg-opacity-10' : 'border-transparent hover:bg-white hover:bg-opacity-10'; ?>">
+							class="p-8 text-sm text-nowrap border <?php echo $is_active ? 'border-white bg-white bg-opacity-10' : 'border-transparent hover:bg-white hover:bg-opacity-10'; ?>">
 							<?php echo esc_html($type->name); ?> case studies
 						</a>
 					<?php endforeach; ?>
@@ -47,7 +48,7 @@ $taxonomy = get_queried_object();
 	</section>
 
 	<?php if (have_posts()) : ?>
-		<div class="big-container mx-auto">
+		<div class="container mx-auto">
 			<div class="case-studies-grid desktop:grid grid-cols-3 gap-32">
 				<?php
 				while (have_posts()) :
@@ -70,7 +71,7 @@ $taxonomy = get_queried_object();
 		</div>
 
 	<?php else : ?>
-		<div class="big-container">
+		<div class="container">
 			<?php get_template_part('template-parts/content', 'none'); ?>
 		</div>
 	<?php endif; ?>

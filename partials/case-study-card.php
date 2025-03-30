@@ -20,7 +20,7 @@ if (empty($excerpt)) {
 }
 ?>
 
-<div class="case-study-card mb-32">
+<div class="case-study-card embla__slide mb-32">
     <a href="<?php the_permalink(); ?>" class="block">
         <div class="case-study-thumbnail aspect-square mb-24">
             <?php if (has_post_thumbnail()) : ?>
@@ -37,7 +37,7 @@ if (empty($excerpt)) {
 
             <h3 class="text-xl font-osp-din uppercase mb-16 text-white"><?php the_title(); ?></h3>
 
-            <div class="study-excerpt text-light-grey mb-16">
+            <div class="study-excerpt font-body-1 text-light-grey mb-16">
                 <?php echo esc_html($excerpt); ?>
             </div>
         </div>

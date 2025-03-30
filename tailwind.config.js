@@ -159,7 +159,7 @@ module.exports = {
 					//textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 				},
 				'h1,.h1': {
-					fontSize: config('theme.fontSize.4xl'),
+					fontSize: '4rem',
 				},
 				'h2,.h2': {
 					fontSize: config('theme.fontSize.3xl'),

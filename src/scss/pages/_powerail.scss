@@ -48,12 +48,52 @@ body.page-template-powerail {
 		}
 
 		img {
-			max-height: 400px;
+			max-height: 300px;
 			width: auto;
+			margin-top: 50px;
+			margin-bottom: -60px;
 
 			@screen md {
+				max-height: 400px;
+				width: auto;
 				margin: 40px 0;
 				margin-top: 120px;
+			}
+		}
+	}
+
+	.blocks-grid {
+
+		.block-item:nth-of-type(2),
+		.block-item:nth-of-type(3) {
+			.content-inner {
+				align-items: flex-end;
+				margin-bottom: 20px;
+
+				@screen desktop {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.block-item:nth-of-type(3) {
+			.content-inner {
+				.max-w-xl {
+					@screen desktop {
+						margin-bottom: 46px;
+					}
+				}
+			}
+		}
+	}
+
+	.case-studies-block-alt~.two-column-image-left {
+		.container {
+			display: flex;
+			flex-direction: column-reverse;
+
+			@screen desktop {
+				display: grid;
 			}
 		}
 	}

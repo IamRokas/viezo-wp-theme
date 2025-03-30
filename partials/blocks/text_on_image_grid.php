@@ -65,7 +65,7 @@ if ($blocks && is_array($blocks)) :
 					</div>
 				<?php endif; ?>
 
-				<div class="block-content relative md:p-24 desktop:p-104 w-full flex">
+				<div class="block-content relative md:p-24 desktop:px-104 desktop:py-56 w-full flex">
 					<div class="content-inner container flex items-center <?= $flex_alignment; ?>">
 						<div class="max-w-xl <?= $text_alignment;
 												print $container_class; ?> text-white">

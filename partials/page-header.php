@@ -64,14 +64,14 @@ if (empty($background)) {
 <?php if ($subtitle_below && $subtitle): ?>
     <div
         class="textblock header-btn-scroll container text-black py-58 flex flex-col-reverse md:flex-row justify-between items-center">
-        <div class="subtitle md:col-span-3 max-w-lg">
+        <div class="subtitle font-body-1 md:col-span-3 max-w-lg">
             <div><?= $subtitle; ?></div>
             <?php if ($button): ?>
                 <a href="<?= $button['url']; ?>" class="button header-btn outline-black mt-28"><?= $button['title']; ?></a>
             <?php endif; ?>
         </div>
         <?php if ($side_image): ?>
-            <div class="image md:w-1/2 mb-24 md:-mt-64">
+            <div class="image md:w-1/2 mb-24 md:mb-0 md:-mt-64">
                 <?= wp_get_attachment_image($side_image, 'custom-image-style', false, ['class' => 'w-full h-auto']); ?>
             </div>
         <?php endif; ?>
