@@ -39,6 +39,7 @@
 .case-studies-block-alt {
 	border-bottom: 1px solid black;
 	display: flex;
+	flex-wrap: wrap;
 	width: 100%;
 
 	@screen desktop {
@@ -155,6 +156,44 @@
 			right: 0;
 			top: 0;
 			background: linear-gradient(180deg, rgba(46, 45, 45, 0.00) 9.73%, rgba(1, 1, 1, 0.59) 62.54%);
+		}
+	}
+}
+
+.case-studies-scroll-container {
+	// Hide scrollbar but maintain scroll functionality
+	scrollbar-width: none;
+	/* Firefox */
+	-ms-overflow-style: none;
+	/* IE and Edge */
+
+	&::-webkit-scrollbar {
+		display: none;
+		/* Chrome, Safari, Opera */
+	}
+
+	@media screen and (max-width: 767px) {
+
+		// Add some right padding to show a portion of the next card
+		.case-studies-grid {
+			padding-right: 75%; // This shows approximately 0.75 of a card offscreen
+		}
+
+		// Set a consistent width for cards on mobile
+		.case-study-card {
+			min-width: 85vw; // Adjust this value to control card width
+			max-width: 85vw;
+
+			// Optional - add a subtle hint of more content with a fade
+			&:last-child::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: -20px;
+				width: 20px;
+				height: 100%;
+				background: linear-gradient(to right, rgba(34, 34, 34, 0), rgba(34, 34, 34, 0.3));
+			}
 		}
 	}
 }

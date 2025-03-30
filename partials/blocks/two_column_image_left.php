@@ -23,7 +23,7 @@ if ($variant === 'full-screen-size') {
 	$container_classes .= " big-container justify-end";
 	$image_column_classes .= " h-full desktop:h-screen desktop:absolute desktop:right-[50%] desktop:left-0 -mx-[1.5rem] desktop:mx-0";
 	$image_wrap_classes .= " desktop:h-full";
-	$content_wrap_classes = "desktop:w-1/2 text-column px-24 desktop:pl-140 py-44 desktop:py-0 text-left desktop:text-right";
+	$content_wrap_classes = "desktop:w-1/2 text-column pr-24 md:px-24 desktop:pl-140 py-44 desktop:py-0 text-left desktop:text-right";
 } elseif ($variant === 'classic-two-col') {
 	$block_classes .= "desktop:overflow-hidden";
 	$container_classes .= " container";
@@ -33,7 +33,7 @@ if ($variant === 'full-screen-size') {
 	// regular-size variant
 	$block_classes .= "desktop:overflow-hidden";
 	$image_wrap_classes .= " desktop:absolute desktop:right-0";
-	$content_wrap_classes = "desktop:col-span-6 text-column px-24 desktop:px-140 py-44 desktop:py-140 text-left desktop:text-right";
+	$content_wrap_classes = "desktop:col-span-6 text-column pr-24 md:px-24 desktop:px-140 py-44 desktop:py-140 text-left desktop:text-right";
 }
 ?>
 

@@ -5,6 +5,7 @@
 	@apply bg-transparent;
 	padding-left: 30px;
 	padding-right: 30px;
+	z-index: 1000;
 
 	height: 70px;
 	transition: background-color 0.2s ease-in-out;

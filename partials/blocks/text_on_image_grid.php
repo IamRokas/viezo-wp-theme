@@ -40,7 +40,7 @@ if ($blocks && is_array($blocks)) :
 					$container_class = ' max-w-2xl';
 					break;
 				case 'right':
-					$text_alignment = 'text-right';
+					$text_alignment = 'text-left desktop:text-right';
 					$flex_alignment = 'justify-end';
 					$container_class = '';
 					break;
@@ -65,7 +65,7 @@ if ($blocks && is_array($blocks)) :
 					</div>
 				<?php endif; ?>
 
-				<div class="block-content relative p-24 desktop:p-104 w-full flex">
+				<div class="block-content relative md:p-24 desktop:p-104 w-full flex">
 					<div class="content-inner container flex items-center <?= $flex_alignment; ?>">
 						<div class="max-w-xl <?= $text_alignment;
 												print $container_class; ?> text-white">
