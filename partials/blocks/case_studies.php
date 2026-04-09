@@ -82,7 +82,47 @@ if ($cases && is_array($cases)) :
     ?>
         <div class="case-studies-block bg-dark-grey text-white pt-40 md:pt-80">
             <div class="container">
-                <h2 class="font-osp-din uppercase mb-48"><?= esc_html($block_title); ?></h2>
+                <div class="flex justify-between items-end mb-48">
+                    <h2 class="font-osp-din uppercase "><?= esc_html($block_title); ?></h2>
+                    <div class="embla-nav w-[100px] gap-10 justify-end hidden md:flex">
+                        <div class="embla-nav-back cursor-pointer">
+                            <svg class="w-[30px] h-auto" width="800px" height="800px" viewBox="0 0 32 32" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                    sketch:type="MSPage">
+                                    <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-412.000000, -983.000000)"
+                                        fill="#ffffff">
+                                        <path
+                                            d="M434,998 L423.414,998 L427.535,993.879 C427.926,993.488 427.926,992.855 427.535,992.465 C427.145,992.074 426.512,992.074 426.121,992.465 L420.465,998.121 C420.225,998.361 420.15,998.689 420.205,999 C420.15,999.311 420.225,999.639 420.465,999.879 L426.121,1005.54 C426.512,1005.93 427.145,1005.93 427.535,1005.54 C427.926,1005.15 427.926,1004.51 427.535,1004.12 L423.414,1000 L434,1000 C434.553,1000 435,999.553 435,999 C435,998.448 434.553,998 434,998 L434,998 Z M442,1011 C442,1012.1 441.104,1013 440,1013 L416,1013 C414.896,1013 414,1012.1 414,1011 L414,987 C414,985.896 414.896,985 416,985 L440,985 C441.104,985 442,985.896 442,987 L442,1011 L442,1011 Z M440,983 L416,983 C413.791,983 412,984.791 412,987 L412,1011 C412,1013.21 413.791,1015 416,1015 L440,1015 C442.209,1015 444,1013.21 444,1011 L444,987 C444,984.791 442.209,983 440,983 L440,983 Z"
+                                            id="arrow-left-square" sketch:type="MSShapeGroup">
+
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="embla-nav-next cursor-pointer">
+                            <svg class="w-[30px] h-auto" width="800px" height="800px" viewBox="0 0 32 32" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                    sketch:type="MSPage">
+                                    <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-464.000000, -983.000000)"
+                                        fill="#ffffff">
+                                        <path
+                                            d="M494,1011 C494,1012.1 493.104,1013 492,1013 L468,1013 C466.896,1013 466,1012.1 466,1011 L466,987 C466,985.896 466.896,985 468,985 L492,985 C493.104,985 494,985.896 494,987 L494,1011 L494,1011 Z M492,983 L468,983 C465.791,983 464,984.791 464,987 L464,1011 C464,1013.21 465.791,1015 468,1015 L492,1015 C494.209,1015 496,1013.21 496,1011 L496,987 C496,984.791 494.209,983 492,983 L492,983 Z M487.535,998.121 L481.879,992.465 C481.488,992.074 480.855,992.074 480.465,992.465 C480.074,992.854 480.074,993.488 480.465,993.879 L484.586,998 L474,998 C473.447,998 473,998.447 473,999 C473,999.552 473.447,1000 474,1000 L484.586,1000 L480.465,1004.12 C480.074,1004.51 480.074,1005.14 480.465,1005.54 C480.855,1005.93 481.488,1005.93 481.879,1005.54 L487.535,999.879 C487.775,999.639 487.85,999.311 487.795,999 C487.85,998.689 487.775,998.361 487.535,998.121 L487.535,998.121 Z"
+                                            id="arrow-right-square" sketch:type="MSShapeGroup">
+
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+
 
                 <div class="embla">
                     <div class="embla__viewport overflow-hidden">

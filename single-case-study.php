@@ -48,32 +48,19 @@ get_header(); ?>
 							</header>
 						<?php endif; ?>
 
-						<?php if ($client) : ?>
-							<div class="mb-20">
-								<div class="text-sm uppercase font-osp-din mb-8">CLIENT</div>
-								<div class="text-lg"><?php echo esc_html($client); ?></div>
-							</div>
-						<?php endif; ?>
-
-						<?php if ($company_operations) : ?>
-							<div class="mb-20">
-								<div class="text-sm uppercase font-osp-din mb-8">COMPANY OPERATIONS</div>
-								<div class="text-lg"><?php echo esc_html($company_operations); ?></div>
-							</div>
-						<?php endif; ?>
-
-						<?php if ($monitored_components) : ?>
-							<div class="mb-20">
-								<div class="text-sm uppercase font-osp-din mb-8">MONITORED COMPONENTS</div>
-								<div class="text-lg"><?php echo esc_html($monitored_components); ?></div>
-							</div>
-						<?php endif; ?>
-
-						<?php if ($equipment_type) : ?>
-							<div class="mb-20">
-								<div class="text-sm uppercase font-osp-din mb-8">EQUIPMENT TYPE</div>
-								<div class="text-lg"><?php echo esc_html($equipment_type); ?></div>
-							</div>
+						<?php if (have_rows('top_area')) : ?>
+							<?php while (have_rows('top_area')) : the_row(); ?>
+								<?php
+								$title = get_sub_field('title');
+								$text = get_sub_field('text');
+								?>
+								<?php if ($text) : ?>
+									<div class="mb-20">
+										<div class="text-sm uppercase font-osp-din mb-8"><?php echo esc_html($title); ?></div>
+										<div class="text-lg"><?php echo esc_html($text); ?></div>
+									</div>
+								<?php endif; ?>
+							<?php endwhile; ?>
 						<?php endif; ?>
 					</div>
 					<div class="md:w-1/2 desktop:mx-0 -mx-24 md:absolute md:left-50 md:right-0 md:top-0 md:bottom-0">
@@ -86,36 +73,34 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<!-- Diagnosed Issue section -->
-			<?php if ($diagnosed_issue) : ?>
-				<section class="py-56 md:py-92 border-b border-dark-grey bg-white">
-					<div class="big-container mx-auto">
-						<div class="md:flex">
-							<div class="md:w-1/3">
-								<h2 class="text-2xl font-osp-din uppercase mb-32">DIAGNOSED ISSUE</h2>
-							</div>
-							<div class="md:w-2/3 text-darkest-grey">
-								<?php echo $diagnosed_issue; ?>
-							</div>
-						</div>
-					</div>
-				</section>
-			<?php endif; ?>
-
-			<!-- Savings section -->
-			<?php if ($savings) : ?>
-				<section class="py-56 md:py-92 bg-white">
-					<div class="big-container mx-auto">
-						<div class="md:flex">
-							<div class="md:w-1/3">
-								<h2 class="text-2xl font-osp-din uppercase mb-32">SAVINGS</h2>
-							</div>
-							<div class="md:w-2/3 text-darkest-grey">
-								<?php echo $savings; ?>
+			<?php if (have_rows('bottom_area')) : ?>
+				<?php
+				$row_count = count(get_field('bottom_area'));
+				$index = 0;
+				?>
+				<?php while (have_rows('bottom_area')) : the_row(); ?>
+					<?php
+					$title = get_sub_field('title');
+					$text = get_sub_field('text');
+					$index++;
+					$is_last = ($index === $row_count);
+					?>
+					<section class="py-56 md:py-92 bg-white <?php echo !$is_last ? 'border-b border-dark-grey' : ''; ?>">
+						<div class="big-container mx-auto">
+							<div class="md:flex">
+								<div class="md:w-1/3">
+									<?php if ($title): ?>
+										<h2 class="text-2xl font-osp-din uppercase mb-32"><?php echo esc_html($title); ?></h2>
+									<?php endif; ?>
+								</div>
+								<div class="md:w-2/3 text-darkest-grey">
+									<?php echo $text;
+									?>
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				<?php endwhile; ?>
 			<?php endif; ?>
 
 			<!-- Content section for any additional content -->

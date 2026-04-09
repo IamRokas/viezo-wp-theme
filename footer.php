@@ -26,24 +26,19 @@ if (!empty($bg)) {
 	}
 }
 ?>
-<div class="get-in-touch py-104 relative text-white" <?php echo $bg_style; ?>>
-	<div class="absolute inset-0 bg-black opacity-40 z-[10]"></div>
-	<div class="container flex flex-wrap gap-20 md:flex-nowrap items-center justify-between relative z-[100]">
-		<div class="w-full md:w-auto text-center md:text-left">
-			<h2 class="mb-28"><?= $title; ?></h2>
-			<div class="subtitle font-body-1 text-white font-extralight mb-48"><?= $subtitle; ?></div>
-		</div>
-
-
-		<?php echo do_shortcode('[wpforms id="3430" title="false"]'); ?>
-		<!--<form>
-			<div class="flex justify-center">
-				<input type="text" class="form-input flex-1" />
-				<button class="button uppercase green" type="submit">Contact Us</button>
+<?php if (!is_page_template('templates/contacts.php')) : ?>
+	<div class="get-in-touch py-104 relative text-white" <?php echo $bg_style; ?>>
+		<div class="absolute inset-0 bg-black opacity-40 z-[10]"></div>
+		<div class="container flex flex-wrap gap-20 md:flex-nowrap items-center justify-between relative z-[100]">
+			<div class="w-full md:w-auto text-center md:text-left">
+				<h2 class="mb-28"><?= $title; ?></h2>
+				<div class="subtitle font-body-1 text-white font-extralight mb-48"><?= $subtitle; ?></div>
 			</div>
-		</form>-->
+
+			<?php echo do_shortcode('[wpforms id="3430" title="false"]'); ?>
+		</div>
 	</div>
-</div>
+<?php endif; ?>
 
 <footer class="site-footer text-white py-48 ">
 	<div class="container md:flex">

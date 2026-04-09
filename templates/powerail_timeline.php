@@ -7,7 +7,7 @@
  * @return void Outputs HTML directly
  */
 ?>
-<div class="bg-dark-grey py-64 ">
+<div class="bg-dark-grey py-64 pb-0">
     <div class="container text-white">
         <div id="powerail-animation-container" class="mt-80 h-[700vh] desktop:h-[600vh] relative">
             <h2 class="text-center py-48">POWERAIL</h2>
@@ -52,6 +52,20 @@
                         </div>
                         <div
                             class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-3">
+                            <h3 class="text-xl desktop:text-2xl mb-20">Supercapacitor</h3>
+                            <p class="text-[16px]  font-hiragino-sans">The supercapacitor has low
+                                self-discharge,
+                                high
+                                voltage, a wide temperature range, and high capacitance. It stores energy when unused
+                                and
+                                releases it as needed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="powerail-card h-[30vh] z-[20]">
+                        <div
+                            class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-1">
                             <h3 class="text-xl desktop:text-2xl mb-20">Energy harvester</h3>
                             <p class="text-[16px]  font-hiragino-sans">The vibration harvester uses a
                                 unique
@@ -59,19 +73,6 @@
                                 PVDF polymer on a cantilever. As it vibrates, it generates electricity, which is stored
                                 in a
                                 supercapacitor.</p>
-                        </div>
-                    </div>
-
-                    <div class="powerail-card h-[30vh] z-[20]">
-                        <div
-                            class="powerail-text desktop:flex desktop:flex-col desktop:justify-center col-start-2 desktop:col-start-1">
-                            <h3 class="text-xl desktop:text-2xl mb-20">Supercapacitor</h3>
-                            <p class="text-[16px]  font-hiragino-sans">The supercapacitor has low
-                                self-discharge,
-                                high
-                                voltage, a wide temperature range, and high capacitance. It stores energy when unused
-                                and
-                                releases it as needed.</p>
                         </div>
                         <div class="h-full col-start-1 row-start-1 desktop:col-start-2 grid grid-cols-1">
                             <img class="col-start-1 row-start-1 swap-image-1 transition-all duration-300"
@@ -100,5 +101,12 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div
+        class="text-center mt-32 flex gap-12 px-8 md:px-0 items-center py-28 border-t border-white justify-center font-body-1">
+        <p class="text-white mb-0">Need more information?</p>
+        <a href="/contact-us" class="button outline-white">
+            Contact Us
+        </a>
     </div>
 </div>

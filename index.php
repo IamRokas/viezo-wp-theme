@@ -54,7 +54,7 @@ get_header(); ?>
         /* Start the Loop */
     ?>
         <div class="container mx-auto">
-            <div class="case-studies-grid desktop:grid grid-cols-3 gap-32">
+            <div class="case-studies-grid md:grid grid-cols-2 desktop:grid-cols-3 gap-32">
 
                 <?php
                 while (have_posts()) :
@@ -66,16 +66,16 @@ get_header(); ?>
 
                 endwhile;
                 ?>
-                <div class="pagination flex justify-center items-center mt-40">
-                    <?php
-                    vzo__display_numeric_pagination([
-                        'before_page_number' => '<div class="w-40 h-40 text-center rounded-full px-12 py-8 mx-4 hover:bg-light-grey hover:text-darkest-grey">',
-                        'after_page_number' => '</div>',
-                        'next_text' => '<div class="w-40 h-40 text-center px-12 py-8 mx-4 hover:bg-light-grey hover:text-darkest-grey"><i class="vicon-ChevronRight"></i></div>',
-                        'prev_text' => '<div class="w-40 h-40 text-center px-12 py-8 mx-4 hover:bg-light-grey hover:text-darkest-grey"><i class="vicon-ChevronLeft"></i></div>',
-                    ]);
-                    ?>
-                </div>
+            </div>
+            <div class="pagination flex justify-center items-center mt-40">
+                <?php
+                vzo__display_numeric_pagination([
+                    'before_page_number' => '<div class="w-40 h-40 text-center rounded-full px-12 py-8 mx-4 hover:bg-light-grey hover:text-darkest-grey">',
+                    'after_page_number' => '</div>',
+                    'next_text' => '<div class="text-center  mx-4 text-white">Next →</div>',
+                    'prev_text' => '<div class="text-center  mx-4 text-white">← Previous</div>',
+                ]);
+                ?>
             </div>
 
         <?php else :

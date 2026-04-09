@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Viezo functions and definitions.
  *
@@ -12,7 +13,8 @@
  *
  * @author WebDevStudios
  */
-function vzo__get_theme_include_files() {
+function vzo__get_theme_include_files()
+{
 	return [
 		'inc/setup.php', // Theme set up. Should be included first.
 		'inc/compat.php', // Backwards Compatibility.
@@ -27,6 +29,29 @@ function vzo__get_theme_include_files() {
 	];
 }
 
-foreach ( vzo__get_theme_include_files() as $include ) {
-	require trailingslashit( get_template_directory() ) . $include;
+foreach (vzo__get_theme_include_files() as $include) {
+	require trailingslashit(get_template_directory()) . $include;
 }
+
+function fix_case_study_menu_classes($classes, $item)
+{
+	// URL of your case studies archive
+	$case_study_archive_url = site_url('/case-studies/');
+	$news_url = site_url('/news');
+
+	// Fix on single case studies
+	if (is_singular('case-study')) {
+		// Add current class to the archive menu item
+		if ($item->url === $case_study_archive_url) {
+			$classes[] = 'current-menu-item';
+		}
+
+		// Remove incorrect highlight from the blog page
+		if ($item->url === $news_url) {
+			$classes = array_diff($classes, ['current-menu-item', 'current_page_parent']);
+		}
+	}
+
+	return $classes;
+}
+add_filter('nav_menu_css_class', 'fix_case_study_menu_classes', 10, 2);

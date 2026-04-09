@@ -10,3 +10,53 @@
 @import 'modals';
 @import 'off-canvas';
 @import 'svg-sprite-wrapper';
+
+.pagination {
+	width: 100%;
+
+	.pagination-container {
+		gap: 12px;
+
+		.page-numbers {
+			&.current {
+				>div {
+					border: 1px solid white;
+				}
+			}
+		}
+	}
+}
+
+.single-post {
+	@apply bg-dark-grey;
+}
+
+.case-study-card {
+	a {
+
+		img {
+			transition: all 0.1s ease-in;
+		}
+
+		&:hover {
+			img {
+				filter: brightness(1.3);
+			}
+		}
+	}
+}
+
+div.post {
+	img {
+		transition: all 0.1s ease-in;
+	}
+
+	a {
+		&:hover {
+			img {
+				filter: brightness(1.3);
+			}
+		}
+
+	}
+}
