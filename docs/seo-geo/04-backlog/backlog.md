@@ -11,7 +11,7 @@ Impact H/M/L, effort S (≤ ½ day) / M (≤ 3 days) / L (more).
 | T-01 | Remove `Disallow: /wp-content/uploads/` from robots.txt, request re-crawl | Dev | S | H | done 2026-10-14 | audit |
 | T-02 | Enable gzip (mod_deflate) in .htaccess | Dev | S | H | done 2026-10-14 | audit |
 | T-03 | Re-encode home videos (hero 49 MB → 3–5 MB, poster, lazy-load second video) | Dev | S | H | done 2026-10-14 | audit |
-| T-04 | Images to WebP: WebP Express plugin (decided 2026-10-14) | Dev | S | M | todo | audit |
+| T-04 | Images to WebP: WebP Express plugin (decided 2026-10-14) | Dev | S | M | done 2026-10-14 (WebP Express, uploads; e.g. 291 KB PNG card → 26 KB) | audit |
 | T-05 | hreflang x-default, PL archive description, missing translation link | Dev | S | L | partly done 2026-10-14: x-default + PL archive live; granulator case needs a PL translation | audit |
 | T-06 | Noindex empty Terms pages; merge 4 EU funding posts into EU page | Dev | S | L | partly done 2026-10-14: Terms noindex live; EU posts kept, needs Viezo decision | audit |
 | S-01 | Organization schema (logo, Vilnius address, sameAs LinkedIn etc.); `name` + `alternateName` "Viezo UAB" and `url` viezo.lt to separate the brand from the unrelated viezo.com | Dev | S | H | done 2026-10-14 | audit, comp/tractian |
