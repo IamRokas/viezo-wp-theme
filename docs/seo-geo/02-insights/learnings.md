@@ -38,10 +38,10 @@ The work is mostly about packaging what Viezo already has, not producing large a
 - **Who:** Augury's llms-full.txt defines each entity and lists "approved citations"; IoTFlows mirrors 139 pages as Markdown; Tractian's llms.txt gives numbers per industry; I-care's robots.txt explicitly allows ~14 AI bots. Against that: SKF, Schaeffler, Petasense and Banner have no schema at all.
 - **Viezo:** llms.txt + a short llms-full.txt that defines UAB Viezo (Vilnius), Sonora, and states that viezo.com is an unrelated domain; list key facts and case-study results. Organization schema with legalName, address and sameAs. Explicit AI-bot allow rules in robots.txt when fixing the image block. → S-04, S-06, S-07, S-01
 
-### 5. Make the price builder readable
+### 5. Answer the price question in text
 
 - **Who:** IoTFlows (prices in text, meta description and Offer schema), Sensoteq (one kit at $2,750), Banner (cart with list prices), Waites/Petasense (value/ROI calculators), Banner (sensor-selection guide).
-- **Lesson:** "How much does vibration monitoring cost" is a common buyer and AI question, and almost nobody answers it. Viezo's builder is a real differentiator, but it is JavaScript, so crawlers see nothing.
+- **Lesson:** "How much does vibration monitoring cost" is a common buyer and AI question, and almost nobody answers it. Viezo's setup builder configures a system but ends in a quote request (corrected 2026-10-14: it does not show prices), so the site never answers it.
 - **Viezo:** static text on the pricing page: price range ("from €X per sensor"), 2–3 example configurations, "how many sensors do I need", an ROI line; Offer schema on Sonora. Needs Viezo to approve publishing price ranges. → C-14
 
 ### 6. Product page: specs, FAQ, video
@@ -81,6 +81,8 @@ The work is mostly about packaging what Viezo already has, not producing large a
 - **Several H1s per page used as styling** (Waites, I-care PL home).
 
 ## Open questions for Viezo
+
+The full list sent to Viezo, with the why and what for each, is in [../04-backlog/client-questions-2026-10.md](../04-backlog/client-questions-2026-10.md).
 
 - The Privacy Policy names the operator as UAB "Nanoenergija", while the site and registry say Viezo, UAB. Which is correct? (Schema now uses "Viezo, UAB".)
 - The 4 EU funding posts: keep as separate project notices (likely required by the funding rules) or merge?

@@ -25,7 +25,7 @@ Checked 2026-10-14. Details and sources are in each profile. Viezo row from the 
 
 | | Case studies | Explainers / glossary | Asset or fault pages | Pricing on site | Comparison pages | G2 reviews | Wikipedia / Wikidata |
 |---|---|---|---|---|---|---|---|
-| **Viezo** | **59, median 152 words, named clients, EN + PL** | 0 (4 EU-funding posts) | none (industry categories only) | **public setup builder (JS)** | no | none | none |
+| **Viezo** | **59, median 152 words, named clients, EN + PL** | 0 (4 EU-funding posts) | none (industry categories only) | setup builder, price on request (lead form) | no | none | none |
 | Tractian | 3 EN, ~2,600 words | glossary (~3,000 words/term), 114 blog, 228 programmatic pages | 11 industry pages | calculator | yes (vs Augury, vs Waites) | ~53, 4.7 | not verified |
 | Augury | 8 | 549 blog, 48 podcasts | 14 asset pages | quote only | not found | ~3 | not verified |
 | AssetWatch | 41 "asset saves" (~140 words, templated) + 16 | 585 glossary terms, 95 blog, 7 intro pages | per asset | no | not found | 18, 4.9 | not verified |
@@ -44,5 +44,5 @@ Checked 2026-10-14. Details and sources are in each profile. Viezo row from the 
 
 - **Polish:** only I-care has a real Polish content operation, followed by Fluke (blog) and SKF (translated hub). Waites and Schaeffler are thin. Viezo already has more PL case material than any of them.
 - **AI readiness:** 6 of 13 have llms.txt, all of them smaller vendors. None of the large incumbents does, and SKF and Schaeffler are effectively invisible to AI crawlers.
-- **Pricing:** only IoTFlows, Sensoteq (one kit) and Banner show prices as plain text. Viezo's builder is rarer than it looks, but crawlers can't read it.
+- **Pricing:** only IoTFlows, Sensoteq (one kit) and Banner show prices as plain text. Viezo's setup builder configures a system but ends in a quote request, so Viezo is "price on request" like most.
 - **Reviews:** the most any profile shows on G2 is ~53 (Tractian). Five to ten genuine reviews would put Viezo level with most of this list.
