@@ -73,49 +73,100 @@ A title such as "Fan bearing wear detected early at Ulmas | Sonora case study" m
 
 ## B. Facts that improve specific pages
 
-### 5. Which clients would leave a short review?
+### 5. Which clients would leave a short public review?
 
-**What we need:** 5–10 client contacts who are happy with Sonora and would write 3–4 sentences on G2 or Capterra (we send them a link and a short guide), or permission for Viezo to ask them.
+**What a review site is:** G2 and Capterra are websites where business buyers compare software and read reviews from other companies, like booking.com for B2B software. Google Business Profile is the box with reviews that appears in Google Search and Maps when someone searches for a company.
 
-**Why:** buyers and AI assistants check review sites. Competitors have very few reviews: Waites 0, Augury about 3, AssetWatch 18, Tractian about 53. Five to ten genuine reviews would put Viezo level with most of them. Never fake reviews; we won't show any rating until reviews are real.
+**What we need:**
+- The names of 5–10 clients who are happy with Sonora, with the contact person (usually the maintenance or production manager) and their email. Good candidates from the case studies: Volkswagen Polska, IMA Schelling, IKEA plants, Freda, Barry Callebaut, Atria, De Heus, Retal, Ulmas.
+- Your OK that we (or Viezo) send them a short request. It takes the client about 5 minutes: G2 asks what they like, what they'd improve, and for a 1–5 star score.
 
-**What we'll do:** create the G2, Capterra and Google Business profiles, prepare the request email, and later show the rating on the site.
+**Why:**
+- Buyers check reviews before they ask for a demo, and AI assistants use review sites as a source when asked "which vibration monitoring system is good?"
+- Competitors have very few reviews, so a handful is enough to stand out. On G2: Waites has 0, Augury about 3, AssetWatch 18 (and AssetWatch replies to every one), Tractian about 53.
+- Reviews also confirm that "Viezo" is a real, active company. That matters because other companies with similar names exist (viezo.com, Viezo Global Pvt Ltd).
 
-### 6. Three to five case studies to expand into full stories
+**What we'll do:**
+1. Create the Viezo profiles on [G2](https://sell.g2.com/), [Capterra](https://www.capterra.com/vendors/sign-up) and [Google Business Profile](https://business.google.com/).
+2. Write the request email for you to send.
+3. Once there are real reviews, show the rating on the website. We never show a rating that isn't backed by real reviews; Google penalises that.
 
-**What we need:** pick 3–5 of the strongest cases (we suggest Volkswagen Polska, IMA Schelling, and one furniture plant such as IKEA or Freda), and for each:
-- a 2–3 sentence quote from the client's maintenance manager, with name and role if they agree,
-- a vibration chart or screenshot from Sonora,
-- a photo of the damaged part after replacement, if one exists,
-- any numbers: downtime avoided, repair time, cost.
+### 6. Material to turn 3–5 case studies into full stories
 
-**Why:** competitors' best stories run 600–2,600 words with quotes and photos (Petasense, Tractian, I-care). Viezo's are 152 words on average. Fully told stories are the pages trade media, AI assistants and buyers quote.
+**What the case studies look like now:** each page has one photo (the Sonora sensor mounted on the machine) and 100–250 words of text in four fields: Client, Company operations, Equipment type, Diagnosed issue / Results. Examples:
+- [Belt imbalance on grinding machine, Volkswagen Polska](https://viezo.lt/case-study/belt-imbalance-on-grinding-machine/): 145 words
+- [IMA KFA corner rounding unit bearing fault, IMA Schelling](https://viezo.lt/case-study/bearing-fault/): 127 words
+- [Pump failure, Retal](https://viezo.lt/case-study/pump-failure/): 108 words, but with a strong number (over €46,000 saved)
 
-**What we'll do:** write the stories and send them for approval, by you and the client.
+**What competitors do instead:** a full story with the machine, what the data showed, what the maintenance team did, and what it saved. They add a chart, photos, and the client's own words:
+- [I-care, BASF success story](https://www.icareweb.com/knowledge/predictive-maintenance/success-story-basf/): about 990 words with three quotes from a named BASF engineer.
+- [Waites, gearbox case study](https://waites.net/case-studies/building-materials-gearbox-83k): a facts box at the top (industry, equipment, failure mode, $83K saved, 48 hours avoided).
+- [Banner, air handler success story](https://www.bannerengineering.com/us/en/solutions/iiot-data-driven-factory/vibration-monitoring-a-main-air-handler--success-story-.html): includes a photo of the damaged bearing after it was removed.
 
-### 7. Who are the engineers behind the analysis?
+**What we need, for each of 3–5 cases** (our suggestion: Volkswagen Polska, IMA Schelling, Retal):
 
-**What we need:** 2–3 people we can name as authors or experts: name, role, years of experience, certifications (e.g. ISO 18436 vibration analyst category), a photo and a LinkedIn link.
+| Item | What exactly | Who provides it |
+|---|---|---|
+| **Client quote** | 2–3 sentences from the client's maintenance or production manager about what happened and what it meant for them, with their name and job title (or just the title, if they prefer). E.g. *"The alert came on a Friday. We found nothing by ear, but the next day the converter tripped, so we already knew it was the bearing."* | Viezo asks the client; we can draft the quote for the client to edit and approve |
+| **Vibration chart** | A screenshot from the Sonora dashboard showing the vibration level over time on that machine: the normal level, when it started rising, when the alert was sent, and the drop after the repair. Client names and IDs can be blurred. | Viezo engineers |
+| **Photo of the damaged part** | If the replaced bearing, belt or pump part was kept or photographed: a phone photo of the wear or damage. It shows the alert was real. | Viezo or the client's maintenance team |
+| **Numbers** | Any of: how many days or weeks of warning, repair time, downtime avoided (hours), cost avoided (€) | Viezo, checked with the client |
+| **Client's OK** | Confirmation the client agrees to the expanded story and to being named | Viezo asks the client |
 
-**Why:** Google and AI assistants trust content more when real experts stand behind it. I-care, the strongest competitor in Polish, has 22 named expert pages. Case studies and explainers signed by a named engineer carry more weight than "Viezo".
+**Why:**
+- These pages are what buyers forward to their boss, what trade journalists pick up, and what AI assistants quote when asked "does wireless vibration monitoring work?"
+- A chart and a photo of the damaged part prove the detection was real, and a quote from the client is more convincing than Viezo's own words.
+- Today, 58 of the 59 case studies are under 250 words, so there is nothing to quote beyond a few lines.
 
-**What we'll do:** short author pages, and the author shown on explainers and case studies.
+**What we'll do:** write each story (about 600–900 words, English and Polish), send it to you and the client for approval, then publish it. The short case studies stay as they are; only these 3–5 get the full treatment.
 
-### 8. Does Sonora integrate with other systems?
+### 7. Two or three engineers to name as authors
 
-**What we need:** which systems Sonora connects to, if any: CMMS (e.g. Maximo, SAP PM, Fiix), SCADA or PLC, an API, webhooks, email/SMS/Teams alerts, Excel exports.
+**What we mean:** articles and case studies on the site currently have no author, so they read as "Viezo" in general. We'd like to show a real person on them, e.g. *"Analysis by Jonas Jonaitis, Vibration Analyst (ISO 18436 Category II), 8 years in condition monitoring"*, with a small photo and a link to a short profile page.
 
-**Why:** "Does it connect to our CMMS?" is a standard buyer question, and Schaeffler and others publish integration pages. If there's nothing to integrate with yet, that's fine too; we just won't claim it.
+**Why:**
+- Google's quality guidelines (called E-E-A-T: experience, expertise, authority, trust) favour content where a real, qualified person stands behind it. This matters most for technical and safety-related topics like machine failures.
+- AI assistants also prefer sources with a named expert.
+- The strongest competitor in Poland, I-care, has 22 expert profile pages. [Example: Pieter Van Camp](https://www.icareweb.com/experts/pieter-van-camp/), with photo, role, experience, and links to the articles he wrote or reviewed.
 
-**What we'll do:** one short Integrations page, or a single FAQ answer.
+**What we need, for 2–3 people** (the engineers who actually analyse the data and write the diagnoses):
+- full name and job title,
+- years of experience in maintenance or vibration analysis,
+- certifications, if any (e.g. ISO 18436 vibration analyst category, mechanical engineering degree),
+- 2–3 sentences about what they do at Viezo and the machines they know best,
+- a professional photo (a phone photo against a plain wall is fine),
+- their LinkedIn profile link,
+- their OK to be shown publicly.
 
-### 9. Translate the granulator case study into Polish?
+**What we'll do:** a short profile page for each engineer, with their name shown as the author on the case studies and explainer articles they worked on.
 
-**What we need:** yes or no. If yes, we translate it and you check the wording.
+### 8. Which other systems does Sonora connect to?
 
-**Why:** "Granulator bearing fault (validated after initial dismissal)" is the only case study without a Polish version. Polish pages perform well: the Polish home page gets clicked by 35% of people who see it in Google.
+**What we mean:** many factories already use other software, and buyers often ask whether Sonora works with it. The usual ones:
+- **Maintenance software (CMMS):** where the maintenance team plans work and logs repairs. Examples: SAP PM, IBM Maximo, Fiix, MaintainX, eMaint. Buyers ask: *"Can a Sonora alert automatically create a work order there?"*
+- **Factory control systems (SCADA / PLC):** the systems that run the production line. Buyers ask: *"Can Sonora data show up on our control-room screens?"*
+- **API or webhooks:** a technical way for the client's IT team to pull Sonora data into their own systems.
+- **Alert channels:** how alerts reach people: email, SMS, Microsoft Teams, a mobile app.
+- **Exports:** downloading data or reports, e.g. as Excel or PDF.
 
----
+**What we need:** for each item, "yes" (and how), "on request", or "no". If integrations are planned, roughly when.
+
+**Why:**
+- This is one of the first questions IT and maintenance managers ask, and an unanswered question in a sales process often becomes a "no".
+- Competitors publish it: Schaeffler has a [developer page for its OPTIME system](https://developer.schaeffler.com/use-cases/schaeffler-optime), and Waites advertises a partnership with the MaintainX maintenance software.
+- AI assistants answer questions like "vibration monitoring that integrates with SAP" only from sites that say so.
+
+**What we'll do:** a short "Integrations" section on the Sonora page, or a single FAQ answer if the list is short. We will only publish what Viezo confirms.
+
+### 9. Translate one case study into Polish
+
+**Which one:** [Granulator bearing fault (validated after initial dismissal)](https://viezo.lt/case-study/granulator-bearing-fault-validated-after-initial-dismissal/). Client: De Heus (animal nutrition), January 2026. Sonora flagged bearing wear on a granulator drive motor; the plant first dismissed it as a false alarm, but further data confirmed an outer-race bearing defect. It's one of the most interesting cases because it shows the system was right when people doubted it.
+
+**The problem:** all other case studies exist in English and Polish, but this one is English only. Visitors to the Polish site never see it, and Polish Google can't show it.
+
+**Why it matters:** the Polish pages perform best in Google. The Polish home page is clicked by 35% of people who see it in results, against 16% for the English home page. De Heus is also active in Poland, so the story is relevant to Polish readers.
+
+**What we need:** a yes or no. If yes, we translate it and Viezo checks the technical terms.
 
 ## C. Quick confirmations
 
@@ -157,11 +208,11 @@ The domain is .lt and the company is Lithuanian, but the site is English and Pol
 | 2 | 2–3 headline numbers | Numbers + how counted |
 | 3 | Sonora specs + buyer FAQ | A document or email |
 | 4 | OK to rewrite case-study titles | Yes/no (list follows) |
-| 5 | Clients for reviews | 5–10 names |
-| 6 | 3–5 cases to expand (quote, chart, photo) | Pick + material |
-| 7 | Named engineers | 2–3 people |
-| 8 | Integrations | List or "none" |
-| 9 | Translate granulator case to Polish | Yes/no |
+| 5 | Clients who'd leave a G2/Capterra/Google review | 5–10 names + contact person |
+| 6 | For 3–5 case studies: client quote, Sonora vibration chart, photo of the damaged part, numbers, client's OK | Pick cases + material |
+| 7 | 2–3 engineers shown as authors: name, title, experience, photo, LinkedIn | 2–3 people |
+| 8 | Does Sonora connect to maintenance software, control systems, API, Teams/SMS, exports? | Yes/no per item |
+| 9 | Translate the De Heus granulator case study into Polish | Yes/no |
 | 10 | Legal name: Viezo, UAB or Nanoenergija? | One word |
 | 11 | EU funding posts: keep separate? | Yes/no |
 | 12 | Terms of Use text | Text or "remove" |
