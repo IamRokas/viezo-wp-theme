@@ -1,0 +1,380 @@
+<title>Viezo SEO &amp; GEO Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (report), wide tables scroll inside their own box; industrial look borrowed from viezo.lt (condensed caps, slate blue). */
+:root {
+	--bg: #f5f6f6;
+	--paper: #ffffff;
+	--ink: #1d2124;
+	--muted: #5d666c;
+	--line: #dde1e3;
+	--accent: #2a6278;
+	--accent-soft: #e3edf1;
+	--crit: #b42d2d;
+	--crit-soft: #f8e5e3;
+	--warn: #9a6200;
+	--warn-soft: #fbefd6;
+	--ok: #2f7a55;
+	--ok-soft: #e1f1e8;
+	--display: "Saira Extra Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+	--body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+	--mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--bg: #15181a; --paper: #1d2124; --ink: #e8ecee; --muted: #9aa5ab; --line: #333a3e;
+		--accent: #7fb3c7; --accent-soft: #1f3540;
+		--crit: #f08a7e; --crit-soft: #3d2220; --warn: #e3b25a; --warn-soft: #3a2f18; --ok: #7cc9a0; --ok-soft: #1c3329;
+		color-scheme: dark;
+	}
+}
+:root[data-theme="dark"] {
+	--bg: #15181a; --paper: #1d2124; --ink: #e8ecee; --muted: #9aa5ab; --line: #333a3e;
+	--accent: #7fb3c7; --accent-soft: #1f3540;
+	--crit: #f08a7e; --crit-soft: #3d2220; --warn: #e3b25a; --warn-soft: #3a2f18; --ok: #7cc9a0; --ok-soft: #1c3329;
+	color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 16.5px/1.6 var(--body); }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; display: grid; gap: 40px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.05; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.6rem, 6vw, 3.8rem); }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.35rem; letter-spacing: 0.03em; }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--accent); }
+code, .mono { font-family: var(--mono); font-size: 0.86em; }
+code { background: var(--accent-soft); padding: 1px 5px; border-radius: 3px; word-break: break-word; }
+.eyebrow { font: 500 0.78rem/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+header.top { display: grid; gap: 16px; padding-bottom: 28px; border-bottom: 3px solid var(--accent); }
+header.top .meta { display: flex; flex-wrap: wrap; gap: 6px 24px; color: var(--muted); font-size: 0.95rem; }
+header.top .lead { font-size: 1.15rem; }
+
+section { display: grid; gap: 18px; }
+.section-head { display: grid; gap: 8px; }
+.section-head p { color: var(--muted); }
+
+/* Key findings */
+.keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.key { background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--crit); padding: 18px 18px 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.key.warn { border-top-color: var(--warn); }
+.key.ok { border-top-color: var(--ok); }
+.key .num { font: 700 2.2rem/1 var(--display); color: var(--ink); }
+.key .what { font-weight: 600; }
+.key p { color: var(--muted); font-size: 0.95rem; }
+
+/* Tables */
+.table-box { overflow-x: auto; background: var(--paper); border: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+th { font: 500 0.74rem/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: var(--bg); }
+tr:last-child td { border-bottom: 0; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+td strong { font-weight: 600; }
+
+.pill { display: inline-block; font: 500 0.72rem/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 7px; border-radius: 3px; white-space: nowrap; }
+.pill.crit { background: var(--crit-soft); color: var(--crit); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); }
+.pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.us { background: var(--accent-soft); color: var(--accent); }
+.pill.client { background: var(--warn-soft); color: var(--warn); }
+
+/* Findings */
+.findings { display: grid; gap: 14px; }
+.finding { background: var(--paper); border: 1px solid var(--line); padding: 20px 22px; display: grid; gap: 10px; min-width: 0; }
+.finding .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; }
+.finding .head h3 { flex: 1 1 320px; }
+.finding .label { font: 500 0.74rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.finding .row { display: grid; grid-template-columns: 7.5rem 1fr; gap: 4px 14px; }
+.finding .row > * { min-width: 0; }
+@media (max-width: 560px) { .finding .row { grid-template-columns: 1fr; } }
+.finding ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 4px; }
+
+/* Plan */
+.phases { display: grid; gap: 18px; }
+.phase { background: var(--paper); border: 1px solid var(--line); display: grid; }
+.phase-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); background: var(--accent-soft); }
+.phase-head .when { font: 500 0.8rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.phase .table-box { border: 0; }
+
+.example { background: var(--paper); border: 1px solid var(--line); padding: 18px 22px; display: grid; gap: 12px; }
+.example .pair { display: grid; grid-template-columns: 6rem 1fr; gap: 6px 14px; }
+.example .pair > * { min-width: 0; }
+.example .before { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--crit); }
+@media (max-width: 560px) { .example .pair { grid-template-columns: 1fr; } }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.kpi { background: var(--paper); border: 1px solid var(--line); padding: 16px 18px; display: grid; gap: 6px; align-content: start; }
+.kpi b { font-weight: 600; }
+.kpi span { color: var(--muted); font-size: 0.93rem; }
+
+.note { color: var(--muted); font-size: 0.93rem; border-left: 3px solid var(--line); padding-left: 14px; max-width: 75ch; }
+footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 18px; }
+</style>
+
+<div class="wrap">
+
+	<header class="top">
+		<span class="eyebrow">viezo.lt · Audit and plan · 14 October 2026</span>
+		<h1>Viezo SEO &amp; GEO Plan</h1>
+		<p class="lead">Findings from a technical and content audit of viezo.lt, and a plan to grow visibility in Google and in AI answers (ChatGPT, Perplexity, Gemini, Copilot), split into what can be done this week and what follows over the next six months.</p>
+		<div class="meta">
+			<span>Scope: all 94 URLs in the site's XML sitemaps (EN + PL)</span>
+			<span>Checked: crawlability, indexing signals, metadata, headings, structured data, page weight, server setup</span>
+		</div>
+	</header>
+
+	<section>
+		<div class="section-head">
+			<span class="eyebrow">Summary</span>
+			<h2>What matters most</h2>
+			<p>The site has a solid base: clean URLs, Yoast sitemaps, working canonicals, EN/PL hreflang, fast server responses (median 471 ms) and genuinely strong case studies with named clients and measured results. The main problems are technical blockers that are cheap to fix, and content that is too thin and too unstructured to win searches or be quoted by AI assistants.</p>
+		</div>
+		<div class="keys">
+			<div class="key">
+				<span class="num">All images</span>
+				<span class="what">Blocked from Google</span>
+				<p><code>robots.txt</code> disallows <code>/wp-content/uploads/</code>, so Google cannot crawl any uploaded image: no image search, weaker page understanding, broken previews in some results.</p>
+			</div>
+			<div class="key">
+				<span class="num">~70 MB</span>
+				<span class="what">Video on the home page</span>
+				<p>A 49 MB hero video and a 21 MB video load on the home page. On mobile this ruins load speed (Core Web Vitals) and costs visitors' data.</p>
+			</div>
+			<div class="key">
+				<span class="num">0 gzip</span>
+				<span class="what">No compression, HTTP/1.1</span>
+				<p>HTML, CSS and JS are sent uncompressed (home HTML 137 KB, CSS 135 KB instead of roughly 25 KB each). The server runs HTTP/1.1, OpenSSL 1.0.2 and Amazon Linux 2 (end of life June 2026).</p>
+			</div>
+			<div class="key warn">
+				<span class="num">No entity data</span>
+				<span class="what">Search engines and AI don't know who Viezo is</span>
+				<p>No Organization, Product or Article structured data, no <code>llms.txt</code>, and the brand domain viezo.com is a parked page. AI assistants have little to anchor "Viezo" and "Sonora" to.</p>
+			</div>
+			<div class="key warn">
+				<span class="num">59 case studies</span>
+				<span class="what">Great material, under-used</span>
+				<p>Median 152 words, generic all-caps titles like "FAN BEARING WEAR – Viezo". They are the site's most citable asset and should be its main traffic driver.</p>
+			</div>
+			<div class="key ok">
+				<span class="num">GA4 live</span>
+				<span class="what">Measurement restarted 12 Oct</span>
+				<p>The old Universal Analytics tag had been dead since 2023. GA4 is now installed with consent mode; Search Console and Bing Webmaster Tools still need to be connected.</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="section-head">
+			<span class="eyebrow">Findings</span>
+			<h2>Detailed findings</h2>
+			<p>Each finding lists the evidence from the crawl, why it matters, and the fix. Severity: <span class="pill crit">High</span> blocks rankings or costs a lot of traffic, <span class="pill warn">Medium</span> limits growth, <span class="pill ok">Low</span> is polish.</p>
+		</div>
+
+		<h3>Technical</h3>
+		<div class="findings">
+			<article class="finding">
+				<div class="head"><h3>robots.txt blocks all uploaded images</h3><span class="pill crit">High</span></div>
+				<div class="row"><span class="label">Evidence</span><p><code>Disallow: /wp-content/uploads/</code>. Every case study photo, logo and product image sits in that folder (926 images across the crawled pages).</p></div>
+				<div class="row"><span class="label">Why</span><p>Google can't index or understand the images, case studies can't appear in image results, and Google renders pages without their visuals.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Remove that line from robots.txt (in Yoast → Tools → File editor, or the file itself). Then request re-crawl in Search Console.</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>Home page loads about 70 MB of video</h3><span class="pill crit">High</span></div>
+				<div class="row"><span class="label">Evidence</span><p><code>Indutrial-Web-video-main-page-1-1.mp4</code> is 49 MB, <code>Sonora-Alert-System-Overview_21mb.mp4</code> is 21 MB. Case-study thumbnails are PNGs of about 300 KB at 460×380 px; none of the 294 case-study images are WebP.</p></div>
+				<div class="row"><span class="label">Why</span><p>Largest Contentful Paint and mobile experience are ranking factors. On a phone connection the hero alone takes tens of seconds and many visitors leave before it plays.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Re-encode the hero to about 3–5 MB (720p, H.264 + WebM, 10–15 s loop), show a poster image first, and load the second video only when it is played. Convert thumbnails to WebP (about 30–50 KB each).</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>No compression, old server stack</h3><span class="pill crit">High</span></div>
+				<div class="row"><span class="label">Evidence</span><p>No <code>Content-Encoding</code> on HTML, CSS or JS. <code>HTTP/1.1</code> only. <code>Apache/2.4.62 OpenSSL/1.0.2k</code> on Amazon Linux 2 (EOL June 2026, 146 pending security updates).</p></div>
+				<div class="row"><span class="label">Why</span><p>Every page ships 3–5× more bytes than needed. HTTP/1.1 loads files one by one. The OS no longer receives security fixes.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Now: enable gzip (mod_deflate) via <code>.htaccess</code>. Later: move to Amazon Linux 2023 or a managed host with HTTP/2, Brotli and current PHP, or put the site behind Cloudflare (free plan covers compression, HTTP/2/3 and caching).</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>viezo.com is a parked domain</h3><span class="pill warn">Medium</span></div>
+				<div class="row"><span class="label">Evidence</span><p><code>https://viezo.com</code> returns a blank page that redirects to <code>/lander</code> (a domain-parking page).</p></div>
+				<div class="row"><span class="label">Why</span><p>People and AI assistants guessing "viezo.com" land on a parking page, and the brand signal is split.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Confirm who owns it. If Viezo owns it, 301-redirect it to viezo.lt. If not, consider buying it; for an international B2B brand, .com is worth having.</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>Thin or empty pages in the index</h3><span class="pill warn">Medium</span></div>
+				<div class="row"><span class="label">Evidence</span><p>Terms of Use has 3 words (EN) and 4 words (PL). PL EU funds page has 22 words. 15 case-study category pages have 32–240 words and no meta description. 4 near-identical "EU Funding" posts.</p></div>
+				<div class="row"><span class="label">Why</span><p>Empty and near-duplicate pages dilute the site's quality signals and waste crawl attention.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Fill in the Terms page or set it to noindex. Turn the category pages into industry landing pages (see plan) or noindex them until then. Merge the EU funding posts into the EU funds page.</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>hreflang has no x-default</h3><span class="pill ok">Low</span></div>
+				<div class="row"><span class="label">Evidence</span><p>Pages declare <code>hreflang="en"</code> and <code>"pl"</code> but no <code>x-default</code>. One EN case study (granulator bearing fault) has no language links at all.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Add <code>x-default</code> pointing to English (Polylang setting), and link the missing translation.</p></div>
+			</article>
+		</div>
+
+		<h3>On-page content</h3>
+		<div class="findings">
+			<article class="finding">
+				<div class="head"><h3>Titles and headings don't say what the page is about</h3><span class="pill crit">High</span></div>
+				<div class="row"><span class="label">Evidence</span>
+					<ul>
+						<li>36 of 59 case-study titles are all caps without context, for example "FAN BEARING WEAR – Viezo".</li>
+						<li>H1 of the Sonora product page is just "Sonora"; Pricing is "Pricing"; Case studies is "CASE STUDIES".</li>
+						<li>Both Contact pages (EN and PL) have no H1 at all.</li>
+					</ul>
+				</div>
+				<div class="row"><span class="label">Why</span><p>Title and H1 are the strongest on-page signals. "Sonora" alone matches nobody's search; "wireless vibration monitoring system" does.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Rewrite titles and H1s around what buyers search for (see examples below). For case studies, use a fixed pattern with the fault, the machine, the client and "case study".</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>Missing or wrong meta descriptions</h3><span class="pill warn">Medium</span></div>
+				<div class="row"><span class="label">Evidence</span><p>27 of 94 URLs have none: Contact (EN, PL), Privacy, Terms, EU pages, the 4 EU posts and 15 category pages. The Polish case-study archive uses the English description.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Write descriptions for every indexable page (about 140–160 characters, with a reason to click). Fix the Polish archive.</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>Case studies are short and not quotable</h3><span class="pill warn">Medium</span></div>
+				<div class="row"><span class="label">Evidence</span><p>Median 152 words; 58 of 59 are under 250 words. The structure is good (client, industry, equipment, issue, results) but there are no dates in the title, no numbers in a summary, no charts, quotes or FAQ.</p></div>
+				<div class="row"><span class="label">Why</span><p>Google ranks pages that fully answer a query, and AI assistants quote pages with clear, specific facts. "Volkswagen Polska cut belt repair from 1 hour to 15 minutes" is exactly what an AI answer cites, if it can find it in a clear block.</p></div>
+				<div class="row"><span class="label">Fix</span><p>A case-study template with a "Key facts" box at the top (client, industry, machine, fault, detected how early, outcome in numbers), a vibration chart, a short client quote and 2–3 FAQs. Aim for 400–600 words.</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>Images without alt text</h3><span class="pill ok">Low</span></div>
+				<div class="row"><span class="label">Evidence</span><p>100 of 926 images have no alt text: 10 on the home page, 17–18 on the Sonora pages, 12 on case studies.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Add descriptive alt texts in the Media Library (machine, fault, sensor). Helps accessibility and image search once robots.txt is fixed.</p></div>
+			</article>
+		</div>
+
+		<h3>Structured data and GEO (AI search)</h3>
+		<div class="findings">
+			<article class="finding">
+				<div class="head"><h3>No structured data about the company, product or case studies</h3><span class="pill crit">High</span></div>
+				<div class="row"><span class="label">Evidence</span><p>Only Yoast's generic <code>WebSite</code>, <code>WebPage</code> and <code>BreadcrumbList</code>. No <code>Organization</code> (logo, address, LinkedIn), no <code>Product</code> for Sonora, no <code>Article</code> on case studies, no <code>FAQPage</code>.</p></div>
+				<div class="row"><span class="label">Why</span><p>Structured data is how Google's Knowledge Graph and AI systems connect "Viezo", "Sonora", the address in Vilnius and the LinkedIn page into one entity. Without it, brand searches and AI answers are less reliable.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Add Organization (with <code>sameAs</code> to LinkedIn and other profiles), Product/SoftwareApplication for Sonora, Article on every case study (with client and industry as <code>about</code>/<code>mentions</code>), and FAQPage where FAQs exist. Can be done in the theme together with Yoast.</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>Nothing written for AI assistants</h3><span class="pill warn">Medium</span></div>
+				<div class="row"><span class="label">Evidence</span><p>No <code>llms.txt</code>. No pages answer the questions buyers ask an assistant, such as "what is predictive maintenance", "how does wireless vibration monitoring work", "how much does it cost", "how many sensors per machine". The blog has 4 posts, all about EU funding. AI crawlers (GPTBot, ClaudeBot, PerplexityBot) are allowed by robots.txt, which is good.</p></div>
+				<div class="row"><span class="label">Why</span><p>AI answers are assembled from pages that state facts plainly, define terms, give numbers and are backed by other sources. Viezo has the expertise but no pages that express it in that form.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Publish an <code>llms.txt</code> (company, product, key pages, case studies) and a small set of expert explainer pages in EN and PL (see plan). Write each with a direct 2–3 sentence answer at the top, then detail, data and a link to relevant case studies.</p></div>
+			</article>
+			<article class="finding">
+				<div class="head"><h3>Weak presence outside the site</h3><span class="pill warn">Medium</span></div>
+				<div class="row"><span class="label">Evidence</span><p>The site links only to LinkedIn. No sign of review-platform listings, a Google Business Profile or a Wikidata entry.</p></div>
+				<div class="row"><span class="label">Why</span><p>Both Google and AI assistants trust brands that are mentioned consistently in other places. Clients like Volkswagen Polska, IMA Schelling and furniture manufacturers are strong references if they are visible beyond viezo.lt.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Create or complete Google Business Profile, G2 and Capterra listings, Crunchbase and a Wikidata item; list Viezo on partners' and distributors' sites (Techvitas, Ruven, Sujan, TGD, IMA Schelling) with a link; pitch 2–3 case studies to industry media.</p></div>
+			</article>
+		</div>
+
+		<h3>Measurement</h3>
+		<div class="findings">
+			<article class="finding">
+				<div class="head"><h3>No search data yet</h3><span class="pill warn">Medium</span></div>
+				<div class="row"><span class="label">Evidence</span><p>Analytics collected nothing between July 2023 and 12 October 2026 (dead Universal Analytics tag). GA4 now runs with consent mode. Search Console access was not available for this audit.</p></div>
+				<div class="row"><span class="label">Fix</span><p>Connect Google Search Console and Bing Webmaster Tools (Bing powers ChatGPT search and Copilot), submit the sitemap in both, link Search Console to GA4, and add a GA4 report for AI referrals (chatgpt.com, perplexity.ai, copilot, gemini).</p></div>
+			</article>
+		</div>
+	</section>
+
+	<section>
+		<div class="section-head">
+			<span class="eyebrow">Examples</span>
+			<h2>What better titles look like</h2>
+			<p>Titles are written for what buyers type. These are proposals; final wording should be checked against Search Console data once it's connected.</p>
+		</div>
+		<div class="example">
+			<div class="pair"><span class="label eyebrow">Sonora</span><div><div class="before">Sonora (H1) · "Wireless Vibration Monitoring System | Sonora by Viezo"</div><div><strong>H1:</strong> Wireless vibration monitoring for predictive maintenance</div></div></div>
+			<div class="pair"><span class="label eyebrow">Case study</span><div><div class="before">FAN BEARING WEAR – Viezo</div><div>Fan bearing wear detected before failure at Ulmas | Vibration monitoring case study</div></div></div>
+			<div class="pair"><span class="label eyebrow">Case study</span><div><div class="before">BELT IMBALANCE ON GRINDING MACHINE – Viezo</div><div>Belt imbalance on a grinding machine at Volkswagen Polska: repair in 15 minutes instead of 1 hour</div></div></div>
+			<div class="pair"><span class="label eyebrow">Pricing</span><div><div class="before">Pricing (H1)</div><div><strong>H1:</strong> Vibration monitoring pricing: build your Sonora setup</div></div></div>
+			<div class="pair"><span class="label eyebrow">Industry page</span><div><div class="before">/case-study-type/furniture/ (218 words, no description)</div><div>Predictive maintenance for furniture manufacturing: real faults detected on CNC, edge banding and sanding lines</div></div></div>
+		</div>
+	</section>
+
+	<section>
+		<div class="section-head">
+			<span class="eyebrow">Plan</span>
+			<h2>The plan</h2>
+			<p><span class="pill us">Dev team</span> means the work can be done in the theme and WordPress without client input. <span class="pill client">Viezo</span> means it needs content, decisions or access from Viezo's side.</p>
+		</div>
+
+		<div class="phases">
+			<div class="phase">
+				<div class="phase-head"><h3>Phase 1 · Quick fixes</h3><span class="when">This week</span></div>
+				<div class="table-box">
+					<table>
+						<thead><tr><th>Task</th><th>Who</th><th>Effort</th><th>Impact</th></tr></thead>
+						<tbody>
+							<tr><td><strong>Unblock images in robots.txt</strong></td><td><span class="pill us">Dev team</span></td><td class="n">5 min</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Enable gzip compression</strong> (.htaccess)</td><td><span class="pill us">Dev team</span></td><td class="n">30 min</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Compress the home page videos</strong>, add poster image, lazy-load the second video</td><td><span class="pill us">Dev team</span></td><td class="n">½ day</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Convert case-study images to WebP</strong> (plugin or regenerate)</td><td><span class="pill us">Dev team</span></td><td class="n">½ day</td><td><span class="pill warn">Medium</span></td></tr>
+							<tr><td><strong>Organization + Product structured data</strong>, Article on case studies</td><td><span class="pill us">Dev team</span></td><td class="n">1 day</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Publish llms.txt</strong> (EN, with links to PL)</td><td><span class="pill us">Dev team</span></td><td class="n">2 h</td><td><span class="pill warn">Medium</span></td></tr>
+							<tr><td><strong>Fix H1s</strong> (Contact EN/PL, Sonora, Pricing, Case studies) and <strong>meta descriptions</strong> on 27 URLs</td><td><span class="pill us">Dev team</span> drafts, <span class="pill client">Viezo</span> approves</td><td class="n">½ day</td><td><span class="pill warn">Medium</span></td></tr>
+							<tr><td><strong>hreflang x-default</strong>, Polish archive description, missing translation link</td><td><span class="pill us">Dev team</span></td><td class="n">1 h</td><td><span class="pill ok">Low</span></td></tr>
+							<tr><td><strong>Noindex the empty Terms pages</strong> until filled; merge EU funding posts</td><td><span class="pill us">Dev team</span></td><td class="n">1 h</td><td><span class="pill ok">Low</span></td></tr>
+							<tr><td><strong>Connect Search Console + Bing Webmaster Tools</strong>, submit sitemap</td><td><span class="pill client">Viezo</span> grants access</td><td class="n">1 h</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Clarify viezo.com ownership</strong>; 301 to viezo.lt if owned</td><td><span class="pill client">Viezo</span></td><td class="n">—</td><td><span class="pill warn">Medium</span></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="phase">
+				<div class="phase-head"><h3>Phase 2 · Content that ranks and gets cited</h3><span class="when">Months 1–3</span></div>
+				<div class="table-box">
+					<table>
+						<thead><tr><th>Task</th><th>Who</th><th>Effort</th><th>Impact</th></tr></thead>
+						<tbody>
+							<tr><td><strong>New case-study template</strong>: key-facts box, chart, quote, FAQ, Article + FAQ schema</td><td><span class="pill us">Dev team</span></td><td class="n">2–3 days</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Rewrite case-study titles</strong> with the pattern above, then expand the 10–15 strongest to 400–600 words</td><td><span class="pill client">Viezo</span> facts, <span class="pill us">Dev team</span> edit</td><td class="n">2–3 weeks</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Industry landing pages</strong> from the existing categories (furniture, food, automotive, packaging, metals, construction): intro, typical failures, matching case studies, FAQ</td><td><span class="pill client">Viezo</span> + <span class="pill us">Dev team</span></td><td class="n">1 page / 2 days</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>6–8 explainer pages</strong> (EN + PL): predictive maintenance basics, wireless vs. manual vibration monitoring, bearing and gearbox failure signs, cost of unplanned downtime, sensors per machine and ROI</td><td><span class="pill client">Viezo</span> expertise, writer drafts</td><td class="n">1 per week</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Restructure the Sonora page</strong>: clear H1, how it works, specs table, FAQ, links to case studies</td><td><span class="pill us">Dev team</span> + <span class="pill client">Viezo</span></td><td class="n">2 days</td><td><span class="pill warn">Medium</span></td></tr>
+							<tr><td><strong>Brand profiles</strong>: Google Business Profile, G2, Capterra, Crunchbase, Wikidata; partner and distributor backlinks</td><td><span class="pill client">Viezo</span></td><td class="n">1–2 days</td><td><span class="pill warn">Medium</span></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="phase">
+				<div class="phase-head"><h3>Phase 3 · Authority and infrastructure</h3><span class="when">Months 3–6</span></div>
+				<div class="table-box">
+					<table>
+						<thead><tr><th>Task</th><th>Who</th><th>Effort</th><th>Impact</th></tr></thead>
+						<tbody>
+							<tr><td><strong>Server upgrade</strong>: Amazon Linux 2023 or managed hosting, HTTP/2, Brotli, current PHP; or Cloudflare in front</td><td><span class="pill us">Dev team</span>, <span class="pill client">Viezo</span> budget</td><td class="n">2–3 days</td><td><span class="pill warn">Medium</span></td></tr>
+							<tr><td><strong>Digital PR</strong>: 2–3 case studies pitched to industry media (maintenance, Industry 4.0, furniture/automotive trade press), conference talks, LinkedIn articles by engineers</td><td><span class="pill client">Viezo</span></td><td class="n">ongoing</td><td><span class="pill crit">High</span></td></tr>
+							<tr><td><strong>Decide on a Lithuanian version</strong> (the domain is .lt but the site is EN/PL only)</td><td><span class="pill client">Viezo</span></td><td class="n">decision</td><td><span class="pill warn">Medium</span></td></tr>
+							<tr><td><strong>AI visibility tracking</strong>: monthly check of 20–30 buyer questions in ChatGPT, Perplexity, Gemini and Copilot; note whether Viezo is mentioned and which page is cited</td><td><span class="pill us">Dev team</span></td><td class="n">2 h / month</td><td><span class="pill warn">Medium</span></td></tr>
+							<tr><td><strong>Quarterly content refresh</strong>: new case studies in the template, update numbers on explainer pages</td><td><span class="pill client">Viezo</span> + <span class="pill us">Dev team</span></td><td class="n">ongoing</td><td><span class="pill warn">Medium</span></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="section-head">
+			<span class="eyebrow">Measuring success</span>
+			<h2>What we track</h2>
+			<p>Baselines are set in the first month, once Search Console and GA4 have data.</p>
+		</div>
+		<div class="kpis">
+			<div class="kpi"><b>Organic clicks and impressions</b><span>Search Console, split EN / PL and brand / non-brand queries.</span></div>
+			<div class="kpi"><b>Rankings for buyer terms</b><span>"vibration monitoring", "predictive maintenance", "wireless vibration sensor", per industry, in EN and PL.</span></div>
+			<div class="kpi"><b>Indexed pages and images</b><span>Search Console coverage, image index after the robots.txt fix.</span></div>
+			<div class="kpi"><b>Core Web Vitals</b><span>LCP under 2.5 s on mobile for the home and Sonora pages.</span></div>
+			<div class="kpi"><b>AI mentions and referrals</b><span>Monthly AI answer check plus GA4 sessions from chatgpt.com, perplexity.ai and others.</span></div>
+			<div class="kpi"><b>Leads from organic and AI</b><span>Pricing builder completions and contact form submissions by source (GA4 key event, site's own stats page).</span></div>
+		</div>
+	</section>
+
+	<p class="note">Limits of this audit: no access to Search Console, so actual rankings, queries and indexing status were not checked. Google's PageSpeed service was unavailable on the day, so speed findings come from measured file sizes and server headers, not Lighthouse scores. No backlink tool was used. All checks were read-only requests to public pages.</p>
+
+	<footer>Prepared for Viezo, UAB · Audit of viezo.lt on 14 October 2026 · 94 URLs from the site's XML sitemaps</footer>
+</div>
