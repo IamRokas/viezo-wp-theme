@@ -82,6 +82,10 @@ The work is mostly about packaging what Viezo already has, not producing large a
 
 ## Open questions for Viezo
 
+- The Privacy Policy names the operator as UAB "Nanoenergija", while the site and registry say Viezo, UAB. Which is correct? (Schema now uses "Viezo, UAB".)
+- The 4 EU funding posts: keep as separate project notices (likely required by the funding rules) or merge?
+- The granulator case study has no Polish version. Translate it?
+
 - Can price ranges be published as text (lesson 5)?
 - Which 2–3 aggregate numbers can be stated and backed (lesson 8)?
 - Which 10 clients would leave a review, and which 3–5 cases can be expanded with a quote?

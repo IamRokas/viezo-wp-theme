@@ -211,6 +211,7 @@ function vzo__seed_import_image( $filename ) {
 	}
 
 	require_once ABSPATH . 'wp-admin/includes/image.php';
+	require_once ABSPATH . 'wp-admin/includes/media.php'; // Video/audio metadata.
 
 	// Write straight into the uploads folder (no PHP temp dir: some hosts don't allow moving
 	// files out of it, which made media_handle_sideload() fail with "could not be moved").

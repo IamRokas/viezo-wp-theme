@@ -3,3 +3,4 @@ build/hot
 .DS_Store
 docs/seo-geo/**/*.zip
 docs/seo-geo/*.zip
+dist/

@@ -23,8 +23,13 @@ if (empty($background)) {
 <header class="page-header px-0 flex items-end justify-center header-<?= $headerSize; ?>">
     <?php if (!empty($background)): ?>
     <?php if ($background['type'] == 'video'): ?>
-    <video class="bg video" autoplay muted loop playsinline>
-        <source src="<?= $background['url']; ?>" type="video/mp4" />
+    <?php
+    // Poster shows instantly while the video loads (set on the video attachment by seeds/seo-home-video.php).
+    $poster_id  = !empty($background['ID']) ? (int) get_post_meta($background['ID'], '_vzo_poster_id', true) : 0;
+    $poster_url = $poster_id ? wp_get_attachment_image_url($poster_id, 'full') : '';
+    ?>
+    <video class="bg video" autoplay muted loop playsinline preload="auto"<?= $poster_url ? ' poster="' . esc_url($poster_url) . '"' : ''; ?>>
+        <source src="<?= esc_url($background['url']); ?>" type="video/mp4" />
     </video>
     <?php else: ?>
     <div class="bg image" style="background-image: url(<?= $background['url']; ?>);"></div>

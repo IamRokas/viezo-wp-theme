@@ -3,13 +3,13 @@
   "version": "2.1.0",
   "private": true,
   "description": "Viezo",
-  "author": "Rokas <https://viezo.com>",
+  "author": "Rokas <https://viezo.lt>",
   "license": "GPL-2.0-or-later",
   "keywords": [
     "WordPress",
     "Theme"
   ],
-  "homepage": "https://viezo.com",
+  "homepage": "https://viezo.lt",
   "repository": {
     "type": "git",
     "url": ""
@@ -30,7 +30,8 @@
   "scripts": {
     "dev": "vite",
     "watch": "vite build --watch --mode development",
-    "build": "vite build"
+    "build": "vite build",
+    "zip": "npm run build && sh scripts/zip-theme.sh"
   },
   "dependencies": {
     "embla-carousel": "^8.6.0"

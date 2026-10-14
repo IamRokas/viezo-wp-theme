@@ -32,6 +32,8 @@ function vzo__get_theme_include_files()
 		'inc/acf.php', // ACF Local JSON (acf-json/).
 		'inc/live-sonora.php', // Home: Live Sonora machine scene + admin dot editor.
 		'inc/seeds.php', // Content seeds (Tools → Viezo seeds).
+		'inc/seo.php', // SEO/GEO: robots.txt, hreflang, schema, noindex, WebP sizes.
+		'inc/llms.php', // /llms.txt and /llms-full.txt for AI assistants.
 	];
 }
 

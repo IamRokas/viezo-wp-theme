@@ -9,6 +9,7 @@ Ongoing work on viezo.lt visibility in Google and in AI answers (ChatGPT, Perple
 | [02-insights/](02-insights/) | What we learn from competitors and data: patterns, gaps, ideas. | When a profile or tracking round adds something |
 | [03-keywords-prompts/](03-keywords-prompts/) | Search terms (EN/PL) and the AI buyer questions we track. | When Search Console data arrives, then monthly |
 | [04-backlog/](04-backlog/) | Single prioritised task list (audit + competitor ideas). Source of truth for what's next. | Every work session |
+| [releases/](releases/) | One file per deploy: what changed, deploy steps, how to verify, rollback. | Each release |
 | [05-tracking/](05-tracking/) | Monthly AI visibility checks and metric snapshots (GSC, GA4, CWV). | Monthly |
 
 ## Workflow
@@ -17,7 +18,7 @@ Ongoing work on viezo.lt visibility in Google and in AI answers (ChatGPT, Perple
 2. **Research** competitors → update `01-competitors/profiles/<slug>.md` (use `_template.md`), then `comparison-matrix.md`.
 3. **Synthesise** → new patterns into `02-insights/learnings.md`; anything actionable becomes a backlog item with an ID.
 4. **Track** monthly → run the prompts in `03-keywords-prompts/ai-prompts.md`, log in `05-tracking/ai-visibility/YYYY-MM.md`.
-5. **Log** what shipped in `changelog.md` so results can be tied to changes.
+5. **Release** → write `releases/YYYY-MM-DD-<name>.md`, build with `npm run zip`, deploy, then log the date in `changelog.md` so results can be tied to changes.
 
 ## Conventions
 
