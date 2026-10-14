@@ -1,0 +1,1018 @@
+{
+    "key": "group_home_live_sonora",
+    "title": "Home: Live Sonora network",
+    "fields": [
+        {
+            "key": "field_live_sonora_tab_content",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_live_sonora_hidden",
+            "label": "Hide section",
+            "name": "live_sonora_hidden",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "ui": 1,
+            "translations": "sync",
+            "default_value": 0,
+            "message": "",
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "pll_default_value": 0
+        },
+        {
+            "key": "field_live_sonora_eyebrow",
+            "label": "Eyebrow",
+            "name": "live_sonora_eyebrow",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "translations": "translate",
+            "placeholder": "Live Sonora network",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_title",
+            "label": "Title",
+            "name": "live_sonora_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "translations": "translate",
+            "placeholder": "This is happening right now.",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_text",
+            "label": "Text",
+            "name": "live_sonora_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_primary_link",
+            "label": "Primary button",
+            "name": "live_sonora_primary_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "translations": "translate"
+        },
+        {
+            "key": "field_live_sonora_secondary_link",
+            "label": "Secondary button",
+            "name": "live_sonora_secondary_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "translations": "translate"
+        },
+        {
+            "key": "field_live_sonora_tab_panel",
+            "label": "Live scene",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_live_sonora_panel_title",
+            "label": "Panel title",
+            "name": "live_sonora_panel_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "translations": "translate",
+            "placeholder": "Sonora \/ Live",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_panel_status",
+            "label": "Panel status",
+            "name": "live_sonora_panel_status",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "translations": "translate",
+            "placeholder": "Monitoring continuously",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_scene_image",
+            "label": "Machine scene image",
+            "name": "live_sonora_scene_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Any photo works (no cropping): wide, landscape shots of 1600px+ look best. Shared by all languages. After replacing it, drag the dots below onto the new machines.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "mime_types": "jpg,jpeg,png,webp",
+            "translations": "sync",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_live_sonora_label_rms",
+            "label": "Label: RMS",
+            "name": "live_sonora_label_rms",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "RMS (velocity)",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_label_temperature",
+            "label": "Label: temperature",
+            "name": "live_sonora_label_temperature",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Ambient temperature",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_label_harmonics",
+            "label": "Label: harmonics",
+            "name": "live_sonora_label_harmonics",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "New harmonics detected",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_label_last",
+            "label": "Label: last measurement",
+            "name": "live_sonora_label_last",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Last measurement",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_status_ok",
+            "label": "Status: normal",
+            "name": "live_sonora_status_ok",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Operating normally",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_status_fault",
+            "label": "Status: fault",
+            "name": "live_sonora_status_fault",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Active defect",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_label_issue",
+            "label": "Label: detected issue",
+            "name": "live_sonora_label_issue",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Detected issue",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_label_yes_no",
+            "label": "Yes \/ No",
+            "name": "live_sonora_label_yes_no",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Yes|No",
+            "translations": "translate",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_points",
+            "label": "Measuring points",
+            "name": "live_sonora_points",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Drag the dots on the photo, or type X\/Y (% from the left \/ top edge). 2–3 points work best. Mark one as \"Develops a fault\": on scroll its values rise, it turns red and its card opens. Photo, positions and values are shared: translations only change the texts (machine, last measurement, detected issue, link label), matched by row order.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 4,
+            "button_label": "Add measuring point",
+            "collapsed": "field_live_sonora_point_name",
+            "translations": "copy_once",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_live_sonora_point_name",
+                    "label": "Machine",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_x",
+                    "label": "Position X (%)",
+                    "name": "x",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "% from the left edge of the photo.",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "min": 0,
+                    "max": 100,
+                    "step": 0.1,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_y",
+                    "label": "Position Y (%)",
+                    "name": "y",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "0": false,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_rms",
+                    "label": "RMS (mm\/s)",
+                    "name": "rms",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "step": 0.1,
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_temperature",
+                    "label": "Temperature (°C)",
+                    "name": "temperature",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_harmonics",
+                    "label": "New harmonics",
+                    "name": "harmonics",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "ui": 1,
+                    "translations": "copy_once",
+                    "default_value": 0,
+                    "message": "",
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "pll_default_value": 0,
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_last",
+                    "label": "Last measurement",
+                    "name": "last_measurement",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "18 min ago",
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_fault",
+                    "label": "Develops a fault",
+                    "name": "fault",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Starts normal with the values above, then switches to the fault values.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "ui": 1,
+                    "translations": "copy_once",
+                    "default_value": 0,
+                    "message": "",
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "pll_default_value": 0,
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_fault_rms",
+                    "label": "Fault RMS (mm\/s)",
+                    "name": "fault_rms",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_live_sonora_point_fault",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "step": 0.1,
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_fault_temperature",
+                    "label": "Fault temperature (°C)",
+                    "name": "fault_temperature",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_live_sonora_point_fault",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_fault_issue",
+                    "label": "Detected issue",
+                    "name": "fault_issue",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_live_sonora_point_fault",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Developing gearbox fault",
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_fault_link_label",
+                    "label": "Link label",
+                    "name": "fault_link_label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_live_sonora_point_fault",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "View defect",
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_points"
+                },
+                {
+                    "key": "field_live_sonora_point_fault_case_study",
+                    "label": "Case study",
+                    "name": "fault_case_study",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_live_sonora_point_fault",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "case-study"
+                    ],
+                    "return_format": "id",
+                    "allow_null": 1,
+                    "ui": 1,
+                    "translations": "copy_once",
+                    "taxonomy": [],
+                    "multiple": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_live_sonora_points"
+                }
+            ]
+        },
+        {
+            "key": "field_live_sonora_tab_machines",
+            "label": "Machines",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_live_sonora_machines_label",
+            "label": "Label",
+            "name": "live_sonora_machines_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "translations": "translate",
+            "placeholder": "Machines we monitor",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_machines_subtitle",
+            "label": "Subtitle (hidden on mobile)",
+            "name": "live_sonora_machines_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "translations": "translate",
+            "placeholder": "Real examples from Sonora cases",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_live_sonora_machines_link",
+            "label": "\"All cases\" link",
+            "name": "live_sonora_machines_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Leave empty to link to the case studies archive.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "translations": "translate"
+        },
+        {
+            "key": "field_live_sonora_machines",
+            "label": "Machines",
+            "name": "live_sonora_machines",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Copied once to new translations; empty translations show the English list. Linked case studies open in the visitor's language.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "min": 0,
+            "max": 8,
+            "button_label": "Add machine",
+            "collapsed": "field_live_sonora_machine_name",
+            "translations": "copy_once",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_live_sonora_machine_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "value",
+                    "default_value": "motor",
+                    "translations": "copy_once",
+                    "choices": {
+                        "pump": "Pump",
+                        "fan": "Fan",
+                        "gearbox": "Gearbox",
+                        "motor": "Motor",
+                        "compressor": "Compressor",
+                        "spindle": "Spindle \/ cutter"
+                    },
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "pll_default_value": "motor",
+                    "parent_repeater": "field_live_sonora_machines"
+                },
+                {
+                    "key": "field_live_sonora_machine_name",
+                    "label": "Machine",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_machines"
+                },
+                {
+                    "key": "field_live_sonora_machine_type",
+                    "label": "Type",
+                    "name": "type",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_live_sonora_machines"
+                },
+                {
+                    "key": "field_live_sonora_machine_case_study",
+                    "label": "Case study",
+                    "name": "case_study",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "case-study"
+                    ],
+                    "return_format": "id",
+                    "allow_null": 1,
+                    "ui": 1,
+                    "translations": "copy_once",
+                    "taxonomy": [],
+                    "multiple": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_live_sonora_machines"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/home.php"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "The \"Live Sonora network\" section under the home page hero (partials\/live-sonora.php).",
+    "show_in_rest": false,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1790498082
+}

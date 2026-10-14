@@ -174,7 +174,7 @@ body {
 			position: absolute;
 			width: 756px;
 			background-color: transparent;
-			background-image: url(../images/icons/green-line-with-circle.svg);
+			background-image: url(@images/icons/green-line-with-circle.svg);
 			height: 12px;
 			display: block;
 			bottom: 12px;
@@ -294,7 +294,7 @@ a.withline {
 		top: 20px;
 
 		.track {
-			background-image: url(../images/track.svg);
+			background-image: url(@images/track.svg);
 			background-repeat: repeat-y;
 			height: 100vw;
 			transform: rotate(-90deg);

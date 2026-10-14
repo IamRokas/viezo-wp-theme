@@ -58,16 +58,6 @@ function vzo__body_classes( $classes ) {
 	// Adds "no-js" class. If JS is enabled, this will be replaced (by javascript) to "js".
 	$classes[] = 'no-js';
 
-	// Add a cleaner class for the scaffolding page template.
-	if ( is_page_template( 'template-scaffolding.php' ) ) {
-		$classes[] = 'template-scaffolding';
-	}
-
-	// Add a `has-sidebar` class if we're using the sidebar template.
-	if ( is_page_template( 'template-sidebar-right.php' ) ) {
-		$classes[] = 'has-sidebar';
-	}
-
 	return $classes;
 }
 
@@ -152,25 +142,6 @@ function vzo__custom_mime_types( $mimes ) {
 }
 
 add_filter( 'upload_mimes', 'vzo__custom_mime_types' );
-
-/**
- * Add SVG definitions to footer.
- *
- * @author WebDevStudios
- */
-function vzo__include_svg_icons() {
-	// Define SVG sprite file.
-	$svg_icons = get_template_directory() . '/build/images/icons/sprite.svg';
-
-	// If it exists, include it.
-	if ( file_exists( $svg_icons ) ) {
-		echo '<div class="svg-sprite-wrapper">';
-		require_once $svg_icons;
-		echo '</div>';
-	}
-}
-
-add_action( 'wp_footer', 'vzo__include_svg_icons', 9999 );
 
 /**
  * Display the customizer header scripts.
@@ -400,12 +371,13 @@ function remove_editor() {
         $id = $_GET['post'];
         $template = get_post_meta($id, '_wp_page_template', true);
         switch ($template) {
-            case 'template/about-us.php':
-            case 'template/eu.php':
-            case 'template/home.php':
+            case 'templates/about-us.php':
+            case 'templates/eu.php':
+            case 'templates/home.php':
             case 'templates/powerail.php':
 			case 'templates/powertrack.php':
 			case 'templates/technology.php':
+			case 'templates/pricing-setup.php':
             // the below removes 'editor' support for 'pages'
             // if you want to remove for posts or custom post types as well
             // add this line for posts:

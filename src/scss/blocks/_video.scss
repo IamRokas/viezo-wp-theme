@@ -1,0 +1,393 @@
+// Video Block
+// ──────────────────────────────────────────────────
+
+.video-block {
+
+	&__title {
+		@apply font-osp-din uppercase text-darkest-grey;
+		text-align: center;
+	}
+
+	&__subtitle {
+		@apply text-darkest-grey;
+		font-size: 1.125rem;
+		line-height: 1.6;
+		max-width: 640px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__wrap {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		background: #111;
+		overflow: hidden;
+	}
+
+	// Native <video> fills the wrap
+	&__video {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+
+		&--hidden {
+			visibility: hidden;
+			position: absolute;
+			inset: 0;
+		}
+	}
+
+	// Embed container + iframe
+	&__embed {
+		width: 100%;
+		height: 100%;
+
+		&--hidden {
+			visibility: hidden;
+			position: absolute;
+			inset: 0;
+		}
+	}
+
+	&__iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	// Cover overlay — flex so the play button centres automatically
+	&__cover {
+		position: absolute;
+		inset: 0;
+		z-index: 10;
+		cursor: pointer;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.35s ease;
+
+		&--out {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	// Image fills the cover behind the play button
+	&__cover-img {
+		position: absolute;
+		inset: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	// Initial play overlay (no-cover case): transparent, just centres the play button
+	&__initial-play {
+		position: absolute;
+		inset: 0;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.35s ease;
+
+		&--out {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	// Shared play button (cover overlay + initial-play overlay)
+	&__play {
+		position: relative;
+		z-index: 1;
+		width: 72px;
+		height: 72px;
+		border-radius: 9999px;
+		background-color: #000;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+		box-shadow: 0 4px 24px rgba(70, 175, 135, 0.45);
+
+		svg {
+			transform: translateX(2px);
+		}
+
+		&:hover,
+		&:focus-visible {
+			background-color: #222;
+			transform: scale(1.08);
+			box-shadow: 0 6px 32px rgba(0, 0, 0, 0.45);
+			outline: none;
+		}
+
+		&:active {
+			transform: scale(0.97);
+		}
+	}
+
+	// ── Controls bar ─────────────────────────────────
+	// Layout: [toggle] [progress ·········] [time] [mute] [volume──] [fullscreen]
+
+	&__controls {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 12;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 16px 14px 10px;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+		opacity: 1;
+		transition: opacity 0.3s ease;
+
+		&--hidden {
+			display: none;
+		}
+
+		&--idle {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	// Hide cursor on wrap when idle
+	&__wrap--hide-cursor {
+		cursor: none;
+	}
+
+	// Play/pause toggle
+	&__toggle {
+		flex-shrink: 0;
+		width: 32px;
+		height: 32px;
+		border-radius: 9999px;
+		background: transparent;
+		color: #fff;
+		border: 0;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.2s ease;
+		opacity: 0.85;
+
+		&:hover,
+		&:focus-visible {
+			opacity: 1;
+			outline: none;
+		}
+	}
+
+	&__toggle-play {
+		width: 0;
+		height: 0;
+		border-top: 6px solid transparent;
+		border-bottom: 6px solid transparent;
+		border-left: 11px solid #fff;
+		margin-left: 2px;
+	}
+
+	&__toggle-pause {
+		display: none;
+		width: 10px;
+		height: 12px;
+		position: relative;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			width: 3px;
+			height: 12px;
+			background: #fff;
+			border-radius: 1px;
+		}
+
+		&::before { left: 0; }
+		&::after  { right: 0; }
+	}
+
+	&__toggle.is-playing &__toggle-play  { display: none; }
+	&__toggle.is-playing &__toggle-pause { display: block; }
+
+	// ── Shared range-input base ───────────────────────
+	// Applied to both progress and volume sliders
+
+	%range-base {
+		-webkit-appearance: none;
+		appearance: none;
+		height: 3px;
+		border-radius: 2px;
+		outline: none;
+		cursor: pointer;
+		// background is driven by JS gradient; set a fallback
+		background: rgba(255, 255, 255, 0.25);
+		transition: height 0.12s ease;
+
+		&::-webkit-slider-runnable-track {
+			height: 3px;
+			border-radius: 2px;
+		}
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: #fff;
+			cursor: pointer;
+			margin-top: -4.5px;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			transition: opacity 0.15s ease, transform 0.15s ease;
+		}
+
+		&::-moz-range-track {
+			height: 3px;
+			border-radius: 2px;
+			background: rgba(255, 255, 255, 0.25);
+		}
+
+		&::-moz-range-progress {
+			height: 3px;
+			border-radius: 2px;
+			background: rgba(255, 255, 255, 0.95);
+		}
+
+		&::-moz-range-thumb {
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: #fff;
+			border: 0;
+			cursor: pointer;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			transition: opacity 0.15s ease;
+		}
+
+		&:hover,
+		&:focus-visible {
+			height: 5px;
+			outline: none;
+
+			&::-webkit-slider-thumb {
+				opacity: 1;
+			}
+
+			&::-moz-range-thumb {
+				opacity: 1;
+			}
+		}
+	}
+
+	// Progress / seek bar
+	&__progress-wrap {
+		flex: 1;
+		display: flex;
+		align-items: center;
+	}
+
+	&__progress {
+		@extend %range-base;
+		width: 100%;
+	}
+
+	// Time display
+	&__time {
+		flex-shrink: 0;
+		font-size: 0.7rem;
+		color: rgba(255, 255, 255, 0.85);
+		white-space: nowrap;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: 0.02em;
+		user-select: none;
+	}
+
+	// Volume group: mute icon + slider
+	&__volume-wrap {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+
+	// Mute / unmute icon button
+	&__mute {
+		flex-shrink: 0;
+		background: transparent;
+		color: #fff;
+		border: 0;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0.85;
+		transition: opacity 0.2s ease;
+		padding: 0;
+
+		&:hover,
+		&:focus-visible {
+			opacity: 1;
+			outline: none;
+		}
+	}
+
+	&__icon-muted {
+		display: none;
+	}
+
+	&__mute.is-muted &__icon-unmuted { display: none; }
+	&__mute.is-muted &__icon-muted   { display: block; }
+
+	// Fullscreen button
+	&__fullscreen {
+		flex-shrink: 0;
+		background: transparent;
+		color: #fff;
+		border: 0;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0.85;
+		transition: opacity 0.2s ease;
+		padding: 0;
+
+		&:hover,
+		&:focus-visible {
+			opacity: 1;
+			outline: none;
+		}
+	}
+
+	&__icon-collapse { display: none; }
+
+	&__fullscreen.is-fullscreen &__icon-expand   { display: none; }
+	&__fullscreen.is-fullscreen &__icon-collapse { display: block; }
+
+	// Volume slider
+	&__volume {
+		@extend %range-base;
+		width: 72px;
+
+		@media (max-width: 480px) {
+			display: none;
+		}
+	}
+}

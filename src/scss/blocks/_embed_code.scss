@@ -1,0 +1,8 @@
+// Raw HTML/JS embeds (calendars, widgets, etc.; footer-dark section)
+.page-content .embed-code-block {
+	&__embed {
+		iframe {
+			max-width: 100%;
+		}
+	}
+}

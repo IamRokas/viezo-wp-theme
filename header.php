@@ -35,24 +35,7 @@
     <meta name="theme-color" content="#333333">
 
 
-    <!-- Google Analytics -->
-    <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-130576283-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-    <!-- End Google Analytics -->
+    <!-- Google Analytics 4: inc/analytics.php (wp_head) -->
 
 
     <?php wp_head(); ?>
@@ -130,7 +113,7 @@
 			// Only display if the link is defined
 			if (!empty($header_cta) && !empty($header_cta['url'])) :
 				$link_url = $header_cta['url'];
-				$link_title = $header_cta['title'] ?? 'Contact Us';
+				$link_title = $header_cta['title'] ?? __('Contact Us', 'viezo');
 				$link_target = $header_cta['target'] ? $header_cta['target'] : '_self';
 			?>
             <div class="header-cta hidden tablet-landscape:block order-4">

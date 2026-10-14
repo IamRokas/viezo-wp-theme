@@ -305,6 +305,35 @@ function vzo__get_the_excerpt( $args = [] ) {
 
 
 
+/**
+ * Lucide chevron-left SVG (stroke follows currentColor).
+ *
+ * @param string $extra_class Optional classes for the svg element.
+ * @return string
+ */
+function vzo__lucide_chevron_left( $extra_class = '' ) {
+	$class = trim( 'lucide lucide-chevron-left inline-block shrink-0 ' . $extra_class );
+
+	return sprintf(
+		'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="%s" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>',
+		esc_attr( $class )
+	);
+}
+
+/**
+ * Lucide chevron-right SVG (stroke follows currentColor).
+ *
+ * @param string $extra_class Optional classes for the svg element.
+ * @return string
+ */
+function vzo__lucide_chevron_right( $extra_class = '' ) {
+	$class = trim( 'lucide lucide-chevron-right inline-block shrink-0 ' . $extra_class );
+
+	return sprintf(
+		'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="%s" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>',
+		esc_attr( $class )
+	);
+}
 
 /**
  * Displays numeric pagination on archive pages.
@@ -401,4 +430,29 @@ function vzo__display_comments() {
 	if ( comments_open() || get_comments_number() ) {
 		comments_template();
 	}
+}
+
+/**
+ * Get an ACF field that is shared across languages.
+ *
+ * Returns the value from the current post, falling back to its default-language
+ * (Polylang) translation when empty. Edit shared data once on the English page.
+ *
+ * @param string   $name    Field key (preferred, e.g. 'field_…') or name.
+ * @param int|null $post_id Post ID. Defaults to the current post.
+ * @return mixed
+ */
+function vzo__get_shared_field( $name, $post_id = null ) {
+	$post_id = $post_id ?: get_the_ID();
+	$value   = get_field( $name, $post_id );
+
+	if ( empty( $value ) && function_exists( 'pll_get_post' ) && function_exists( 'pll_default_language' ) ) {
+		$source_id = pll_get_post( $post_id, pll_default_language() );
+
+		if ( $source_id && $source_id !== $post_id ) {
+			$value = get_field( $name, $source_id );
+		}
+	}
+
+	return $value;
 }

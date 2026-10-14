@@ -1,0 +1,753 @@
+//--------------------------------------------------------------
+// Pricing setup builder (partials/setup-builder.php)
+// One card: questions → result → lead form.
+//--------------------------------------------------------------
+$setup-line: #e6e6e6;
+$setup-muted: #8a8a8a;
+$setup-accent: #2a6278; // Viezo "Mėlyna", rgb(42, 98, 120).
+$setup-accent-hover: #1f4a5b;
+$setup-tint: rgba($setup-accent, 0.08);
+
+.setup-builder {
+	@apply bg-light-grey text-darkest-grey py-24 md:py-40 desktop:py-80;
+	scroll-margin-top: 80px;
+
+	[hidden] {
+		display: none !important;
+	}
+
+	// OSP-DIN has no proper tilde.
+	.setup-approx {
+		@apply font-hiragino-sans;
+		font-size: 0.8em;
+	}
+
+	&__card {
+		@apply bg-white mx-auto px-16 py-20 md:px-40 md:py-32 desktop:px-56 desktop:py-40;
+		max-width: 960px;
+		border: 1px solid $setup-line;
+		scroll-margin-top: 80px;
+	}
+
+	// Head: eyebrow + step counter, full-width progress bar underneath
+	&__head {
+		@apply flex flex-wrap items-baseline justify-between mb-24 md:mb-32 desktop:mb-40;
+		gap: 12px 24px;
+	}
+
+	&__eyebrow {
+		@apply font-osp-din uppercase;
+		font-size: 13px;
+		letter-spacing: 2.5px;
+		color: $setup-muted;
+	}
+
+	&__progress {
+		@apply flex w-full;
+		order: 3;
+		gap: 6px;
+
+		span {
+			flex: 1;
+			height: 4px;
+			background: $setup-line;
+			transition: background-color 300ms ease;
+
+			&.is-done {
+				background-color: $setup-accent;
+			}
+		}
+	}
+
+	&__counter {
+		@apply text-right;
+		font-size: 14px;
+		color: $setup-muted;
+		white-space: nowrap;
+	}
+
+	// Steps
+	&__questions {
+		@apply m-0;
+	}
+
+	&__step {
+		@apply m-0 p-0 border-0 min-w-0;
+		outline: none;
+		animation: setup-step-in 300ms ease both;
+	}
+
+	&__title {
+		@apply block w-full p-0 font-osp-din uppercase text-black mb-8;
+		font-size: 1.375rem;
+		line-height: 1.15;
+		letter-spacing: 0.5px;
+		text-wrap: balance;
+
+		@screen md {
+			font-size: 1.625rem;
+		}
+
+		@screen desktop {
+			font-size: 2rem;
+		}
+	}
+
+	&__subtitle {
+		@apply mb-20 md:mb-24 desktop:mb-32;
+		font-size: 15px;
+		line-height: 1.45;
+		color: $setup-muted;
+	}
+
+	&__options {
+		@apply grid grid-cols-2 md:grid-cols-3;
+		gap: 8px;
+
+		@screen md {
+			gap: 12px;
+		}
+
+		@screen desktop {
+			gap: 16px;
+		}
+	}
+
+	&__note {
+		@apply flex items-start mt-32 mb-0 px-16 py-12;
+		gap: 12px;
+		font-size: 14px;
+		line-height: 1.5;
+		background: $setup-tint;
+
+		.setup-icon {
+			@apply flex-shrink-0;
+			color: $setup-accent;
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	// Nav
+	&__nav {
+		@apply flex items-center justify-between mt-24 md:mt-32 desktop:mt-40;
+		gap: 16px;
+	}
+
+	&__back {
+		@apply flex items-center p-0 bg-transparent border-0 cursor-pointer text-darkest-grey;
+		gap: 8px;
+		font-size: 16px;
+
+		&:hover,
+		&:focus-visible {
+			color: $setup-accent;
+		}
+	}
+
+	[data-setup-next] {
+		@apply ml-auto;
+	}
+
+	// The result/offer steps have their own CTAs; keep "Back" on the left.
+	&[data-step="result"] &__nav,
+	&[data-step="offer"] &__nav {
+		@apply mt-24;
+	}
+
+	&.is-submitted {
+		.setup-offer__privacy,
+		.setup-builder__nav {
+			display: none;
+		}
+	}
+}
+
+@keyframes setup-step-in {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.setup-builder__step {
+		animation: none;
+	}
+}
+
+// Buttons
+.setup-button {
+	@apply inline-flex items-center justify-center text-white border-0 cursor-pointer;
+	background-color: $setup-accent;
+	gap: 10px;
+	padding: 14px 24px 13px;
+	transition: background-color 200ms ease;
+
+	&:hover,
+	&:focus-visible {
+		background: $setup-accent-hover;
+	}
+
+	&[disabled] {
+		@apply cursor-not-allowed;
+		background: $setup-line;
+		color: $setup-muted;
+	}
+
+	&--light {
+		@apply bg-white text-dark-grey;
+
+		&:hover,
+		&:focus-visible {
+			@apply bg-light-grey text-dark-grey;
+		}
+	}
+}
+
+// Option cards
+.setup-option {
+	@apply relative block cursor-pointer;
+
+	&__input {
+		@apply absolute opacity-0;
+		width: 1px;
+		height: 1px;
+	}
+
+	&__box {
+		@apply relative flex flex-col items-center justify-center text-center h-full px-8 py-16 md:px-12 md:py-20 bg-white;
+		gap: 10px;
+		min-height: 104px;
+		border: 1px solid $setup-line;
+		transition: border-color 200ms ease, background-color 200ms ease;
+
+		@screen desktop {
+			min-height: 144px;
+		}
+	}
+
+	&__icon {
+		@apply text-darkest-grey;
+		width: 30px;
+		height: 30px;
+
+		@screen md {
+			width: 36px;
+			height: 36px;
+		}
+
+		transition: color 200ms ease;
+	}
+
+	&__label {
+		font-size: 14px;
+		line-height: 1.3;
+
+		@screen md {
+			font-size: 15px;
+		}
+	}
+
+	&__check {
+		@apply absolute rounded-full;
+		background-color: $setup-accent;
+		top: 8px;
+		right: 8px;
+		width: 22px;
+		height: 22px;
+		opacity: 0;
+		transform: scale(0.6);
+		transition: opacity 200ms ease, transform 200ms ease;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 8px;
+			top: 4px;
+			width: 6px;
+			height: 11px;
+			border: solid #fff;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+		}
+	}
+
+	&:hover &__box {
+		@apply border-darkest-grey;
+	}
+
+	&__input:focus-visible + &__box {
+		outline: 2px solid $setup-accent;
+		outline-offset: 2px;
+	}
+
+	&__input:checked + &__box {
+		border-color: $setup-accent;
+		background: $setup-tint;
+
+		.setup-option__icon {
+			color: $setup-accent;
+		}
+
+		.setup-option__check {
+			opacity: 1;
+			transform: none;
+		}
+	}
+}
+
+// Machines slider
+.setup-range {
+	@apply text-center;
+
+	&__value {
+		@apply block font-osp-din text-black;
+		font-size: 3.25rem;
+		line-height: 1;
+		font-variant-numeric: tabular-nums;
+
+		@screen md {
+			font-size: 4rem;
+		}
+	}
+
+	&__unit {
+		@apply block mt-8 mb-32;
+		font-size: 16px;
+		color: $setup-muted;
+	}
+
+	&__input {
+		--fill: 0%;
+		@apply block w-full m-0 p-0 cursor-pointer bg-transparent;
+		appearance: none;
+		height: 28px;
+		border-radius: 0 !important;
+		box-shadow: none !important;
+
+		&::-webkit-slider-runnable-track {
+			height: 6px;
+			border-radius: 9999px;
+			background: linear-gradient(to right, $setup-accent var(--fill), $setup-line var(--fill));
+		}
+
+		&::-moz-range-track {
+			height: 6px;
+			border-radius: 9999px;
+			background: $setup-line;
+		}
+
+		&::-moz-range-progress {
+			height: 6px;
+			border-radius: 9999px;
+			background: $setup-accent;
+		}
+
+		&::-webkit-slider-thumb {
+			appearance: none;
+			width: 28px;
+			height: 28px;
+			margin-top: -11px;
+			border-radius: 9999px;
+			background: $setup-accent;
+			border: 4px solid #fff;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+		}
+
+		&::-moz-range-thumb {
+			width: 20px;
+			height: 20px;
+			border-radius: 9999px;
+			background: $setup-accent;
+			border: 4px solid #fff;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+		}
+
+		&:focus-visible {
+			outline: 2px solid $setup-accent;
+			outline-offset: 4px;
+		}
+	}
+
+	// Labels sit exactly under the stops (thumb centre at 14px from each end).
+	&__ticks {
+		@apply relative flex justify-between mt-12;
+		margin-left: 14px;
+		margin-right: 14px;
+		height: 20px;
+		font-size: 14px;
+		color: $setup-muted;
+
+		span {
+			width: 0;
+			display: flex;
+			justify-content: center;
+			white-space: nowrap;
+		}
+	}
+}
+
+// Result
+.setup-result {
+	&__stats {
+		@apply grid grid-cols-2 m-0 mb-24;
+		gap: 12px;
+
+		@screen desktop {
+			gap: 16px;
+		}
+	}
+
+	&__stat {
+		@apply grid items-center px-16 py-16 md:px-24 md:py-20;
+		grid-template-columns: 1fr;
+		row-gap: 4px;
+		background: $setup-tint;
+
+		@screen md {
+			grid-template-columns: auto 1fr;
+			column-gap: 16px;
+			row-gap: 0;
+		}
+
+		.setup-icon {
+			@apply mb-8 md:mb-0;
+			color: $setup-accent;
+			width: 28px;
+			height: 28px;
+
+			@screen md {
+				grid-row: span 2;
+				width: 36px;
+				height: 36px;
+			}
+		}
+
+		dd {
+			@apply m-0 font-osp-din text-black;
+			font-size: 2rem;
+			line-height: 1;
+			font-variant-numeric: tabular-nums;
+
+			@screen md {
+				font-size: 2.5rem;
+			}
+		}
+
+		dt {
+			font-size: 14px;
+			color: $setup-muted;
+		}
+	}
+
+	&__cta {
+		@apply grid items-center mt-24 px-20 py-24 md:px-32 bg-dark-grey text-white;
+		grid-template-columns: auto 1fr;
+		gap: 16px 20px;
+
+		@screen md {
+			grid-template-columns: auto 1fr auto;
+		}
+
+		h3 {
+			@apply font-osp-din uppercase text-white;
+			margin-bottom: 4px;
+			font-size: 1.25rem;
+			letter-spacing: 0.5px;
+		}
+
+		p {
+			@apply m-0;
+			font-size: 15px;
+			opacity: 0.75;
+		}
+
+		.setup-button {
+			grid-column: 1 / -1;
+
+			@screen md {
+				grid-column: auto;
+			}
+		}
+	}
+
+	&__cta-icon {
+		color: $setup-accent;
+		width: 32px;
+		height: 32px;
+	}
+}
+
+// Matched case study
+.setup-case {
+	@apply grid overflow-hidden;
+	border: 1px solid $setup-line;
+
+	@screen md {
+		grid-template-columns: 2fr 3fr;
+	}
+
+	&__media {
+		@apply relative block bg-dark-grey;
+		min-height: 200px;
+
+		img {
+			@apply absolute w-full h-full object-cover;
+			inset: 0;
+		}
+	}
+
+	&__tag {
+		@apply absolute font-osp-din uppercase bg-white text-black px-12 py-8;
+		top: 16px;
+		left: 16px;
+		font-size: 13px;
+		letter-spacing: 1.5px;
+		line-height: 1;
+	}
+
+	&__body {
+		@apply px-20 py-24 md:px-32;
+	}
+
+	&__eyebrow {
+		@apply block font-osp-din uppercase mb-8;
+		color: $setup-accent;
+		font-size: 13px;
+		letter-spacing: 2px;
+	}
+
+	&__title {
+		@apply font-osp-din uppercase text-black mb-16;
+		font-size: 1.5rem;
+		letter-spacing: 0.5px;
+	}
+
+	&__facts {
+		@apply m-0 mb-20;
+		font-size: 15px;
+		line-height: 1.45;
+
+		div {
+			@apply grid mb-12;
+			grid-template-columns: 88px 1fr;
+			gap: 12px;
+		}
+
+		dt {
+			@apply font-medium text-black;
+		}
+
+		dd {
+			@apply m-0;
+		}
+	}
+
+	.setup-case__more {
+		@apply font-osp-din uppercase;
+		color: $setup-accent;
+		font-size: 15px;
+		letter-spacing: 1px;
+
+		&:hover {
+			@apply text-dark-grey;
+		}
+	}
+}
+
+// Offer (form + summary)
+.setup-offer {
+	@apply grid;
+	gap: 32px;
+
+	@screen desktop {
+		grid-template-columns: 7fr 5fr;
+		gap: 48px;
+	}
+
+	.setup-builder__eyebrow {
+		@apply block mb-8;
+	}
+
+	&__missing {
+		@apply px-16 py-12 bg-light-grey;
+		font-size: 14px;
+	}
+
+	&__privacy {
+		@apply flex items-start mt-16 mb-0;
+		gap: 10px;
+		font-size: 14px;
+		color: $setup-muted;
+
+		.setup-icon {
+			@apply flex-shrink-0;
+			width: 18px;
+			height: 18px;
+		}
+	}
+
+	// WPForms, restyled to the project look.
+	.wpforms-container {
+		margin: 0 !important;
+
+		.wpforms-field {
+			padding: 0 0 16px !important;
+		}
+
+		.wpforms-field-label {
+			@apply text-darkest-grey font-normal mb-8;
+			font-size: 15px;
+		}
+
+		.wpforms-required-label {
+			color: $setup-accent;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"] {
+			@apply w-full bg-white text-darkest-grey;
+			max-width: 100% !important;
+			height: 48px !important;
+			padding: 0 16px !important;
+			font-size: 16px !important;
+			border: 1px solid $setup-line !important;
+			border-radius: 0 !important;
+			box-shadow: none !important;
+
+			&:focus {
+				border-color: $setup-accent !important;
+				outline: none;
+			}
+		}
+
+		.wpforms-submit-container {
+			padding-top: 8px !important;
+		}
+
+		button.wpforms-submit {
+			@apply w-full font-osp-din uppercase text-white;
+			height: auto !important;
+			padding: 16px 24px 15px !important;
+			font-size: 18px !important;
+			letter-spacing: 1px;
+			line-height: 1 !important;
+			border: 0 !important;
+			border-radius: 0 !important;
+			background: $setup-accent !important;
+
+			&:hover,
+			&:focus {
+				background: $setup-accent-hover !important;
+			}
+		}
+
+		.wpforms-confirmation-container-full {
+			@apply m-0 px-20 py-24 text-darkest-grey;
+			background: $setup-tint !important;
+			border: 1px solid $setup-accent !important;
+			font-size: 16px;
+		}
+	}
+}
+
+.setup-summary {
+	@apply bg-light-grey px-20 py-24 md:px-28;
+	align-self: start;
+
+	&__head {
+		@apply flex items-center justify-between mb-20;
+		gap: 12px;
+	}
+
+	&__title {
+		@apply font-osp-din uppercase text-black m-0;
+		font-size: 1.25rem;
+		letter-spacing: 0.5px;
+	}
+
+	&__edit {
+		@apply flex items-center p-0 bg-transparent border-0 cursor-pointer;
+		color: $setup-accent;
+		gap: 6px;
+		font-size: 15px;
+
+		.setup-icon {
+			width: 16px;
+			height: 16px;
+		}
+
+		&:hover {
+			@apply text-dark-grey;
+		}
+	}
+
+	&__list {
+		@apply m-0;
+	}
+
+	&__item {
+		@apply grid mb-16;
+		grid-template-columns: 28px 1fr;
+		column-gap: 14px;
+
+		.setup-icon {
+			color: $setup-accent;
+			grid-row: span 2;
+			width: 24px;
+			height: 24px;
+			margin-top: 2px;
+		}
+
+		dt {
+			font-size: 13px;
+			color: $setup-muted;
+		}
+
+		dd {
+			@apply m-0 text-black;
+			font-size: 15px;
+			line-height: 1.4;
+		}
+	}
+
+	&__case {
+		@apply grid items-center pt-20 text-darkest-grey;
+		margin-top: 4px;
+		grid-template-columns: 88px 1fr;
+		gap: 16px;
+		border-top: 1px solid $setup-line;
+
+		img {
+			@apply w-full object-cover bg-dark-grey;
+			aspect-ratio: 1;
+		}
+	}
+
+	&__case-label {
+		@apply block;
+		font-size: 13px;
+		color: $setup-muted;
+	}
+
+	&__case-title {
+		@apply block font-osp-din uppercase text-black;
+		margin: 4px 0;
+		font-size: 1.05rem;
+		line-height: 1.2;
+	}
+
+	&__case-more {
+		@apply block font-osp-din uppercase;
+		color: $setup-accent;
+		font-size: 14px;
+		letter-spacing: 1px;
+	}
+}

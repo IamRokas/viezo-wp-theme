@@ -1,0 +1,690 @@
+//--------------------------------------------------------------
+// Live Sonora network (partials/live-sonora.php)
+// Text left, live panel right, machines row underneath.
+//--------------------------------------------------------------
+$live-red: #e5484d;
+$live-blue: #2a6278; // Viezo "Mėlyna", rgb(42, 98, 120): the "operating normally" colour.
+$live-line: #e6e6e6;
+$live-muted: #8a8a8a;
+
+// Pulsing status dot. Red = live / defects, blue = monitoring point.
+.live-dot {
+	position: relative;
+	display: inline-block;
+	flex-shrink: 0;
+	width: 7px;
+	height: 7px;
+	border-radius: 9999px;
+	background: $live-red;
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: -4px;
+		border-radius: inherit;
+		border: 1px solid rgba($live-red, 0.4);
+		animation: live-pulse 2.6s ease-out infinite;
+	}
+
+}
+
+@keyframes live-pulse {
+	0% {
+		transform: scale(0.6);
+		opacity: 1;
+	}
+
+	80%,
+	100% {
+		transform: scale(1.7);
+		opacity: 0;
+	}
+}
+
+.live-sonora {
+	@apply bg-white text-darkest-grey py-56 desktop:py-80;
+
+	&__top {
+		@apply grid grid-cols-1 items-start;
+		gap: 8px 64px;
+		margin-bottom: 40px;
+
+		@screen desktop {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	// Intro
+	&__eyebrow,
+	&__label {
+		@apply font-osp-din uppercase;
+		font-size: 13px;
+		letter-spacing: 2.5px;
+		color: $live-muted;
+	}
+
+	&__eyebrow {
+		@apply flex items-center mb-16;
+		gap: 10px;
+	}
+
+	&__title {
+		text-wrap: balance;
+	}
+
+	&__lead {
+		@apply text-base mb-20;
+		line-height: 1.65;
+		max-width: 520px;
+		text-wrap: pretty;
+	}
+
+	&__actions {
+		@apply flex flex-wrap;
+		gap: 12px;
+	}
+
+	// Machine scene
+	&__scene {
+		border: 1px solid $live-line;
+		background: $live-line; // Shows beside photos narrower than the container.
+	}
+
+	// Shrinks to the photo's width (tall photos are capped at 80vh), so the point and card
+	// layers always cover exactly the photo and % positions stay exact.
+	&__scene-media {
+		position: relative;
+		width: fit-content;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	&__scene-frame {
+		position: relative;
+		overflow: hidden;
+		background: #2a2f33;
+	}
+
+	&__scene-image {
+		display: block;
+		// Natural aspect ratio (no crop): point positions are % of the photo itself,
+		// so they stay on the machines whatever photo is uploaded.
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		max-height: 80vh;
+		transform: scale(1.04);
+		transform-origin: center;
+		filter: saturate(0.85) brightness(0.92);
+		transition: transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1), filter 1.6s;
+
+		.is-live & {
+			transform: scale(1);
+			filter: saturate(0.9) brightness(0.97);
+		}
+	}
+
+	&__badge {
+		@apply absolute flex items-center text-white;
+		top: 16px;
+		left: 16px;
+		gap: 10px;
+		padding: 8px 14px;
+		background: rgba(17, 17, 17, 0.72);
+		backdrop-filter: blur(6px);
+
+		@screen md {
+			top: 24px;
+			left: 24px;
+		}
+	}
+
+	&__badge-title {
+		@apply font-osp-din uppercase;
+		font-size: 13px;
+		letter-spacing: 1.5px;
+	}
+
+	&__badge-status {
+		@apply hidden md:inline;
+		font-size: 12px;
+		opacity: 0.7;
+	}
+
+	// Machines row
+	&__machines {
+		margin-top: 48px;
+
+		@screen desktop {
+			margin-top: 56px;
+		}
+	}
+
+	&__machines-head {
+		@apply flex flex-wrap items-baseline mb-16;
+		gap: 4px 16px;
+	}
+
+	&__machines-sub {
+		@apply hidden md:inline;
+		font-size: 13px;
+		color: $live-muted;
+	}
+
+	&__more {
+		@apply no-underline whitespace-nowrap ml-auto;
+		font-size: 13px;
+		color: $live-muted;
+		transition: color 0.2s;
+
+		&:hover {
+			color: $live-blue;
+		}
+	}
+
+	&__machine-list {
+		@apply grid grid-cols-2 desktop:grid-cols-4 list-none m-0 p-0;
+		gap: 12px;
+	}
+
+	// Reset the global `.site-main ul li` bullet square + spacing (needs higher specificity).
+	& ul#{&}__machine-list > li {
+		margin: 0;
+
+		&::before {
+			content: none;
+		}
+	}
+
+	&__machine {
+		@apply relative flex flex-col items-start md:flex-row md:items-center h-full no-underline text-darkest-grey;
+		gap: 12px 16px;
+		padding: 14px 16px;
+		border: 1px solid $live-line;
+		transition: border-color 0.2s;
+
+		&[href]:hover {
+			border-color: #bcbcbc;
+		}
+	}
+
+	&__machine-icon {
+		flex-shrink: 0;
+		width: 48px;
+		height: 30px;
+		color: #2a2a2a;
+	}
+
+	&__machine-text {
+		@apply flex flex-col min-w-0;
+	}
+
+	&__machine-name {
+		@apply text-black font-normal;
+		font-size: 15px;
+		line-height: 1.3;
+	}
+
+	&__machine-type {
+		margin-top: 2px;
+		font-size: 12px;
+		color: $live-muted;
+	}
+
+	&__machine-point {
+		background: $live-blue;
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		width: 5px;
+		height: 5px;
+		border-radius: 9999px;
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: -3px;
+			border-radius: inherit;
+			border: 1px solid rgba($live-blue, 0.5);
+			animation: live-pulse 3.2s ease-out infinite;
+		}
+	}
+
+	// Stagger the monitoring points so they don't pulse in sync.
+	li:nth-child(2) &__machine-point::after {
+		animation-delay: 0.8s;
+	}
+
+	li:nth-child(3) &__machine-point::after {
+		animation-delay: 1.6s;
+	}
+
+	li:nth-child(4) &__machine-point::after {
+		animation-delay: 2.4s;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.live-dot::after,
+		&__machine-point::after {
+			animation: none;
+		}
+	}
+}
+
+//--------------------------------------------------------------
+// Machine scene: measuring points + cards
+// States (set by JS on the point and its card): .is-open, .is-warning, .is-fault.
+//--------------------------------------------------------------
+$scene-ok: $live-blue;
+$scene-card-ok: #46af87; // "Operating normally" text in the cards.
+$scene-warn: #f5a524;
+$scene-fault: #e5484d;
+$scene-card-bg: rgba(17, 19, 21, 0.86);
+
+@keyframes scene-blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.35;
+	}
+}
+
+@keyframes scene-ring {
+	0% {
+		transform: scale(0.5);
+		opacity: 0.9;
+	}
+
+	100% {
+		transform: scale(2.4);
+		opacity: 0;
+	}
+}
+
+.scene-point {
+	--c: #{$scene-ok};
+	position: absolute;
+	left: var(--x);
+	top: var(--y);
+	z-index: 2;
+	width: 28px;
+	height: 28px;
+	margin: -14px 0 0 -14px;
+	padding: 0;
+	border: 0;
+	border-radius: 9999px;
+	background: transparent;
+	cursor: pointer;
+	opacity: 0;
+	transform: scale(0.4);
+	transition: opacity 0.5s, transform 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+	transition-delay: calc(0.5s + var(--i) * 0.3s);
+
+	// Core dot.
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 7px;
+		border-radius: inherit;
+		background: var(--c);
+		box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9), 0 0 16px 2px var(--c);
+		transition: background-color 0.6s, box-shadow 0.6s;
+	}
+
+	// Pulse ring.
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 7px;
+		border-radius: inherit;
+		border: 2px solid var(--c);
+		animation: scene-ring 2.4s ease-out infinite;
+		animation-delay: calc(var(--i) * 0.8s);
+	}
+
+	.is-live & {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	&.is-warning {
+		--c: #{$scene-warn};
+	}
+
+	&.is-fault {
+		--c: #{$scene-fault};
+
+		&::before {
+			animation: scene-blink 0.9s ease-in-out infinite;
+		}
+
+		&::after {
+			animation-duration: 1.2s;
+		}
+	}
+
+	&:focus-visible {
+		outline: 2px solid #fff;
+		outline-offset: 2px;
+	}
+
+	&__num {
+		@apply font-osp-din desktop:hidden;
+		position: absolute;
+		left: 26px;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 1px 6px;
+		font-size: 12px;
+		line-height: 1.4;
+		color: #fff;
+		background: $scene-card-bg;
+	}
+}
+
+.live-sonora__scene-cards {
+	display: grid;
+	gap: 1px;
+	background: $live-line;
+
+	@screen desktop {
+		position: absolute;
+		inset: 0;
+		z-index: 3;
+		display: block;
+		background: none;
+		pointer-events: none;
+	}
+}
+
+.scene-card {
+	// Green reads better than the blue as small text on the dark card.
+	--c: #{$scene-card-ok};
+	color: #fff;
+	background: #1b1e21;
+
+	@screen desktop {
+		position: absolute;
+		// Sits above its point (like a label), so cards never cover each other.
+		bottom: calc(100% - var(--y) + 30px);
+		left: max(8px, calc(var(--x) - 34px));
+		width: 220px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+		pointer-events: auto;
+		opacity: 0;
+		transform: translateY(6px);
+		transition: opacity 0.5s, transform 0.5s, border-color 0.6s, box-shadow 0.6s;
+		transition-delay: calc(0.9s + var(--i) * 0.3s);
+
+		// Leader line from the card down to its point.
+		&::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 33px;
+			width: 1px;
+			height: 22px;
+			background: rgba(255, 255, 255, 0.75);
+		}
+
+		// Near the right edge: align the card's right side with the point instead.
+		&--left {
+			left: auto;
+			right: max(8px, calc(100% - var(--x) - 34px));
+
+			&::after {
+				left: auto;
+				right: 33px;
+			}
+		}
+
+		// Dot near the top of the photo: the card hangs below it.
+		&--below {
+			top: calc(var(--y) + 30px);
+			bottom: auto;
+			transform: translateY(-6px);
+
+			&::after {
+				top: auto;
+				bottom: 100%;
+			}
+		}
+
+		.is-live & {
+			opacity: 1;
+			transform: none;
+		}
+
+		&.is-open {
+			z-index: 2;
+		}
+
+	}
+
+	&.is-warning {
+		--c: #{$scene-warn};
+	}
+
+	&.is-fault {
+		--c: #{$scene-fault};
+
+		@screen desktop {
+			border-color: rgba($scene-fault, 0.7);
+			box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba($scene-fault, 0.4), 0 0 28px rgba($scene-fault, 0.25);
+		}
+	}
+
+	&__head {
+		@apply flex items-center w-full text-left text-white;
+		gap: 10px;
+		padding: 10px 12px;
+		background: none;
+		border: 0;
+		cursor: pointer;
+	}
+
+	&__num {
+		@apply flex items-center justify-center font-osp-din flex-shrink-0;
+		width: 20px;
+		height: 20px;
+		font-size: 12px;
+		color: #111;
+		background: #fff;
+		border-radius: 9999px;
+	}
+
+	&__title {
+		@apply flex flex-col flex-1 min-w-0;
+	}
+
+	&__name {
+		font-size: 14px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: 400;
+		line-height: 1.25;
+	}
+
+	&__status {
+		@apply inline-flex items-center;
+		gap: 6px;
+		margin-top: 2px;
+		font-size: 11px;
+		white-space: nowrap;
+		color: var(--c);
+		transition: color 0.6s;
+
+		&::before {
+			content: "";
+			width: 7px;
+			height: 7px;
+			border-radius: 9999px;
+			background: currentColor;
+		}
+
+		.is-fault &::before {
+			animation: scene-blink 0.9s ease-in-out infinite;
+		}
+	}
+
+	&__status-fault,
+	&.is-fault &__status-ok {
+		display: none;
+	}
+
+	&.is-fault &__status-fault {
+		display: inline;
+	}
+
+	&__chevron {
+		width: 8px;
+		height: 8px;
+		margin-right: 2px;
+		border-right: 1.5px solid currentColor;
+		border-bottom: 1.5px solid currentColor;
+		opacity: 0.6;
+		transform: rotate(-45deg);
+		transition: transform 0.3s;
+
+		.is-open & {
+			transform: rotate(45deg);
+		}
+	}
+
+	// Collapsible body.
+	&__body {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+		> * {
+			min-height: 0;
+			overflow: hidden;
+		}
+
+		.is-open & {
+			grid-template-rows: 1fr;
+		}
+	}
+
+	// Horizontal padding only: vertical padding would stay visible while collapsed.
+	&__body-inner {
+		padding: 0 12px;
+
+		> :last-child {
+			margin-bottom: 14px;
+		}
+	}
+
+	&__rows {
+		margin: 0;
+		padding-top: 10px;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	// Label left, value right, always on one line (long labels are truncated).
+	&__row {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: baseline;
+		gap: 10px;
+		padding: 3px 0;
+		font-size: 12px;
+		line-height: 1.4;
+
+		dt {
+			min-width: 0;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			opacity: 0.7;
+		}
+
+		dd {
+			margin: 0;
+			font-variant-numeric: tabular-nums;
+			white-space: nowrap;
+			transition: color 0.6s;
+		}
+	}
+
+	&.is-fault &__row--alert dd {
+		color: $scene-fault;
+	}
+
+	&__after,
+	&.is-fault &__before {
+		display: none;
+	}
+
+	&.is-fault &__after {
+		display: inline;
+	}
+
+	&__issue {
+		@apply flex items-center;
+		gap: 12px;
+		margin-top: 12px;
+		padding-top: 10px;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		font-size: 13px;
+		line-height: 1.35;
+
+		svg {
+			flex-shrink: 0;
+			width: 28px;
+			height: 20px;
+			color: $scene-fault;
+		}
+	}
+
+	&__issue-label {
+		display: block;
+		font-size: 11px;
+		opacity: 0.7;
+	}
+
+	&__link {
+		@apply inline-block no-underline;
+		margin-top: 10px;
+		font-size: 13px;
+		color: $scene-fault;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	// Issue + link only appear once the fault is detected.
+	&__issue,
+	&__link {
+		display: none;
+	}
+
+	&.is-fault &__issue {
+		display: flex;
+	}
+
+	&.is-fault &__link {
+		display: inline-block;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scene-point,
+	.scene-card,
+	.live-sonora__scene-image {
+		transition: none;
+	}
+
+	.scene-point::after,
+	.scene-point.is-fault::before,
+	.scene-card .is-fault .scene-card__status::before {
+		animation: none;
+	}
+}

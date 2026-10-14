@@ -14,6 +14,8 @@ $blocks = get_field('blocks');
 
 	<?php get_template_part('partials/page-header'); ?>
 
+	<?php get_template_part('partials/live-sonora'); ?>
+
 	<div class="page-content">
 		<?php foreach ($blocks as $block): ?>
 			<?php echo get_template_part('partials/blocks/' . $block['acf_fc_layout'], null, ['block' => $block]); ?>

@@ -86,15 +86,19 @@
 		}
 	}
 
-	#map {
-		margin-left: -46px;
-		bottom: 5px;
-		margin-bottom: -43px;
-		width: calc(100% + 90px);
-		position: relative;
-		overflow: hidden;
-		height: 65%;
-		min-height: 150px;
+	// Map under "Our details": edge to edge, fills the rest of the column (as tall as the form).
+	.contacts-map {
+		@apply relative flex-1 border-t border-white;
+		min-height: 280px;
+
+		@screen desktop {
+			min-height: 320px;
+		}
+
+		#map {
+			position: absolute;
+			inset: 0;
+		}
 	}
 }
 
@@ -144,6 +148,85 @@
 	}
 }
 
-.page-template-contacts {
+.page-template-contacts:not(.mce-content-body) {
 	@apply bg-dark-grey;
+}
+
+// Distributors & OEM partners (partials/contact-partners.php).
+// Viezo "Mėlyna" rgb(42, 98, 120); the light tint keeps small text readable on the dark page.
+$partner-blue: #2a6278;
+$partner-blue-light: #6fa3b8;
+.contact-partners {
+	&__title {
+		@apply text-white;
+	}
+}
+
+.partner-card {
+	@apply flex flex-col h-full overflow-hidden rounded-xl border border-white/20 text-white no-underline;
+	transition: border-color 200ms ease, transform 200ms ease;
+
+	&__logo {
+		@apply flex items-center justify-center bg-white px-24;
+		height: 128px;
+
+		img {
+			@apply w-auto h-auto object-contain;
+			max-width: 100%;
+			max-height: 72px;
+		}
+	}
+
+	&__logo-text {
+		@apply font-osp-din uppercase text-lg text-darkest-grey text-center;
+	}
+
+	&__body {
+		@apply flex flex-col flex-1 p-24;
+	}
+
+	&__region {
+		@apply font-osp-din uppercase text-xs tracking-wider mb-8;
+		color: $partner-blue-light;
+	}
+
+	&__company {
+		@apply font-osp-din uppercase text-lg text-white mb-16;
+		line-height: 1.2;
+	}
+
+	&__link {
+		@apply mt-auto text-xs text-white/60;
+		transition: color 200ms ease;
+	}
+
+	&[href]:hover {
+		border-color: $partner-blue;
+		transform: translateY(-2px);
+
+		.partner-card__link {
+			color: $partner-blue-light;
+		}
+	}
+
+	// Wide layout for OEM partners: logo left, details right.
+	&--featured {
+		@screen md {
+			@apply flex-row;
+
+			.partner-card__logo {
+				@apply h-auto;
+				flex: 0 0 33.333%;
+				min-height: 160px;
+			}
+
+			.partner-card__body {
+				@apply justify-center px-40;
+			}
+
+			.partner-card__company {
+				@apply text-xl;
+			}
+		}
+	}
 }

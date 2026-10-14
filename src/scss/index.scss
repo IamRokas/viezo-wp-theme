@@ -6,7 +6,8 @@
 //----------------------------------------
 // Theme Styles.
 //----------------------------------------
-@import 'sprites.scss';
+@import 'sprites';
+@import 'global/_sprites-mixin.scss';
 @import 'global/_mixins.scss';
 
 @import 'template-tags/index.scss';
@@ -23,3 +24,4 @@
 @import 'pages/eu';
 @import 'pages/powertrack';
 @import 'pages/contacts';
+@import 'pages/setup-builder';

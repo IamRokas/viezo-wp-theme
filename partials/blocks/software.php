@@ -3,7 +3,7 @@ $title = $args['block']['left_side']['title'];
 $description = $args['block']['left_side']['description'];
 $button = $args['block']['left_side']['button'];
 // OLD: $image = get_template_directory_uri().'/build/images/powerail-software-1.png';
-$image = 'https://viezo.lt/wp-content/uploads/2023/06/exchange-of-data-with-whote.png';
+$image = content_url('/uploads/2023/06/exchange-of-data-with-whote.png');
 
 ?>
 

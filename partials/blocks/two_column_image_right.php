@@ -2,17 +2,21 @@
 
 /**
  * Two Columns Block Template
- * Supports two variants: regular-size and full-screen-size
+ * Supports variants: regular-size, full-screen-size, classic-two-col, wide-two-col
  */
 
-$title = $args['block']['data']['title'] ?? false;
-$text = $args['block']['data']['text'];
-$button = $args['block']['data']['button'] ?? false;
-$variant = $args['block']['data']['variant'];
-$counter = (isset($args['counter']) ? 'block-' . $args['counter'] : null);
+$title      = $args['block']['data']['title'] ?? false;
+$text       = $args['block']['data']['text'];
+$button     = $args['block']['data']['button'] ?? false;
+$variant    = $args['block']['data']['variant'];
+$counter    = (isset($args['counter']) ? 'block-' . $args['counter'] : null);
+$border_top = $args['block']['settings']['border_top'] ?? false;
 
 // Define classes based on variant
 $block_classes = "two-columns-block two-column-image-left {$variant} {$counter} ";
+if ($border_top) {
+	$block_classes .= ' border-t border-black';
+}
 $container_classes = "px-0 items-center desktop:grid desktop:gap-18 desktop:grid-cols-12 mx-auto ";
 $image_column_classes = "desktop:col-span-6 relative image-column desktop:py-0 relative ";
 $image_wrap_classes = "image-wrap relative ";
@@ -28,6 +32,12 @@ if ($variant === 'full-screen-size') {
 	$container_classes .= " container desktop:gap-64 ";
 	$image_wrap_classes .= " desktop:relative px-24 desktop:px-0 py-44 desktop:py-0";
 	$content_wrap_classes = "desktop:col-span-6 text-column px-24 desktop:px-0 py-44 desktop:py-140 text-left desktop:text-left";
+} elseif ($variant === 'wide-two-col') {
+	$block_classes .= "desktop:overflow-hidden relative";
+	$container_classes .= " big-container desktop:gap-64 ";
+	$image_column_classes .= "desktop:col-span-7";
+	$image_wrap_classes .= "  desktop:relative md:px-24 desktop:px-0 md:py-44 mb-24 md:mb-0";
+	$content_wrap_classes = "desktop:col-span-5 text-column desktop:px-0 py-44 desktop:py-140 text-left desktop:text-left";
 } else {
 	// regular-size variant
 	$container_classes .= " items-stretch big-container mx-auto ";
@@ -39,38 +49,38 @@ if ($variant === 'full-screen-size') {
 ?>
 
 <div class="<?= $block_classes; ?>">
-	<div class="<?= $container_classes; ?>">
-		<div class="<?= $content_wrap_classes ?>">
-			<?php if ($title): ?>
-				<h2 class="pb-20"><?= $title; ?></h2>
-			<?php endif; ?>
+    <div class="<?= $container_classes; ?>">
+        <div class="<?= $content_wrap_classes ?>">
+            <?php if ($title): ?>
+            <h2 class="pb-20"><?= $title; ?></h2>
+            <?php endif; ?>
 
-			<div class="text font-body-1">
-				<?= $text; ?>
-			</div>
+            <div class="text font-body-1">
+                <?= $text; ?>
+            </div>
 
-			<?php if (!empty($button)):
+            <?php if (!empty($button)):
 				$target = (!empty($button['target']) ? 'target="' . esc_attr($button['target']) . '"' : '');
 			?>
-				<a href="<?= esc_url($button['url']); ?>" class="button blue-transparent mt-32" <?= $target; ?>>
-					<?= esc_html($button['title']); ?>
-				</a>
-			<?php endif; ?>
-		</div>
-		<div class="<?= $image_column_classes; ?>">
-			<div class="<?= $image_wrap_classes; ?>">
-				<?php if (isset($args['block']['image']['type']) && $args['block']['image']['type'] == 'video'): ?>
-					<video autoplay muted loop playsinline
-						class="w-full h-full object-cover <?= ($variant === 'full-screen-size' ? 'desktop:h-screen' : ''); ?>">
-						<source src="<?= esc_url($args['block']['image']['url']); ?>" type="video/mp4">
-					</video>
-				<?php else: ?>
-					<?php
+            <a href="<?= esc_url($button['url']); ?>" class="button blue-transparent mt-32" <?= $target; ?>>
+                <?= esc_html($button['title']); ?>
+            </a>
+            <?php endif; ?>
+        </div>
+        <div class="<?= $image_column_classes; ?>">
+            <div class="<?= $image_wrap_classes; ?>">
+                <?php if (isset($args['block']['image']['type']) && $args['block']['image']['type'] == 'video'): ?>
+                <video autoplay muted loop playsinline
+                    class="w-full h-full object-cover <?= ($variant === 'full-screen-size' ? 'desktop:h-screen' : ''); ?>">
+                    <source src="<?= esc_url($args['block']['image']['url']); ?>" type="video/mp4">
+                </video>
+                <?php else: ?>
+                <?php
 					$img_classes = ($variant === 'full-screen-size') ? 'w-full h-full object-cover desktop:h-screen' : 'w-full h-full object-cover';
 					echo wp_get_attachment_image($args['block']['image']['ID'], 'full', false, ['class' => $img_classes]);
 					?>
-				<?php endif; ?>
-			</div>
-		</div>
-	</div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
 </div>

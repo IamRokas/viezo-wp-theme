@@ -6,3 +6,4 @@
  */
 
  import './powerrail';
+import './setup-builder';

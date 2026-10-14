@@ -22,10 +22,16 @@ function vzo__get_theme_include_files()
 		'inc/extras.php', // Custom functions that act independently of the theme templates.
 		'inc/hooks.php', // Load custom filters and hooks.
 		'inc/security.php', // WordPress hardening.
-		'inc/scaffolding.php', // Scaffolding.
 		'inc/scripts.php', // Load styles and scripts.
+		'inc/analytics.php', // Google Analytics 4 + Consent Mode.
 		'inc/template-tags.php', // Custom template tags for this theme.
-		'inc/calculator.php'
+		'inc/calculator.php', // Calculator form.
+		'inc/setup-builder.php', // Pricing setup builder funnel.
+		'inc/setup-builder-email.php', // Setup builder: confirmation email to the lead.
+		'inc/setup-builder-stats.php', // Setup builder: funnel events log + Tools → Setup builder stats.
+		'inc/acf.php', // ACF Local JSON (acf-json/).
+		'inc/live-sonora.php', // Home: Live Sonora machine scene + admin dot editor.
+		'inc/seeds.php', // Content seeds (Tools → Viezo seeds).
 	];
 }
 

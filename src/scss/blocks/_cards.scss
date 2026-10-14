@@ -1,0 +1,13 @@
+// Minimal cards block (page flexible content)
+.cards-block {
+	&__content {
+		a {
+			@apply text-primary-blue;
+
+			&:hover,
+			&:focus {
+				@apply text-button-hover-blue;
+			}
+		}
+	}
+}

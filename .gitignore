@@ -1,5 +1,5 @@
-node_modules
-vendor
 node_modules/
-composer-lock.json
-package-lock.json
+build/hot
+.DS_Store
+docs/seo-geo/**/*.zip
+docs/seo-geo/*.zip

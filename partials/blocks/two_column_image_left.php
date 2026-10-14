@@ -5,14 +5,18 @@
  * Supports two variants: regular-size and full-screen-size
  */
 
-$title = $args['block']['data']['title'] ?? false;
-$text = $args['block']['data']['text'];
-$button = $args['block']['data']['button'] ?? false;
-$variant = $args['block']['data']['variant'];
-$counter = (isset($args['counter']) ? 'block-' . $args['counter'] : null);
+$title      = $args['block']['data']['title'] ?? false;
+$text       = $args['block']['data']['text'];
+$button     = $args['block']['data']['button'] ?? false;
+$variant    = $args['block']['data']['variant'];
+$counter    = (isset($args['counter']) ? 'block-' . $args['counter'] : null);
+$border_top = $args['block']['settings']['border_top'] ?? false;
 
 // Define classes based on variant
 $block_classes = "two-columns-block two-column-image-left {$variant} {$counter}";
+if ($border_top) {
+	$block_classes .= ' border-t border-black';
+}
 $container_classes = "px-0 items-center desktop:flex desktop:gap-18 mx-auto";
 $image_column_classes = "desktop:col-span-6 relative image-column desktop:py-0 relative";
 $image_wrap_classes = "image-wrap relative";

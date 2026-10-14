@@ -7,8 +7,8 @@
 
 // Get the case studies data
 $cases = $args['block']['cases']; // Post IDs
-$block_title = $args['block']['title'] ?? 'CASE STUDIES';
-$read_more_text = $args['block']['read_more_text'] ?? 'SEE ALL';
+$block_title = $args['block']['title'] ?? __('CASE STUDIES', 'viezo');
+$read_more_text = $args['block']['read_more_text'] ?? __('SEE ALL', 'viezo');
 $read_more_link = $args['block']['read_more_link'] ?? array('url' => get_post_type_archive_link('case-study'));
 $read_more_link_text = $args['block']['read_more_link']['title'] ?? '';
 $see_more_link = $args['block']['see_more'] ?? ''; // link
@@ -28,7 +28,7 @@ if ($cases && is_array($cases)) :
                         <?php if (!empty($see_more_link)) : ?>
                             <div class="see-more-link md:block hidden mt-20 desktop:mt-32">
                                 <a href="<?= esc_url($see_more_link['url'] ?? '#'); ?>" class="button outline-black">
-                                    <?= esc_html($see_more_link['title'] ?? 'See More'); ?>
+                                    <?= esc_html($see_more_link['title'] ?? __('See More', 'viezo')); ?>
                                 </a>
                             </div>
                         <?php endif; ?>
@@ -73,7 +73,7 @@ if ($cases && is_array($cases)) :
         <?php if (!empty($see_more_link)) : ?>
             <div class="see-more-link w-fill text-center md:hidden block mt-20 desktop:mt-32">
                 <a href="<?= esc_url($see_more_link['url'] ?? '#'); ?>" class="button outline-black">
-                    <?= esc_html($see_more_link['title'] ?? 'See More'); ?>
+                    <?= esc_html($see_more_link['title'] ?? __('See More', 'viezo')); ?>
                 </a>
             </div>
         <?php endif; ?>

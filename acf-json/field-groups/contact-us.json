@@ -1,0 +1,367 @@
+{
+    "key": "group_62460615b28e7",
+    "title": "Contact us",
+    "fields": [
+        {
+            "key": "field_contacts_form_tab",
+            "label": "Contact form",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6246062492f17",
+            "label": "Contact us form code",
+            "name": "contact_form",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "translations": "copy_once",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_contacts_partners_tab",
+            "label": "Distributors and partners",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_contacts_distributors_title",
+            "label": "Distributors title",
+            "name": "distributors_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Distributors",
+            "translations": "translate",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": "Distributors"
+        },
+        {
+            "key": "field_contacts_oem_partners_title",
+            "label": "OEM partners title",
+            "name": "oem_partners_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "OEM partner",
+            "translations": "translate",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": "OEM partner"
+        },
+        {
+            "key": "field_contacts_distributors",
+            "label": "Distributors",
+            "name": "distributors",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Shared across languages: edit on the English page. Other languages copy it when created and fall back to English when empty.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add distributor",
+            "collapsed": "field_contacts_distributor_company",
+            "translations": "copy_once",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_contacts_distributor_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "png,jpg,jpeg,svg,webp",
+                    "translations": "copy_once",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "parent_repeater": "field_contacts_distributors"
+                },
+                {
+                    "key": "field_contacts_distributor_region",
+                    "label": "Country \/ region",
+                    "name": "region",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_contacts_distributors"
+                },
+                {
+                    "key": "field_contacts_distributor_company",
+                    "label": "Company",
+                    "name": "company",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_contacts_distributors"
+                },
+                {
+                    "key": "field_contacts_distributor_website",
+                    "label": "Website",
+                    "name": "website",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "placeholder": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_contacts_distributors"
+                }
+            ]
+        },
+        {
+            "key": "field_contacts_oem_partners",
+            "label": "OEM partners",
+            "name": "oem_partners",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Shared across languages: edit on the English page.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add OEM partner",
+            "collapsed": "field_contacts_oem_partner_company",
+            "translations": "copy_once",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_contacts_oem_partner_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "mime_types": "png,jpg,jpeg,svg,webp",
+                    "translations": "copy_once",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "parent_repeater": "field_contacts_oem_partners"
+                },
+                {
+                    "key": "field_contacts_oem_partner_region",
+                    "label": "Country \/ region",
+                    "name": "region",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_contacts_oem_partners"
+                },
+                {
+                    "key": "field_contacts_oem_partner_company",
+                    "label": "Company",
+                    "name": "company",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_contacts_oem_partners"
+                },
+                {
+                    "key": "field_contacts_oem_partner_website",
+                    "label": "Website",
+                    "name": "website",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "translations": "copy_once",
+                    "default_value": "",
+                    "placeholder": "",
+                    "pll_default_value": "",
+                    "parent_repeater": "field_contacts_oem_partners"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/contacts.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "pll_display_field_instructions": 1,
+    "modified": 1790433824,
+    "local_file": "\/Users\/rokas\/Local Sites\/viezo\/app\/public\/wp-content\/themes\/viezo\/acf-json\/field-groups\/contact-us.json"
+}

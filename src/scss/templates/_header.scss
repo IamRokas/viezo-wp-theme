@@ -36,12 +36,12 @@
 		}
 
 		.client-area i {
-			background: url(../images/icons/PersonOutline.svg ) center no-repeat transparent;
+			background: url(@images/icons/PersonOutline.svg ) center no-repeat transparent;
 			background-size: 24px 24px;
 		}
 
 		.contacts i {
-			background: url(../images/icons/LocalPostOffice.svg ) center no-repeat transparent;
+			background: url(@images/icons/LocalPostOffice.svg ) center no-repeat transparent;
 			background-size: 24px 24px;
 		}
 	}
@@ -137,6 +137,8 @@ body.scrolled .site-header {
 			font-size: 18px;
 			line-height: 28px;
 			max-width: 555px;
+			text-wrap: pretty;
+			overflow-wrap: anywhere;
 		}
 
 		@media screen and (max-width: 768px) {
@@ -166,33 +168,41 @@ body.scrolled .site-header {
 		height: 100vh;
 	}
 
-	&.header-big {
-		height: 100vh;
-		max-height: 491px;
-
-		@media screen and (max-width: 768px) {
-			max-height: 45vh;
-		}
+	// Big & small heroes grow with their content instead of overflowing:
+	// min-height instead of a fixed height, text in normal flow at the bottom.
+	&.header-big,
+	&.header-small {
+		height: auto;
+		padding-top: 140px; // 70px overlapping site header + breathing room.
+		padding-bottom: 60px;
 
 		.textblock {
-			bottom: 60px;
+			position: relative;
 			top: auto;
+			bottom: auto;
 			min-height: unset;
+		}
+
+		h1 {
+			max-width: 13em;
+			text-wrap: balance;
+			overflow-wrap: anywhere;
+		}
+	}
+
+	&.header-big {
+		min-height: 491px;
+
+		@media screen and (max-width: 768px) {
+			min-height: 45vh;
 		}
 	}
 
 	&.header-small {
-		height: 100vh;
-		max-height: 315px;
+		min-height: 315px;
 
 		h1 {
 			margin-bottom: 0;
-		}
-
-		.textblock {
-			bottom: 60px;
-			top: auto;
-			min-height: unset;
 		}
 	}
 
@@ -208,5 +218,40 @@ body.scrolled .site-header {
 				font-size: 36px;
 			}
 		}
+	}
+}
+
+// Page header (hero) button + optional note ("Takes less than a minute").
+// Separate from the site header's .header-cta: only layout/spacing here, button looks come from .button.
+.page-header__cta {
+	@apply flex flex-col items-start;
+	gap: 12px;
+	margin-top: 40px;
+
+	.header-btn-scroll & {
+		margin-top: 28px;
+	}
+
+	.home & {
+		@apply items-center;
+	}
+
+	.button {
+		margin-top: 0 !important;
+	}
+}
+
+.page-header__cta-note {
+	@apply inline-flex items-center text-xs;
+	gap: 8px;
+	opacity: 0.75;
+
+	&::before {
+		content: "";
+		width: 14px;
+		height: 14px;
+		flex-shrink: 0;
+		background-color: currentColor;
+		mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3e%3ccircle cx='12' cy='12' r='9'/%3e%3cpath d='M12 7v5l3 2'/%3e%3c/svg%3e") center / contain no-repeat;
 	}
 }

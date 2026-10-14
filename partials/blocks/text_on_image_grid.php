@@ -12,8 +12,8 @@ $blocks = $args['block']['blocks'];
 if ($blocks && is_array($blocks)) :
 ?>
 
-	<div class="blocks-grid desktop:grid desktop:grid-cols-12 desktop:gap-0">
-		<?php foreach ($blocks as $index => $block) :
+<div class="blocks-grid desktop:grid desktop:grid-cols-12 desktop:gap-0">
+    <?php foreach ($blocks as $index => $block) :
 			// Get block data
 			$title = $block['data']['title'] ?? false;
 			$text = $block['data']['text'] ?? '';
@@ -52,46 +52,46 @@ if ($blocks && is_array($blocks)) :
 			$block_classes = "block-item flex {$variant} {$counter} {$col_span} relative min-h-[350px] desktop:min-h-[60vh]";
 		?>
 
-			<div class="<?= $block_classes; ?>">
-				<?php if ($image && isset($image['ID'])) : ?>
-					<div class="block-image absolute w-full inset-0">
-						<?php if (isset($image['type']) && $image['type'] == 'video') : ?>
-							<video autoplay muted loop playsinline class="w-full h-full object-cover">
-								<source src="<?= esc_url($image['url']); ?>" type="video/mp4">
-							</video>
-						<?php else : ?>
-							<?php echo wp_get_attachment_image($image['ID'], 'full', false, ['class' => 'w-full block h-full object-cover']); ?>
-						<?php endif; ?>
-					</div>
-				<?php endif; ?>
+    <div class="<?= $block_classes; ?>">
+        <?php if ($image && isset($image['ID'])) : ?>
+        <div class="block-image absolute w-full inset-0">
+            <?php if (isset($image['type']) && $image['type'] == 'video') : ?>
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="<?= esc_url($image['url']); ?>" type="video/mp4">
+            </video>
+            <?php else : ?>
+            <?php echo wp_get_attachment_image($image['ID'], 'full', false, ['class' => 'w-full block h-full object-cover']); ?>
+            <?php endif; ?>
+        </div>
+        <?php endif; ?>
 
-				<div class="block-content relative md:p-24 desktop:px-104 desktop:py-56 w-full flex">
-					<div class="content-inner container flex items-center <?= $flex_alignment; ?>">
-						<div class="max-w-xl <?= $text_alignment;
+        <div class="block-content relative md:p-24 desktop:px-104 desktop:py-56 w-full flex">
+            <div class="content-inner container flex items-center <?= $flex_alignment; ?>">
+                <div class="max-w-xl <?= $text_alignment;
 												print $container_class; ?> text-white">
-							<?php if ($title) : ?>
-								<h2 class=" pb-20 font-osp-din uppercase"><?= $title; ?></h2>
-							<?php endif; ?>
+                    <?php if ($title) : ?>
+                    <h2 class=" pb-20 font-osp-din uppercase"><?= $title; ?></h2>
+                    <?php endif; ?>
 
-							<?php if ($text) : ?>
-								<div class="text font-body-1 text-white">
-									<?= $text; ?>
-								</div>
-							<?php endif; ?>
+                    <?php if ($text) : ?>
+                    <div class="text font-body-1 text-white">
+                        <?= $text; ?>
+                    </div>
+                    <?php endif; ?>
 
-							<?php if (!empty($button)) :
+                    <?php if (!empty($button)) :
 								$target = (!empty($button['target']) ? 'target="' . esc_attr($button['target']) . '"' : '');
 							?>
-								<a href="<?= esc_url($button['url']); ?>" class="button blue-transparent mt-32" <?= $target; ?>>
-									<?= esc_html($button['title']); ?>
-								</a>
-							<?php endif; ?>
-						</div>
-					</div>
-				</div>
-			</div>
+                    <a href="<?= esc_url($button['url']); ?>" class="button outline-white mt-32" <?= $target; ?>>
+                        <?= esc_html($button['title']); ?>
+                    </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
-		<?php endforeach; ?>
-	</div>
+    <?php endforeach; ?>
+</div>
 
 <?php endif; ?>

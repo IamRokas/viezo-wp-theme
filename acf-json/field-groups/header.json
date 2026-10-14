@@ -1,0 +1,216 @@
+{
+    "key": "group_622b72bc3f7ab",
+    "title": "Header",
+    "fields": [
+        {
+            "key": "field_622b72d772814",
+            "label": "Header size",
+            "name": "header_size",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "huge": "Huge",
+                "big": "Big",
+                "small": "small"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0,
+            "pll_default_value": false
+        },
+        {
+            "key": "field_622b730b72815",
+            "label": "Header title",
+            "name": "header_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_622b731e72816",
+            "label": "Header subtitle",
+            "name": "header_subtitle",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_622b733372817",
+            "label": "Header button",
+            "name": "header_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_header_button_note",
+            "label": "Button note",
+            "name": "header_button_note",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Short hint shown next to the button, e.g. \"Takes less than a minute\".",
+            "required": false,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_622b733372817",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "Takes less than a minute",
+            "maxlength": 60,
+            "translations": "translate",
+            "default_value": "",
+            "prepend": "",
+            "append": "",
+            "pll_default_value": ""
+        },
+        {
+            "key": "field_622bad52103f6",
+            "label": "Background",
+            "name": "header_background",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_67d439807a2cb",
+            "label": "Subtitle position",
+            "name": "subtitle_below_image",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Display subtitle below image",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "pll_default_value": 1
+        },
+        {
+            "key": "field_67d450610bd57",
+            "label": "Side image",
+            "name": "side_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Is only shown when subtitle is shown below header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "translations": "sync",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "pll_display_field_instructions": 1,
+    "modified": 1790433824,
+    "local_file": "\/Users\/rokas\/Local Sites\/viezo\/app\/public\/wp-content\/themes\/viezo\/acf-json\/field-groups\/header.json"
+}
