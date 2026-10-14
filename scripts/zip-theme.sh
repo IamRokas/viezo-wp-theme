@@ -2,9 +2,9 @@
 # Package the theme for a manual production upload (Appearance → Themes → Add New → Upload,
 # "Replace current with uploaded"). Run via `npm run zip`, which builds assets first.
 #
-# Output: dist/<folder>-YYYYMMDD-HHMM.zip whose top-level folder is the theme's folder name ON THE
-# SERVER, so "Replace current with uploaded" updates the active theme. Production's folder is
-# viezo_2026_10_08 (the default below); override with THEME_FOLDER=name npm run zip.
+# Output: dist/<folder>-YYYYMMDD-HHMM.zip whose top-level folder must match the theme's folder name
+# ON THE SERVER, so "Replace current with uploaded" updates the active theme. Production uses
+# viezo (the default); override with THEME_FOLDER=name npm run zip.
 # Left out: dev-only files (node_modules, src, docs, editor/lint config) and build/hot, which
 # would make production load assets from the local Vite dev server.
 
@@ -12,7 +12,7 @@ set -e
 
 THEME_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 THEME_NAME="$(basename "$THEME_DIR")"
-TARGET="${THEME_FOLDER:-viezo_2026_10_08}"
+TARGET="${THEME_FOLDER:-viezo}"
 STAMP="$(date +%Y%m%d-%H%M)"
 OUT="$THEME_DIR/dist/$TARGET-$STAMP.zip"
 

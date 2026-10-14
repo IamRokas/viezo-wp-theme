@@ -3,7 +3,7 @@
 **Status: deployed to viezo.lt on 2026-10-14 and verified.** On production PHP cannot write the site root, so the `seo-server` seed could not change `robots.txt` or `.htaccess`. Both were changed by hand over SSH (see "If something fails"); backups are `robots.txt.viezo-backup` and `.htaccess.backup-20261014` in `/var/www/viezo.lt/`. Checked after deploy: robots.txt is served by the theme; gzip is on for HTML (home 137 KB → 21.9 KB), main.css (135 KB → 26 KB), index.js and style.css; llms.txt, Organization schema, x-default and the 4.8 MB hero video are live. Apache has mod_deflate and mod_filter loaded.
 
 Production facts learned here:
-- The active theme folder is **`wp-content/themes/viezo_2026_10_08/`**. `themes/viezo/` is an old inactive copy, so don't test against it. `npm run zip` packages under the production folder name.
+- The theme folder on production is `wp-content/themes/viezo/`. At deploy time it was `viezo_2026_10_08/`, with an old inactive `viezo/` copy. After the deploy it was renamed to `viezo/` and the old themes were deleted (2026-10-14). `npm run zip` packages under `viezo/`.
 - PHP can't write the site root (`robots.txt`, `.htaccess`): server-file changes need SSH (`ec2-user`, `sudo`).
 - Check compression with a GET, not `curl -I`: Apache doesn't gzip HEAD responses from PHP, so `-I` wrongly shows the home page as uncompressed.
 
@@ -33,7 +33,7 @@ Not in this release:
 ## Deploy
 
 1. **Back up**: database and the site root's `robots.txt` and `.htaccess` (the seed also keeps a robots backup).
-2. **Build the package** locally: `npm run zip` → `dist/viezo_2026_10_08-YYYYMMDD-HHMM.zip` (about 9 MB, top folder = production's theme folder).
+2. **Build the package** locally: `npm run zip` → `dist/viezo-YYYYMMDD-HHMM.zip` (about 9 MB, top folder `viezo/` = production's theme folder).
 3. **Upload**: Appearance → Themes → Add New → Upload Theme → choose the zip → **Replace current with uploaded**. (Or copy the unzipped folder over `wp-content/themes/viezo/` via SFTP.)
 4. **Run the seeds**: Tools → Viezo seeds, then run in this order:
    1. **SEO: organization for schema (Yoast)**
