@@ -14,7 +14,7 @@ npm install
 | `npm run dev` | Starts the Vite dev server at `https://localhost:5173` with hot reloading for CSS/JS. Saving a PHP file does a full page reload. |
 | `npm run watch` | Rebuilds `build/` on every change, without a dev server. Use it if HMR isn't wanted. |
 | `npm run build` | Production build into `build/` (minified). **Run this before committing/deploying.** |
-| `npm run zip` | Build, then package the theme for a manual upload into `dist/viezo-YYYYMMDD-HHMM.zip` (runtime files only, ~9 MB). Upload via Appearance → Themes → Add New → Upload → "Replace current with uploaded". Refuses to run while `build/hot` exists. |
+| `npm run zip` | Build, then package the theme for a manual upload into `dist/viezo_2026_10_08-YYYYMMDD-HHMM.zip` (runtime files only, ~9 MB). The zip's top folder is **`viezo_2026_10_08`, the active theme's folder on production** (the `viezo/` folder there is an old inactive copy), so Appearance → Themes → Add New → Upload → "Replace current with uploaded" updates the right theme. Other folder: `THEME_FOLDER=name npm run zip`. Refuses to run while `build/hot` exists. |
 
 ### First-time dev server setup
 

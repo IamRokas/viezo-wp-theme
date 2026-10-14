@@ -1,5 +1,12 @@
 # Release 2026-10-14 · Simple SEO/GEO fixes (theme 2.2.0)
 
+**Status: deployed to viezo.lt on 2026-10-14 and verified.** On production PHP cannot write the site root, so the `seo-server` seed could not change `robots.txt` or `.htaccess`. Both were changed by hand over SSH (see "If something fails"); backups are `robots.txt.viezo-backup` and `.htaccess.backup-20261014` in `/var/www/viezo.lt/`. Checked after deploy: robots.txt is served by the theme; gzip is on for HTML (home 137 KB → 21.9 KB), main.css (135 KB → 26 KB), index.js and style.css; llms.txt, Organization schema, x-default and the 4.8 MB hero video are live. Apache has mod_deflate and mod_filter loaded.
+
+Production facts learned here:
+- The active theme folder is **`wp-content/themes/viezo_2026_10_08/`**. `themes/viezo/` is an old inactive copy, so don't test against it. `npm run zip` packages under the production folder name.
+- PHP can't write the site root (`robots.txt`, `.htaccess`): server-file changes need SSH (`ec2-user`, `sudo`).
+- Check compression with a GET, not `curl -I`: Apache doesn't gzip HEAD responses from PHP, so `-I` wrongly shows the home page as uncompressed.
+
 The fixes from the backlog that need no client input. Everything ships in the theme. Three one-click seeds then change the settings, server files and media the theme can't change by itself.
 
 ## What's in it
@@ -26,7 +33,7 @@ Not in this release:
 ## Deploy
 
 1. **Back up**: database and the site root's `robots.txt` and `.htaccess` (the seed also keeps a robots backup).
-2. **Build the package** locally: `npm run zip` → `dist/viezo-YYYYMMDD-HHMM.zip` (about 9 MB).
+2. **Build the package** locally: `npm run zip` → `dist/viezo_2026_10_08-YYYYMMDD-HHMM.zip` (about 9 MB, top folder = production's theme folder).
 3. **Upload**: Appearance → Themes → Add New → Upload Theme → choose the zip → **Replace current with uploaded**. (Or copy the unzipped folder over `wp-content/themes/viezo/` via SFTP.)
 4. **Run the seeds**: Tools → Viezo seeds, then run in this order:
    1. **SEO: organization for schema (Yoast)**
@@ -40,7 +47,7 @@ Not in this release:
 
 - https://viezo.lt/robots.txt: no `Disallow: /wp-content/uploads/`, lists GPTBot, ClaudeBot and others.
 - https://viezo.lt/llms.txt and /llms-full.txt: load as text and list the case studies.
-- Compression: `curl -sI -H "Accept-Encoding: gzip" https://viezo.lt/` shows `Content-Encoding: gzip`.
+- Compression: `curl -s -D - -o /dev/null -H "Accept-Encoding: gzip" https://viezo.lt/ | grep -i content-encoding` shows `gzip` (use a GET; `curl -I` gives a false negative for PHP pages).
 - Home page: video starts quickly. In DevTools → Network the hero mp4 is about 4.8 MB.
 - Schema: https://validator.schema.org on the home page (Organization), the Sonora page (Product) and one case study (Article). Google's Rich Results Test should report no errors.
 - View source on any page: `hreflang="x-default"`.
@@ -49,8 +56,8 @@ Not in this release:
 
 ## If something fails
 
-- **robots.txt not writable**: delete or rename `robots.txt` in the site root by SFTP. WordPress then serves the theme's version.
-- **.htaccess not writable**: add this block to the root `.htaccess` by hand:
+- **robots.txt not writable** (the case on production): over SSH, `cd /var/www/viezo.lt && sudo cp -p robots.txt robots.txt.viezo-backup && sudo rm robots.txt`. WordPress then serves the theme's version.
+- **.htaccess not writable** (the case on production): back it up (`sudo cp -p .htaccess .htaccess.backup-YYYYMMDD`), then append this block with `sudo tee -a /var/www/viezo.lt/.htaccess`:
 
   ```apache
   # BEGIN Viezo compression

@@ -8,16 +8,16 @@ Impact H/M/L, effort S (≤ ½ day) / M (≤ 3 days) / L (more).
 
 | ID | Task | Owner | Effort | Impact | Status | Src |
 |---|---|---|---|---|---|---|
-| T-01 | Remove `Disallow: /wp-content/uploads/` from robots.txt, request re-crawl | Dev | S | H | ready to deploy (release 2026-10-14) | audit |
-| T-02 | Enable gzip (mod_deflate) in .htaccess | Dev | S | H | ready to deploy (release 2026-10-14) | audit |
-| T-03 | Re-encode home videos (hero 49 MB → 3–5 MB, poster, lazy-load second video) | Dev | S | H | ready to deploy (release 2026-10-14) | audit |
+| T-01 | Remove `Disallow: /wp-content/uploads/` from robots.txt, request re-crawl | Dev | S | H | done 2026-10-14 | audit |
+| T-02 | Enable gzip (mod_deflate) in .htaccess | Dev | S | H | done 2026-10-14 | audit |
+| T-03 | Re-encode home videos (hero 49 MB → 3–5 MB, poster, lazy-load second video) | Dev | S | H | done 2026-10-14 | audit |
 | T-04 | Images to WebP: WebP Express plugin (decided 2026-10-14) | Dev | S | M | todo | audit |
-| T-05 | hreflang x-default, PL archive description, missing translation link | Dev | S | L | partly: x-default + PL archive ready; granulator case needs a PL translation | audit |
-| T-06 | Noindex empty Terms pages; merge 4 EU funding posts into EU page | Dev | S | L | partly: Terms noindex ready; EU posts kept, needs Viezo decision | audit |
-| S-01 | Organization schema (logo, Vilnius address, sameAs LinkedIn etc.); `name` + `alternateName` "Viezo UAB" and `url` viezo.lt to separate the brand from the unrelated viezo.com | Dev | S | H | ready to deploy (release 2026-10-14) | audit, comp/tractian |
-| S-02 | Product / SoftwareApplication schema for Sonora | Dev | S | H | ready to deploy (release 2026-10-14) | audit |
-| S-03 | Article schema on case studies (client, industry as about/mentions) | Dev | S | H | ready to deploy (release 2026-10-14) | audit |
-| S-04 | Publish llms.txt (EN, links to PL) | Dev | S | M | ready to deploy (release 2026-10-14) | audit, comp/tractian, waites |
+| T-05 | hreflang x-default, PL archive description, missing translation link | Dev | S | L | partly done 2026-10-14: x-default + PL archive live; granulator case needs a PL translation | audit |
+| T-06 | Noindex empty Terms pages; merge 4 EU funding posts into EU page | Dev | S | L | partly done 2026-10-14: Terms noindex live; EU posts kept, needs Viezo decision | audit |
+| S-01 | Organization schema (logo, Vilnius address, sameAs LinkedIn etc.); `name` + `alternateName` "Viezo UAB" and `url` viezo.lt to separate the brand from the unrelated viezo.com | Dev | S | H | done 2026-10-14 | audit, comp/tractian |
+| S-02 | Product / SoftwareApplication schema for Sonora | Dev | S | H | done 2026-10-14 | audit |
+| S-03 | Article schema on case studies (client, industry as about/mentions) | Dev | S | H | done 2026-10-14 | audit |
+| S-04 | Publish llms.txt (EN, links to PL) | Dev | S | M | done 2026-10-14 | audit, comp/tractian, waites |
 | C-01 | Fix H1s (Contact EN/PL, Sonora, Pricing, Case studies) + meta descriptions on 27 URLs | Dev drafts, Viezo approves | S | M | todo | audit |
 | M-01 | Connect Search Console + Bing Webmaster Tools, submit sitemaps, link GSC to GA4 | Viezo access | S | H | doing (GSC export received 2026-10-14) | audit |
 | M-02 | GA4 report/segment for AI referrals (chatgpt.com, perplexity.ai, copilot, gemini) | Dev | S | M | steps in release 2026-10-14 | audit |
@@ -62,8 +62,8 @@ Added from `02-insights/learnings.md`.
 | C-18 | 2–3 min Sonora installation video, own page, VideoObject schema | Viezo | M | M | todo | comp/fluke, banner |
 | C-19 | Integrations / API one-pager (if Sonora has CMMS/SCADA/API paths) | Viezo + Dev | S | L | todo | comp/schaeffler-optime |
 | S-05 | 2–3 aggregate proof numbers (plants, faults caught, median warning lead time) on home, Sonora, llms.txt | Viezo data | S | H | todo | comp/assetwatch, augury, waites |
-| S-06 | llms-full.txt: entity definitions (UAB Viezo, Sonora, not viezo.com), approved facts, case results | Dev | S | M | ready to deploy (release 2026-10-14) | comp/augury, iotflows |
-| S-07 | Explicit AI-crawler allow rules in robots.txt (do with T-01) | Dev | S | L | ready to deploy (release 2026-10-14) | comp/icare |
+| S-06 | llms-full.txt: entity definitions (UAB Viezo, Sonora, not viezo.com), approved facts, case results | Dev | S | M | done 2026-10-14 | comp/augury, iotflows |
+| S-07 | Explicit AI-crawler allow rules in robots.txt (do with T-01) | Dev | S | L | done 2026-10-14 | comp/icare |
 | S-09 | 2–3 engineer author pages, Person schema, linked as author | Viezo + Dev | S | M | todo | comp/icare |
 | A-04 | Ask ~10 case-study clients for G2/Capterra reviews (after A-01) | Viezo | M | M | todo | comp/assetwatch |
 | A-05 | 2 releases/year to PL maintenance trade media + LT/Baltic tech media | Viezo | M | M | todo | comp/schaeffler-optime, sensoteq |
