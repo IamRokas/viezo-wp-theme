@@ -6,7 +6,7 @@ Checked 2026-10-14. Details and sources are in each profile. Viezo row from the 
 
 | | Polish content | llms.txt | Structured data | Readable by AI crawlers | Titles / H1 |
 |---|---|---|---|---|---|
-| **Viezo** | **Full EN + PL site, all 59 case studies** | no | Yoast generic only | yes (server-rendered) | weak ("Sonora", all-caps cases) |
+| **Viezo** | **Full EN + PL site, all 30 case studies (each in EN + PL)** | no | Yoast generic only | yes (server-rendered) | weak ("Sonora", all-caps cases) |
 | Tractian | none (EN/PT/ES) | yes, 19 KB, numbers per industry | Organization, Product (+ inflated rating) | yes | strong |
 | Augury | none | yes + llms-full.txt (entities, approved facts) | FAQPage, QAPage, Product, rating | partly (Cloudflare blocks some) | strong ("Machine Health" everywhere) |
 | AssetWatch | none | yes, 12.6 KB | per page type: Article, HowTo, FAQPage, DefinedTerm, SoftwareApplication | yes | strong |
@@ -25,7 +25,7 @@ Checked 2026-10-14. Details and sources are in each profile. Viezo row from the 
 
 | | Case studies | Explainers / glossary | Asset or fault pages | Pricing on site | Comparison pages | G2 reviews | Wikipedia / Wikidata |
 |---|---|---|---|---|---|---|---|
-| **Viezo** | **59, median 152 words, named clients, EN + PL** | 0 (4 EU-funding posts) | none (industry categories only) | setup builder, price on request (lead form) | no | none | none |
+| **Viezo** | **30 (29 also in PL), median 152 words, client names shown but not promoted** | 0 (4 EU-funding posts) | none (industry categories only) | setup builder, price on request (lead form) | no | none | none |
 | Tractian | 3 EN, ~2,600 words | glossary (~3,000 words/term), 114 blog, 228 programmatic pages | 11 industry pages | calculator | yes (vs Augury, vs Waites) | ~53, 4.7 | not verified |
 | Augury | 8 | 549 blog, 48 podcasts | 14 asset pages | quote only | not found | ~3 | not verified |
 | AssetWatch | 41 "asset saves" (~140 words, templated) + 16 | 585 glossary terms, 95 blog, 7 intro pages | per asset | no | not found | 18, 4.9 | not verified |

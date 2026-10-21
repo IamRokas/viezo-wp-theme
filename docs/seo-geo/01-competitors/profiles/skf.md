@@ -80,7 +80,7 @@ To fill during monthly tracking.
 2. **They publish a certification page per product variant** (`.../enlight-collect-imx-1/regulatory-certifications/cmwa-6100-ex`). → Viezo should add a crawlable "Sonora technical specifications" page in EN and PL: measurement axes, frequency range, battery life, IP rating, radio, mounting and certifications. Give each spec as a plain text row so AI can quote it. Effort: S.
 3. **The PL CM hub opens with a definition paragraph** ("Monitorowanie stanu to proces…"). → Viezo's PL pillar page "Monitoring stanu maszyn / wibrodiagnostyka" should open with a 40-60-word definition answer, then cover how Sonora does it. Effort: S.
 4. **Their product copy names one concrete method** (SKF Acceleration Enveloping for early bearing and gear defects). → Viezo should name and explain its own detection method on the Sonora page: which features and thresholds detect bearing wear, imbalance and gearbox faults. Generic "AI alerts" copy loses to named methods. Effort: S.
-5. **Their customer proof sits in press releases, not structured case pages.** → Viezo's 59 named case studies (VW Polska, IMA Schelling) already beat SKF on proof volume for mid-size plants. Surface them in a "Customers" hub with logo, industry and fault filters, and cite them on the Sonora page. Effort: S-M.
+5. **Their customer proof sits in press releases, not structured case pages.** → Viezo's 30 named case studies (VW Polska, IMA Schelling) already beat SKF on proof volume for mid-size plants. Surface them in a "Customers" hub with logo, industry and fault filters, and cite them on the Sonora page. Effort: S-M.
 
 ## What not to copy
 

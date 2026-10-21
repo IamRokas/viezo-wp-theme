@@ -23,7 +23,7 @@
 function vzo__seo_company() {
 	return [
 		'name'        => 'Viezo',
-		'legal_name'  => 'Viezo, UAB',
+		'legal_name'  => 'UAB Viezo',
 		'url'         => 'https://viezo.lt/',
 		'email'       => 'info@viezo.lt',
 		'telephone'   => '+370 675 56 247',
@@ -243,7 +243,7 @@ function vzo__schema_organization( $data ) {
 	$company = vzo__seo_company();
 
 	$data['legalName']     = $company['legal_name'];
-	$data['alternateName'] = 'UAB Viezo';
+	$data['alternateName'] = 'Viezo, UAB';
 	$data['description']   = $company['description'];
 	$data['email']         = $company['email'];
 	$data['telephone']     = $company['telephone'];
@@ -270,6 +270,41 @@ function vzo__schema_organization( $data ) {
 	return $data;
 }
 add_filter( 'wpseo_schema_organization', 'vzo__schema_organization' );
+
+/**
+ * Sonora facts approved by Viezo (2026-10-21): the spec table on the Sonora page plus answers to
+ * common buyer questions. Used in Product schema and llms-full.txt. Prices, client numbers,
+ * data ownership, integrations and contract terms are not public: don't add them here.
+ *
+ * @return array{specs: array<string,string>, facts: string[]}
+ */
+function vzo__seo_sonora_facts() {
+	return [
+		'specs' => [
+			'Sensor data transfer'          => 'Bluetooth',
+			'Sensor power'                  => 'Battery',
+			'Sensor lifetime'               => '5 years',
+			'Sensor operating temperature'  => '-30 °C to +80 °C',
+			'Sensor ingress protection'     => 'IP66',
+			'Accelerometer'                 => 'Up to 25 kHz',
+			'Measurement frequency'         => 'Hourly',
+			'Temperature measurement'       => 'Yes',
+			'Sensor installation'           => 'Glue and magnet, about 1 minute',
+			'Gateway data transfer'         => 'Bluetooth / 4G',
+			'Gateway power'                 => '220 V',
+			'Gateway operating temperature' => '-20 °C to +65 °C',
+			'Gateway ingress protection'    => 'IP22 (outdoor casing possible)',
+			'Machine speed range'           => '100 to 15,000 RPM',
+		],
+		'facts' => [
+			'Installing a Sonora sensor takes about 1 minute and needs no IT support; connecting the gateway may need IT help depending on the factory network.',
+			'Sonora monitors rotating industrial machinery between 100 and 15,000 RPM: motors, pumps, compressors, fans, gearboxes, spindles and conveyors. Machines outside this range or with unsuitable mounting conditions are assessed individually.',
+			'Typically 1–2 sensors per machine are enough, usually near the front and rear bearings; it depends on the machine and the components monitored.',
+			'Analysis is semi-automated: algorithms analyse the raw vibration data automatically, Viezo\'s analytics team reviews potential anomalies, and validated defects appear in the Sonora dashboard with maintenance recommendations.',
+			'Sonora identifies vibration patterns of bearing wear and developing bearing defects, shaft and coupling misalignment, mechanical looseness, imbalance of rotating components, gearbox and gear defects, belt and pulley problems, and other abnormal vibration. Detection depends on the machine, sensor placement, operating conditions and available data.',
+		],
+	];
+}
 
 /**
  * Add a Product piece for Sonora on the Sonora pages (EN and PL).
@@ -301,6 +336,10 @@ function vzo__schema_sonora_product( $graph, $context ) {
 		'brand'        => [ '@type' => 'Brand', 'name' => 'Viezo' ],
 		'manufacturer' => [ '@id' => $org_id ],
 	];
+
+	foreach ( vzo__seo_sonora_facts()['specs'] as $name => $value ) {
+		$product['additionalProperty'][] = [ '@type' => 'PropertyValue', 'name' => $name, 'value' => $value ];
+	}
 
 	if ( has_post_thumbnail( get_queried_object_id() ) ) {
 		$product['image'] = get_the_post_thumbnail_url( get_queried_object_id(), 'large' );
@@ -347,16 +386,21 @@ add_filter( 'wpseo_schema_article_type', 'vzo__schema_case_study_article_type', 
 /**
  * Get a case study's key facts (the top_area repeater: Client, Industry, Equipment, …).
  *
- * @param int $post_id Case study ID.
+ * @param int  $post_id        Case study ID.
+ * @param bool $include_client Whether to include the Client row.
  * @return array Title => text.
  */
-function vzo__case_study_facts( $post_id ) {
+function vzo__case_study_facts( $post_id, $include_client = true ) {
 	$facts = [];
 	$rows  = function_exists( 'get_field' ) ? get_field( 'top_area', $post_id ) : [];
 
 	foreach ( (array) $rows as $row ) {
 		$title = trim( wp_strip_all_tags( $row['title'] ?? '' ) );
 		$text  = trim( wp_strip_all_tags( $row['text'] ?? '' ) );
+
+		if ( ! $include_client && preg_match( '/^(client|klient)/i', $title ) ) {
+			continue;
+		}
 
 		if ( '' !== $title && '' !== $text ) {
 			$facts[ $title ] = $text;
@@ -367,8 +411,11 @@ function vzo__case_study_facts( $post_id ) {
 }
 
 /**
- * Case-study Article: published by Viezo (not the WordPress user), about vibration monitoring,
- * mentions the client, product and industry.
+ * Case-study Article: published by Viezo (not the WordPress user), about vibration monitoring and
+ * the industry, mentions Sonora.
+ *
+ * Client names are deliberately not added: Viezo may show them on the page but doesn't want to
+ * amplify them (decision 2026-10-21).
  *
  * @param array $data Article schema.
  * @return array
@@ -389,12 +436,6 @@ function vzo__schema_case_study_article( $data ) {
 	];
 
 	$mentions = [ [ '@type' => 'Product', 'name' => 'Sonora', 'brand' => [ '@type' => 'Brand', 'name' => 'Viezo' ] ] ];
-
-	foreach ( vzo__case_study_facts( $post_id ) as $title => $text ) {
-		if ( preg_match( '/^(client|klient)/i', $title ) ) {
-			$mentions[] = [ '@type' => 'Organization', 'name' => $text ];
-		}
-	}
 
 	$terms = get_the_terms( $post_id, 'case-study-type' );
 

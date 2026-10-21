@@ -53,7 +53,7 @@ Fill during monthly tracking: which prompts mention them, which of their pages g
 
 ## What Viezo can learn
 
-Concrete, specific to Viezo's size (small team, EN/PL, Sonora, 59 case studies). Each item: what they do → what Viezo should do → effort (S/M/L) → backlog ID if added.
+Concrete, specific to Viezo's size (small team, EN/PL, Sonora, 30 case studies). Each item: what they do → what Viezo should do → effort (S/M/L) → backlog ID if added.
 
 1.
 

@@ -6,7 +6,7 @@ Synthesis of the 13 profiles in `01-competitors/` (checked 2026-10-14). Each les
 
 Viezo is a small vendor competing with large incumbents (SKF, Schaeffler, Fluke) and funded scale-ups (Tractian, Augury). It can't win on content volume. It can win on three things the others mostly don't do:
 
-1. **Polish.** Only I-care runs a real Polish content operation. Fluke has PL blog posts, SKF a translated hub, Waites a Polish home page and nothing behind it, Schaeffler shows English on its Polish site. Viezo already has all 59 case studies in Polish.
+1. **Polish.** Only I-care runs a real Polish content operation. Fluke has PL blog posts, SKF a translated hub, Waites a Polish home page and nothing behind it, Schaeffler shows English on its Polish site. Viezo already has 29 of its 30 case studies in Polish.
 2. **Being readable by AI.** The big three have no llms.txt and no Product schema. SKF and Schaeffler serve AI crawlers an empty page. A well-structured WordPress site with schema and llms.txt beats them in AI answers regardless of brand size.
 3. **Structured proof.** Viezo has more named-client case studies than most of the list, and more than any in Polish. They are just unstructured and badly titled.
 
@@ -25,7 +25,7 @@ The work is mostly about packaging what Viezo already has, not producing large a
 
 - **Who:** Augury (14 asset pages listing faults detected), AssetWatch (cases grouped by asset), Petasense (asset pages), Fluke ("four common faults" framing), I-care (one page per diagnostic method, in Polish), Acoem (24 application pages).
 - **Lesson:** buyers and AI prompts are phrased by machine and by fault ("how to detect gearbox fault", "fan bearing monitoring"), not by vendor.
-- **Viezo:** tag the 59 cases by asset and fault, then publish ~6 asset pages (motors, fans, pumps, gearboxes, compressors, conveyors/belts) and ~5 fault pages (bearing wear, imbalance, misalignment, looseness, belt problems), each with a short explanation, how Sonora detects it, and the matching case studies. Industry pages (C-04) follow the same pattern. → C-11, C-09, C-10, C-04
+- **Viezo:** tag the 30 cases by asset and fault, then publish ~6 asset pages (motors, fans, pumps, gearboxes, compressors, conveyors/belts) and ~5 fault pages (bearing wear, imbalance, misalignment, looseness, belt problems), each with a short explanation, how Sonora detects it, and the matching case studies. Industry pages (C-04) follow the same pattern. → C-11, C-09, C-10, C-04
 
 ### 3. A small explainer layer, definition first
 

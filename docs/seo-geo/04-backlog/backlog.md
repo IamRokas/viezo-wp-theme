@@ -12,8 +12,8 @@ Impact H/M/L, effort S (≤ ½ day) / M (≤ 3 days) / L (more).
 | T-02 | Enable gzip (mod_deflate) in .htaccess | Dev | S | H | done 2026-10-14 | audit |
 | T-03 | Re-encode home videos (hero 49 MB → 3–5 MB, poster, lazy-load second video) | Dev | S | H | done 2026-10-14 | audit |
 | T-04 | Images to WebP: WebP Express plugin (decided 2026-10-14) | Dev | S | M | done 2026-10-14 (WebP Express, uploads; e.g. 291 KB PNG card → 26 KB) | audit |
-| T-05 | hreflang x-default, PL archive description, missing translation link | Dev | S | L | partly done 2026-10-14: x-default + PL archive live; granulator case needs a PL translation | audit |
-| T-06 | Noindex empty Terms pages; merge 4 EU funding posts into EU page | Dev | S | L | partly done 2026-10-14: Terms noindex live; EU posts kept, needs Viezo decision | audit |
+| T-05 | hreflang x-default, PL archive description, missing translation link | Dev | S | L | partly done: x-default + PL archive live; De Heus granulator case translation approved 2026-10-21, todo | audit |
+| T-06 | Noindex empty Terms pages; merge 4 EU funding posts into EU page | Dev | S | L | done: Terms noindex live; EU posts stay (required, Viezo 2026-10-21). Terms page has always been empty: needs text from Viezo or remove footer link | audit |
 | S-01 | Organization schema (logo, Vilnius address, sameAs LinkedIn etc.); `name` + `alternateName` "Viezo UAB" and `url` viezo.lt to separate the brand from the unrelated viezo.com | Dev | S | H | done 2026-10-14 | audit, comp/tractian |
 | S-02 | Product / SoftwareApplication schema for Sonora | Dev | S | H | done 2026-10-14 | audit |
 | S-03 | Article schema on case studies (client, industry as about/mentions) | Dev | S | H | done 2026-10-14 | audit |
@@ -27,11 +27,11 @@ Impact H/M/L, effort S (≤ ½ day) / M (≤ 3 days) / L (more).
 | ID | Task | Owner | Effort | Impact | Status | Src |
 |---|---|---|---|---|---|---|
 | C-02 | New case-study template: key-facts box, chart, quote, FAQ, Article + FAQ schema | Dev | M | H | todo | audit, comp/waites, assetwatch, acoem |
-| C-03 | Rewrite case-study titles (fault + machine + client + "case study"); expand best 10–15 to 400–600 words | Viezo facts, Dev edit | L | H | todo | audit, comp/waites, fluke |
+| C-03 | Rewrite case-study titles (fault + machine + industry + "case study"; **no client names**, Viezo 2026-10-21); expand best 10–15 | Viezo facts, Dev edit | L | H | approved 2026-10-21, drafting titles | audit, comp/waites, fluke |
 | C-04 | Industry landing pages from case-study categories | Viezo + Dev | L | H | todo | audit, comp/acoem, waites |
 | C-05 | 6–8 explainer pages EN + PL | Viezo expertise, writer | L | H | todo | audit, comp/waites, fluke, skf |
 | C-06 | Restructure Sonora page: clear H1, how it works, specs table, FAQ, case links | Dev + Viezo | M | M | todo | audit, comp/fluke, augury |
-| A-01 | Google Business Profile, G2, Capterra, Crunchbase, Wikidata | Viezo | M | M | todo | audit |
+| A-01 | Google Business Profile, Crunchbase, Wikidata (G2/Capterra on hold: no reviews for now) | Viezo | M | M | todo (G2/Capterra on hold 2026-10-21) | audit |
 | A-02 | Partner/distributor backlinks (Techvitas, Ruven, Sujan, TGD, IMA Schelling) | Viezo | M | M | todo | audit |
 
 ## Phase 3 · Authority and infrastructure (months 3–6)
@@ -40,7 +40,7 @@ Impact H/M/L, effort S (≤ ½ day) / M (≤ 3 days) / L (more).
 |---|---|---|---|---|---|---|
 | T-07 | Server upgrade (AL2023 / managed host / Cloudflare): HTTP/2, Brotli, current PHP | Dev, Viezo budget | M | M | todo | audit |
 | A-03 | Digital PR: 2–3 case studies to trade media, talks, engineer LinkedIn articles | Viezo | L | H | todo | audit |
-| C-07 | Decide on a Lithuanian version | Viezo | decision | M | todo | audit |
+| C-07 | Decide on a Lithuanian version | Viezo | decision | M | closed 2026-10-21: EN + PL only | audit |
 | M-03 | Monthly AI visibility check (see `03-keywords-prompts/ai-prompts.md`) | Dev | S/month | M | todo | audit |
 | C-08 | Quarterly content refresh | Viezo + Dev | ongoing | M | todo | audit |
 
@@ -54,23 +54,26 @@ Added from `02-insights/learnings.md`.
 | C-10 | ~5 fault pages EN/PL (bearing wear, imbalance, misalignment, looseness, belt) linking cases | Viezo + Dev | L | H | todo | comp/fluke, icare |
 | C-11 | Tag cases by asset + fault (new taxonomies), filterable archive, indexable term pages | Dev | M | H | todo | comp/assetwatch, icare |
 | C-12 | Glossary 20–25 terms EN/PL, definition first, DefinedTermSet schema | Viezo + writer | M | M | todo | comp/tractian, assetwatch |
-| C-13 | Sonora specs page (HTML table) + 8–12 FAQs with FAQPage schema | Viezo facts, Dev | S | M | todo | comp/iotflows, skf, fluke, sensoteq |
-| C-14 | Crawlable pricing text: price range, 2–3 example setups, "how many sensors", ROI line; Offer schema | Viezo approves, Dev | S | H | todo | comp/iotflows, banner, waites, petasense |
+| C-13 | Sonora specs page (HTML table) + 8–12 FAQs with FAQPage schema | Viezo facts, Dev | S | M | answers received 2026-10-21; specs + answers in schema/llms done; FAQ block on Sonora page next | comp/iotflows, skf, fluke, sensoteq |
+| C-14 | Pricing page text **without prices** (no public prices, Viezo 2026-10-21): what drives cost, sensors per machine, typical setups | Viezo approves, Dev | S | H | todo | comp/iotflows, banner, waites, petasense |
 | C-15 | Comparison content: "Wireless vs route-based" first, later "Sonora vs Tractian/Waites" | Viezo + writer | M | M | todo | comp/tractian |
 | C-16 | "When wireless isn't the right fit" article EN/PL | writer | S | M | todo | comp/sensoteq, petasense |
-| C-17 | Expand 3–5 flagship cases to 600–900 words with quote (VW Polska, IMA Schelling, furniture) | Viezo facts, writer | M | H | todo | comp/petasense, tractian, icare |
+| C-17 | Expand flagship cases: **Vilpak, CIE LT Forge, IMA Schelling only**, no client quotes; chart + damaged-part photo + timeline from Viezo | Viezo facts, writer | M | H | todo (needs material from Viezo engineers) | comp/petasense, tractian, icare |
 | C-18 | 2–3 min Sonora installation video, own page, VideoObject schema | Viezo | M | M | todo | comp/fluke, banner |
-| C-19 | Integrations / API one-pager (if Sonora has CMMS/SCADA/API paths) | Viezo + Dev | S | L | todo | comp/schaeffler-optime |
-| S-05 | 2–3 aggregate proof numbers (plants, faults caught, median warning lead time) on home, Sonora, llms.txt | Viezo data | S | H | todo | comp/assetwatch, augury, waites |
+| C-19 | Integrations / API one-pager (if Sonora has CMMS/SCADA/API paths) | Viezo + Dev | S | L | dropped 2026-10-21: no integrations yet | comp/schaeffler-optime |
+| S-05 | 2–3 aggregate proof numbers (plants, faults caught, median warning lead time) on home, Sonora, llms.txt | Viezo data | S | H | dropped 2026-10-21: no numbers can be published | comp/assetwatch, augury, waites |
 | S-06 | llms-full.txt: entity definitions (UAB Viezo, Sonora, not viezo.com), approved facts, case results | Dev | S | M | done 2026-10-14 | comp/augury, iotflows |
 | S-07 | Explicit AI-crawler allow rules in robots.txt (do with T-01) | Dev | S | L | done 2026-10-14 | comp/icare |
-| S-09 | 2–3 engineer author pages, Person schema, linked as author | Viezo + Dev | S | M | todo | comp/icare |
-| A-04 | Ask ~10 case-study clients for G2/Capterra reviews (after A-01) | Viezo | M | M | todo | comp/assetwatch |
+| S-09 | 2–3 engineer author pages, Person schema, linked as author | Viezo + Dev | S | M | dropped 2026-10-21: no named engineers | comp/icare |
+| A-04 | Ask ~10 case-study clients for G2/Capterra reviews (after A-01) | Viezo | M | M | on hold 2026-10-21: no client reviews for now | comp/assetwatch |
 | A-05 | 2 releases/year to PL maintenance trade media + LT/Baltic tech media | Viezo | M | M | todo | comp/schaeffler-optime, sensoteq |
 | M-04 | Quarterly competitor re-check (profiles + matrix) | Dev | S | L | todo | comp |
 
 Rule from competitor research: no AggregateRating in schema until there are real reviews, and then only with the real count (see `02-insights/learnings.md`, "What not to copy").
 
 ## Dropped / changed
+
+- **Client names (2026-10-21):** Viezo may show client names on existing case studies but doesn't want them amplified. Removed from Article schema `mentions` and llms-full.txt; not used in new titles or content.
+- **Legal name (2026-10-21):** UAB Viezo. The Privacy Policy still says UAB "Nanoenergija": Viezo to supply corrected text.
 
 - **viezo.com 301 (audit, Medium):** dropped 2026-10-14. viezo.com does not belong to the client. Replaced by brand disambiguation in S-01 (always "Viezo" + "Sonora" + viezo.lt together; consistent sameAs).

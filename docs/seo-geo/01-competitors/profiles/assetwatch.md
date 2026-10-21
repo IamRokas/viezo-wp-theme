@@ -3,7 +3,7 @@
 - **Site:** https://www.assetwatch.com
 - **Checked:** 2026-10-14
 - **Tier:** additional
-- **Overlap with Viezo:** high on content model, medium on market. Wireless vibration monitoring + AI + human analyst, sold as an all-inclusive subscription. US/Canada only, but its short "asset save" stories are almost the same format as Viezo's 59 case studies.
+- **Overlap with Viezo:** high on content model, medium on market. Wireless vibration monitoring + AI + human analyst, sold as an all-inclusive subscription. US/Canada only, but its short "asset save" stories are almost the same format as Viezo's 30 case studies.
 
 ## Snapshot
 
@@ -81,8 +81,8 @@ To fill during monthly tracking. The glossary (585 "What is X?" pages) and `/int
 
 ## What Viezo can learn
 
-1. **Restructure the 59 short case studies like asset saves.** AssetWatch's 41 asset saves are as short as Viezo's (~140 vs 152 words) but are templated, with asset / industry / detection method tags, headline € and hours metrics, and Observation → Recommendation → Resolution. They also carry Article + HowTo + MonetaryAmount schema and a specific meta description. **Viezo:** apply one ACF template to all 59, adding fields for asset, fault, industry, client, lead time gained and estimated cost avoided. Rename titles from "FAN BEARING WEAR – Viezo" to "Fan bearing wear detected early at [client] – Sonora case study". Output Article JSON-LD and allow images in robots.txt so the trend charts can be indexed. → M
-2. **Filterable hub by asset and fault.** AssetWatch slugs every save by asset + fault and groups them under `/assets/<asset>`. **Viezo:** add taxonomy filters (asset type, fault type, industry) to the case-study archive, and make each term page an indexable landing page ("Gearbox fault case studies"). This turns 59 small pages into ~15 rich hub pages. → M
+1. **Restructure the 30 short case studies like asset saves.** AssetWatch's 41 asset saves are as short as Viezo's (~140 vs 152 words) but are templated, with asset / industry / detection method tags, headline € and hours metrics, and Observation → Recommendation → Resolution. They also carry Article + HowTo + MonetaryAmount schema and a specific meta description. **Viezo:** apply one ACF template to all 30, adding fields for asset, fault, industry, client, lead time gained and estimated cost avoided. Rename titles from "FAN BEARING WEAR – Viezo" to "Fan bearing wear detected early at [client] – Sonora case study". Output Article JSON-LD and allow images in robots.txt so the trend charts can be indexed. → M
+2. **Filterable hub by asset and fault.** AssetWatch slugs every save by asset + fault and groups them under `/assets/<asset>`. **Viezo:** add taxonomy filters (asset type, fault type, industry) to the case-study archive, and make each term page an indexable landing page ("Gearbox fault case studies"). This turns 30 small pages into ~15 rich hub pages. → M
 3. **Intro pages for core keywords.** AssetWatch has 7 `/intro/` pages (wireless, remote, bearing, motor, pump condition monitoring…) of ~640 words with Service + Offer schema. **Viezo:** write 3 to 4 EN/PL explainer pages ("wireless vibration monitoring", "bearing condition monitoring", "predictive maintenance for furniture/wood plants"). This fills the "no explainer content" gap. → M
 4. **Small glossary instead of 585 terms.** AssetWatch shows that DefinedTerm schema plus "What is X?" H1s scale. **Viezo:** start with 20 terms in EN and PL with DefinedTermSet schema. PL definitions face little competition. → S/M
 5. **Aggregate proof stats on the home page.** AssetWatch shows "$31K+ avg savings per alert", "first alert ~3 days median" and "1,700+ facilities". **Viezo:** compute 3 numbers from its own data (e.g. number of plants, faults caught, median warning lead time) and show them on home and in llms.txt. → S

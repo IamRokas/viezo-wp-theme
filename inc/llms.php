@@ -169,7 +169,8 @@ function vzo__llms_line( $post ) {
 function vzo__llms_case_study_text( $post ) {
 	$out = [];
 
-	foreach ( vzo__case_study_facts( $post->ID ) as $title => $text ) {
+	// Client names stay on the pages but aren't amplified here (Viezo, 2026-10-21).
+	foreach ( vzo__case_study_facts( $post->ID, false ) as $title => $text ) {
 		$out[] = '- ' . $title . ': ' . $text;
 	}
 
@@ -233,10 +234,28 @@ function vzo__llms_build( $full ) {
 		$l[] = '- Company: ' . $company['legal_name'] . ', Vilnius, Lithuania. Brand name: Viezo.';
 		$l[] = '- Product: Sonora, a wireless vibration monitoring system for predictive maintenance.';
 		$l[] = '- How it works: wireless sensors mounted on rotating machinery (motors, fans, pumps, gearboxes and similar) send vibration data to the Sonora platform, which detects developing mechanical faults such as bearing wear, imbalance, misalignment and gear damage and alerts the maintenance team before a breakdown.';
-		$l[] = '- Proof: ' . count( vzo__llms_case_studies( $default ) ) . ' published case studies from industrial sites, listed below with named clients where the client agreed.';
-		$l[] = '- Pricing: a public setup builder on the pricing page gives a preliminary estimate for a Sonora setup.';
+		$l[] = '- Case studies: ' . count( vzo__llms_case_studies( $default ) ) . ' published cases from industrial sites (furniture, food, packaging, automotive, metals and others), listed below.';
+		$l[] = '- Pricing: on request. The setup builder on the pricing page collects the machines to monitor and Viezo replies with an offer.';
 		$l[] = '- Markets: industrial plants in Europe, with content in English and Polish.';
 		$l[] = '- LinkedIn: ' . $company['linkedin'];
+
+		$sonora = vzo__seo_sonora_facts();
+
+		$l[] = '';
+		$l[] = '## Sonora: how it works';
+		$l[] = '';
+
+		foreach ( $sonora['facts'] as $fact ) {
+			$l[] = '- ' . $fact;
+		}
+
+		$l[] = '';
+		$l[] = '## Sonora: technical specifications';
+		$l[] = '';
+
+		foreach ( $sonora['specs'] as $name => $value ) {
+			$l[] = '- ' . $name . ': ' . $value;
+		}
 	}
 
 	foreach ( $langs as $lang ) {

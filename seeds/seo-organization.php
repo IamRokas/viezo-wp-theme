@@ -32,11 +32,11 @@ return [
 
 		WPSEO_Options::set( 'company_or_person', 'company' );
 		WPSEO_Options::set( 'company_name', 'Viezo' );
-		WPSEO_Options::set( 'company_alternate_name', 'UAB Viezo' );
+		WPSEO_Options::set( 'company_alternate_name', 'Viezo, UAB' );
 		WPSEO_Options::set( 'company_logo', wp_get_attachment_url( $logo_id ) );
 		WPSEO_Options::set( 'company_logo_id', $logo_id );
 		WPSEO_Options::set( 'website_name', 'Viezo' );
-		WPSEO_Options::set( 'alternate_website_name', 'Viezo, UAB' );
+		WPSEO_Options::set( 'alternate_website_name', 'UAB Viezo' );
 
 		return sprintf( 'Company "Viezo" with logo #%d set. Check the source of any page for "@type":"Organization".', $logo_id );
 	},

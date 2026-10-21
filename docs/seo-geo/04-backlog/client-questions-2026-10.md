@@ -1,10 +1,29 @@
 # Questions for Viezo · October 2026
 
-Sent: _(date)_ · Answers received: _(date)_
+Sent: 2026-10-14 · Answers received: 2026-10-21 (summary below; the original questions follow for reference)
 
 These come from the SEO/GEO audit, the competitor analysis (13 companies) and the first Search Console data. Each question says what we need, why it matters, and what we will do with the answer. Short answers are fine; we write the copy and send it back for approval.
 
 The questions are in priority order. 1–4 unblock the work with the biggest effect, 5–9 improve specific pages, 10–13 are quick confirmations.
+
+## Answers (2026-10-21) and what changes
+
+| # | Viezo's answer | What we do now |
+|---|---|---|
+| 1 | No prices on the website. | Pricing page gets text **without numbers**: what affects the price, how many sensors a machine needs, what a setup looks like (C-14). No Offer/price in schema. |
+| 2 | No numbers can be published (nothing to show, or not allowed). | No headline numbers (S-05 dropped). Case-study numbers already on the pages stay. |
+| 3 | Answers given for installation, which machines, sensors per machine, how alerts are reviewed, which faults. **Not public:** data ownership, CMMS/SCADA, contract and pilot. The spec table already exists on the [Sonora page](https://viezo.lt/for-factory-owners-sonora/) (it's real text, so readable by Google). | Specs and answers added to the Sonora product schema and llms-full.txt (done 2026-10-21). Next: an FAQ block on the Sonora page with these 5 answers (C-13). |
+| 4 | OK, go ahead. | Draft new case-study titles for approval (C-03), **without client names in the titles** (see 5). |
+| 5 | No reviews for now. Client names may stay on the case studies "until someone objects", but the narrative must not be pushed further. | Review profiles on hold (A-01 G2/Capterra, A-04). Client names removed from structured data and llms-full.txt (done 2026-10-21). New titles, descriptions and future content won't feature client names. |
+| 6 | Clients won't give quotes. Some exist (IMA, IKEA Lithuania) but can't be published. Full stories only for clients that allow it: **Vilpak, CIE LT Forge, IMA Schelling**. | C-17: expand those three only, without quotes, using what Viezo's engineers can provide (vibration chart, photo of the damaged part, timeline). |
+| 7 | No named engineers. | S-09 dropped. Content stays authored by Viezo. |
+| 8 | No integrations yet. | C-19 dropped. The FAQ won't mention integrations. |
+| 9 | Yes, translate. Most cases are already translated. | Confirmed: 29 of 30 English case studies have a Polish version; only [the De Heus granulator case](https://viezo.lt/case-study/granulator-bearing-fault-validated-after-initial-dismissal/) is missing. We translate it (T-05). |
+| 10 | **UAB Viezo.** | Structured data and llms.txt now say "UAB Viezo" (done 2026-10-21). The Privacy Policy still names UAB "Nanoenergija" and needs Viezo's corrected text (legal page, we won't rewrite it ourselves). |
+| 11 | The EU posts must stay as they are (around 10 years, possibly forever). | Kept as they are (T-06 closed for the EU part). |
+| 12 | There used to be Terms on the old (Powerail) site; maybe lost in the redesign. Please check. | Checked: the [Wayback Machine](https://web.archive.org/web/2022*/viezo.lt/terms-of-use/) has 12 snapshots from May 2022 to April 2026, and the old 2022 database: the page has **always been empty** (only the heading). Nothing was lost. The railway photo is the theme's default header, shown when a page has none. Viezo needs to supply the text, or we remove the link from the English footer. It stays hidden from Google meanwhile. |
+| 13 | Lithuania is a target, but Lithuanians read English. EN and PL only for now. | No Lithuanian version (C-07 closed). |
+
 
 ---
 
