@@ -3,7 +3,8 @@
  * /llms.txt and /llms-full.txt: a plain-text summary of Viezo for AI assistants (llmstxt.org).
  *
  * Generated from the site's own content (pages, Yoast descriptions, case studies), so it stays
- * current without editing. Cached; the cache is cleared whenever a post is saved.
+ * current without editing. Cached for a day; the cache is cleared whenever a post is saved, and a
+ * new theme version starts a new cache (the key includes the version), so a deploy shows at once.
  *
  * llms.txt       Summary, key pages (EN + PL) and every case study with a one-line summary.
  * llms-full.txt  The same plus entity facts and the full text of every case study.
@@ -42,8 +43,20 @@ add_action( 'parse_request', 'vzo__llms_serve', 0 );
  * Clear the cache when content changes.
  */
 function vzo__llms_flush() {
-	delete_transient( VZO_LLMS_CACHE_KEY . '_short' );
-	delete_transient( VZO_LLMS_CACHE_KEY . '_full' );
+	delete_transient( vzo__llms_cache_key( false ) );
+	delete_transient( vzo__llms_cache_key( true ) );
+}
+
+/**
+ * Cache key, per theme version so a theme upload never serves text from the previous code.
+ *
+ * @param bool $full Whether it's llms-full.txt.
+ * @return string
+ */
+function vzo__llms_cache_key( $full ) {
+	$version = (string) wp_get_theme( get_template() )->get( 'Version' );
+
+	return VZO_LLMS_CACHE_KEY . '_' . md5( $version ) . ( $full ? '_full' : '_short' );
 }
 add_action( 'save_post', 'vzo__llms_flush' );
 add_action( 'deleted_post', 'vzo__llms_flush' );
@@ -56,7 +69,7 @@ add_action( 'switch_theme', 'vzo__llms_flush' );
  * @return string
  */
 function vzo__llms_text( $full = false ) {
-	$key    = VZO_LLMS_CACHE_KEY . ( $full ? '_full' : '_short' );
+	$key    = vzo__llms_cache_key( $full );
 	$cached = get_transient( $key );
 
 	if ( is_string( $cached ) && '' !== $cached ) {

@@ -19,7 +19,7 @@ Applies Viezo's answers of 2026-10-21 ([client-questions-2026-10.md](../04-backl
 1. `npm run zip` → upload `dist/viezo-YYYYMMDD-HHMM.zip` (Appearance → Themes → Add New → Upload → Replace current with uploaded).
 2. **ACF → Field Groups**: "Blocks" shows **Sync available**. Click **Sync**, so the FAQ layout is also in the database copy that the admin edits. (The block works on the site before syncing.)
 3. **Tools → Viezo seeds → SEO: FAQ on the Sonora pages → Run.** Expected: "#… (en): FAQ added as block 12. #… (pl): FAQ added as block 12."
-4. Clear the LiteSpeed cache if active. llms.txt refreshes on its own within a day, or immediately when any post is saved.
+4. Clear the LiteSpeed cache if active. llms.txt and llms-full.txt switch to the new version immediately: their cache is tied to the theme version.
 
 Editing later: the FAQ is a normal block on the Sonora page (Blocks → FAQ), editable per language.
 
