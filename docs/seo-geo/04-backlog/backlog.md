@@ -54,7 +54,7 @@ Added from `02-insights/learnings.md`.
 | C-10 | ~5 fault pages EN/PL (bearing wear, imbalance, misalignment, looseness, belt) linking cases | Viezo + Dev | L | H | todo | comp/fluke, icare |
 | C-11 | Tag cases by asset + fault (new taxonomies), filterable archive, indexable term pages | Dev | M | H | todo | comp/assetwatch, icare |
 | C-12 | Glossary 20–25 terms EN/PL, definition first, DefinedTermSet schema | Viezo + writer | M | M | todo | comp/tractian, assetwatch |
-| C-13 | Sonora specs page (HTML table) + 8–12 FAQs with FAQPage schema | Viezo facts, Dev | S | M | answers received 2026-10-21; specs + answers in schema/llms done; FAQ block on Sonora page next | comp/iotflows, skf, fluke, sensoteq |
+| C-13 | Sonora specs page (HTML table) + 8–12 FAQs with FAQPage schema | Viezo facts, Dev | S | M | FAQ block built 2026-10-22 (6 Q&A EN/PL, FAQPage schema), ready to deploy in 2.3.0; specs table already on page | comp/iotflows, skf, fluke, sensoteq |
 | C-14 | Pricing page text **without prices** (no public prices, Viezo 2026-10-21): what drives cost, sensors per machine, typical setups | Viezo approves, Dev | S | H | todo | comp/iotflows, banner, waites, petasense |
 | C-15 | Comparison content: "Wireless vs route-based" first, later "Sonora vs Tractian/Waites" | Viezo + writer | M | M | todo | comp/tractian |
 | C-16 | "When wireless isn't the right fit" article EN/PL | writer | S | M | todo | comp/sensoteq, petasense |

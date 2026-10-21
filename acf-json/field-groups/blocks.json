@@ -2057,6 +2057,223 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_f08417026abcb": {
+                    "key": "layout_f08417026abcb",
+                    "name": "faq",
+                    "label": "FAQ",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_18e3cfa5cc230",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "translations": "translate",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "pll_default_value": ""
+                        },
+                        {
+                            "key": "field_fb1da86f47ed2",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "translations": "translate",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "pll_default_value": ""
+                        },
+                        {
+                            "key": "field_ca65bd9ecbc74",
+                            "label": "Questions",
+                            "name": "items",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "One row per question. Keep answers short and factual: they are shown on the page and sent to search engines as FAQ structured data.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add question",
+                            "rows_per_page": 20,
+                            "translations": "translate",
+                            "allow_in_bindings": 0,
+                            "sub_fields": [
+                                {
+                                    "key": "field_3ca4de761e044",
+                                    "label": "Question",
+                                    "name": "question",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "translations": "translate",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "pll_default_value": "",
+                                    "parent_repeater": "field_ca65bd9ecbc74"
+                                },
+                                {
+                                    "key": "field_b8d7abe63569e",
+                                    "label": "Answer",
+                                    "name": "answer",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "translations": "translate",
+                                    "tabs": "all",
+                                    "toolbar": "basic",
+                                    "media_upload": 0,
+                                    "delay": 0,
+                                    "allow_in_bindings": 0,
+                                    "pll_default_value": "",
+                                    "parent_repeater": "field_ca65bd9ecbc74"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_b5341e5758ca5",
+                            "label": "Settings",
+                            "name": "settings",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6d9d5a239352f",
+                                    "label": "Border top",
+                                    "name": "border_top",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Turn on top border",
+                                    "default_value": 0,
+                                    "translations": "sync",
+                                    "allow_in_bindings": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "pll_default_value": 0
+                                },
+                                {
+                                    "key": "field_6d38e6a3c0ca8",
+                                    "label": "Border bottom",
+                                    "name": "border_bottom",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Turn on bottom border",
+                                    "default_value": 0,
+                                    "translations": "sync",
+                                    "allow_in_bindings": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "pll_default_value": 0
+                                },
+                                {
+                                    "key": "field_4e60558d0c4d2",
+                                    "label": "FAQ structured data",
+                                    "name": "schema",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Turn off if the same questions appear in another FAQ block on this page.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Send these questions to search engines as FAQ data",
+                                    "default_value": 1,
+                                    "translations": "sync",
+                                    "allow_in_bindings": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": "",
+                                    "pll_default_value": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -2086,5 +2303,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "pll_display_field_instructions": 1,
-    "modified": 1785531879
+    "modified": 1792617107
 }

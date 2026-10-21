@@ -360,6 +360,62 @@ function vzo__schema_sonora_product( $graph, $context ) {
 add_filter( 'wpseo_schema_graph', 'vzo__schema_sonora_product', 10, 2 );
 
 /**
+ * FAQPage piece built from the page's FAQ blocks (partials/blocks/faq.php).
+ *
+ * Google only shows FAQ rich results for a few authoritative sites, but the markup still tells
+ * search engines and AI assistants which question each answer belongs to.
+ *
+ * @param array $graph Schema graph.
+ * @return array
+ */
+function vzo__schema_faq( $graph ) {
+	if ( ! is_singular() || ! function_exists( 'get_field' ) ) {
+		return $graph;
+	}
+
+	$questions = [];
+
+	foreach ( (array) get_field( 'blocks', get_queried_object_id() ) as $block ) {
+		if ( 'faq' !== ( $block['acf_fc_layout'] ?? '' ) || empty( $block['items'] ) ) {
+			continue;
+		}
+
+		if ( isset( $block['settings']['schema'] ) && ! $block['settings']['schema'] ) {
+			continue;
+		}
+
+		foreach ( (array) $block['items'] as $item ) {
+			$question = trim( wp_strip_all_tags( $item['question'] ?? '' ) );
+			$answer   = trim( wp_kses( $item['answer'] ?? '', [ 'p' => [], 'br' => [], 'ul' => [], 'ol' => [], 'li' => [], 'strong' => [], 'em' => [], 'a' => [ 'href' => [] ] ] ) );
+
+			if ( '' !== $question && '' !== $answer ) {
+				$questions[] = [
+					'@type'          => 'Question',
+					'name'           => $question,
+					'acceptedAnswer' => [ '@type' => 'Answer', 'text' => $answer ],
+				];
+			}
+		}
+	}
+
+	if ( ! $questions ) {
+		return $graph;
+	}
+
+	$url     = get_permalink( get_queried_object_id() );
+	$graph[] = [
+		'@type'      => 'FAQPage',
+		'@id'        => $url . '#faq',
+		'url'        => $url,
+		'isPartOf'   => [ '@id' => $url ],
+		'mainEntity' => $questions,
+	];
+
+	return $graph;
+}
+add_filter( 'wpseo_schema_graph', 'vzo__schema_faq', 20 );
+
+/**
  * Case studies get Article schema. Yoast needs author support on the post type for that.
  */
 function vzo__seo_case_study_author_support() {

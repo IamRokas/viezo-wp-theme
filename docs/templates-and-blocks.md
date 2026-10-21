@@ -63,6 +63,7 @@ The layout name **is** the file name. Available layouts:
 | `info_line` | Info/stat strip |
 | `comparison_table` | Comparison table |
 | `video` | Video with custom play/pause controls (`src/js/blocks/video.js`) |
+| `faq` | Title + questions/answers as expandable rows (native `<details>`, no JS). Outputs FAQPage structured data (turn off per block in Settings → FAQ structured data). Styles `src/scss/blocks/_faq.scss`, schema `vzo__schema_faq()` in `inc/seo.php`. Used on the Sonora pages |
 | `embed_code` | Title/subtitle + raw embed code |
 | `case_studies` | Case study cards (`partials/case-study-card.php`) |
 | `partners` | Partner logos (from the `partner` post type) |
