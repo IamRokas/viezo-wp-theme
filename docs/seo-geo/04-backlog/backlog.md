@@ -55,10 +55,10 @@ Added from `02-insights/learnings.md`.
 | C-11 | Tag cases by asset + fault (new taxonomies), filterable archive, indexable term pages | Dev | M | H | todo | comp/assetwatch, icare |
 | C-12 | Glossary 20–25 terms EN/PL, definition first, DefinedTermSet schema | Viezo + writer | M | M | todo | comp/tractian, assetwatch |
 | C-13 | Sonora specs page (HTML table) + 8–12 FAQs with FAQPage schema | Viezo facts, Dev | S | M | done: FAQ live on Sonora EN/PL (2.3.0); Polish reviewed by Viezo | comp/iotflows, skf, fluke, sensoteq |
-| C-14 | Pricing page text **without prices** (no public prices, Viezo 2026-10-21): what drives cost, sensors per machine, typical setups | Viezo approves, Dev | S | H | todo | comp/iotflows, banner, waites, petasense |
+| C-14 | Pricing page text **without prices** (no public prices, Viezo 2026-10-21): what drives cost, sensors per machine, typical setups | Viezo approves, Dev | S | H | todo: no prices or price ranges (confirmed again 2026-10-29); only what drives setup size, from approved FAQ facts. Drop if Viezo objects | comp/iotflows, banner, waites, petasense |
 | C-15 | Comparison content: "Wireless vs route-based" first, later "Sonora vs Tractian/Waites" | Viezo + writer | M | M | todo | comp/tractian |
 | C-16 | "When wireless isn't the right fit" article EN/PL | writer | S | M | todo | comp/sensoteq, petasense |
-| C-17 | Expand flagship cases: **Vilpak, CIE LT Forge, IMA Schelling only**, no client quotes; chart + damaged-part photo + timeline from Viezo | Viezo facts, writer | M | H | todo (needs material from Viezo engineers) | comp/petasense, tractian, icare |
+| C-17 | Expand flagship cases: **Vilpak, CIE LT Forge, IMA Schelling only**, no client quotes; chart + damaged-part photo + timeline from Viezo | Viezo facts, writer | M | H | dropped 2026-10-29: no engineer material (charts, photos) available | comp/petasense, tractian, icare |
 | C-18 | 2–3 min Sonora installation video, own page, VideoObject schema | Viezo | M | M | todo | comp/fluke, banner |
 | C-19 | Integrations / API one-pager (if Sonora has CMMS/SCADA/API paths) | Viezo + Dev | S | L | dropped 2026-10-21: no integrations yet | comp/schaeffler-optime |
 | S-05 | 2–3 aggregate proof numbers (plants, faults caught, median warning lead time) on home, Sonora, llms.txt | Viezo data | S | H | dropped 2026-10-21: no numbers can be published | comp/assetwatch, augury, waites |
