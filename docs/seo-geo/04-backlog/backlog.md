@@ -4,6 +4,8 @@ Single list of SEO/GEO work. Sources: audit `00-audit/2026-10-14-seo-geo-plan.ht
 
 Impact H/M/L, effort S (≤ ½ day) / M (≤ 3 days) / L (more).
 
+Client-side to-do list (Bing, Google Business Profile, Crunchbase, Wikidata, LinkedIn, partner links, YouTube, directories, press), with ready texts: [client-actions-2026-10.md](client-actions-2026-10.md).
+
 ## Phase 1 · Quick fixes
 
 | ID | Task | Owner | Effort | Impact | Status | Src |
