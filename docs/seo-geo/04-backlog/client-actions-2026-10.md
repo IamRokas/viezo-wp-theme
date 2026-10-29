@@ -19,18 +19,11 @@ Sąrašas darbų, kuriuos atlieka Viezo (reikia jūsų paskyrų, prieigų ar spr
 4. Po kelių dienų skiltyje **Sitemaps** patikrinkite, ar `https://viezo.lt/sitemap_index.xml` rodomas su būsena „Success“.
 5. Pridėkite Roką kaip naudotoją (Settings → User management), kad galėtume stebėti rezultatus.
 
-### 2. LinkedIn įmonės puslapis · ~15 min.
+### 2. LinkedIn įmonės puslapis · ~10 min.
 
-**Kodėl:** LinkedIn yra pagrindinis išorinis šaltinis, kurį Google ir AI naudoja įmonei identifikuoti. Svetainės struktūrizuotuose duomenyse jau nurodyta nuoroda į jūsų LinkedIn, tad informacija turi sutapti.
-
-**Kaip** (LinkedIn → jūsų įmonės puslapis → **Edit page**):
-- **Website:** `https://viezo.lt` (ne viezo.com).
-- **Description:** įklijuokite ilgąjį EN aprašymą iš skyriaus „Paruošti tekstai“ apačioje.
-- **Industry:** „Industrial Machinery Manufacturing“ arba „Software Development“, kuri jums tinkamesnė.
-- **Specialties:** Predictive maintenance, Vibration monitoring, Condition monitoring, Industrial IoT, Wireless sensors.
-- **Locations:** Lentvario g. 33, Vilnius.
-- Paprašykite darbuotojų, kad jų profiliuose darbovietė būtų susieta būtent su šiuo įmonės puslapiu.
-- Kartą per 1–2 savaites įkelkite įrašą su nuoroda į vieną atvejo aprašymą (pavadinimai jau nauji ir aiškūs).
+Svetainės nuoroda jau teisinga (viezo.lt). Verta patikrinti tik du dalykus:
+- **Description:** kad sutaptų su svetainės aprašymu. Jei skiriasi, įklijuokite ilgąjį EN tekstą iš skyriaus „Paruošti tekstai“ apačioje. Tas pats aprašymas visur padeda Google ir AI susieti profilius su viena įmone.
+- **Įrašai:** kartą per 1–2 savaites įkelkite įrašą su nuoroda į vieną atvejo aprašymą (pavadinimai jau nauji ir aiškūs).
 
 ### 3. Google Business Profile · ~30 min. + patvirtinimas
 
