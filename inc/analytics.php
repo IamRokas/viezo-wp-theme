@@ -4,8 +4,9 @@
  *
  * - Measurement ID: Settings → Viezo Settings → Analytics (field "GA4 Measurement ID"),
  *   falling back to VZO_GA4_DEFAULT_ID. Enter "off" to disable.
- * - Analytics cookies stay off until the visitor accepts the cookie banner (GlowCookies
- *   stores localStorage "GlowCookies" = "1"); until then GA4 only receives cookieless pings.
+ * - Analytics cookies stay off until the visitor clicks "Accept all" in the cookie banner
+ *   (inc/consent.php, localStorage "vzo_consent"); until then GA4 only receives cookieless pings.
+ *   The banner sends the consent updates (grant, or revoke from "Cookie settings").
  *   Ads storage is always denied (no ads tracking on this site).
  * - The setup builder (src/js/templates/setup-builder.js) sends its funnel events via gtag().
  *
@@ -39,13 +40,16 @@ function vzo__ga4_tag() {
 		return;
 	}
 	?>
-	<!-- Google Analytics 4 (Consent Mode: analytics cookies only after the cookie banner is accepted) -->
+	<!-- Google Analytics 4 (Consent Mode: analytics cookies only after "Accept all" in the cookie banner) -->
 	<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	(function () {
 		var accepted = false;
-		try { accepted = window.localStorage.getItem('GlowCookies') === '1'; } catch (e) {}
+		try {
+			var stored = JSON.parse(window.localStorage.getItem('vzo_consent') || 'null');
+			accepted = stored ? stored.choice === 'all' && Date.now() - stored.at < 31536000000 : window.localStorage.getItem('GlowCookies') === '1';
+		} catch (e) {}
 		gtag('consent', 'default', {
 			analytics_storage: accepted ? 'granted' : 'denied',
 			ad_storage: 'denied',
@@ -61,22 +65,3 @@ function vzo__ga4_tag() {
 	<?php
 }
 add_action( 'wp_head', 'vzo__ga4_tag', 1 );
-
-/**
- * Grant analytics consent when the visitor clicks the cookie banner's OK button.
- */
-function vzo__ga4_consent_listener() {
-	if ( ! vzo__ga4_id() ) {
-		return;
-	}
-	?>
-	<script>
-	document.addEventListener('click', function (event) {
-		if (event.target.closest && event.target.closest('#acceptCookies') && typeof window.gtag === 'function') {
-			window.gtag('consent', 'update', { analytics_storage: 'granted' });
-		}
-	});
-	</script>
-	<?php
-}
-add_action( 'wp_footer', 'vzo__ga4_consent_listener', 99 );

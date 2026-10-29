@@ -4,6 +4,7 @@ What shipped on viezo.lt and when, so changes in rankings, traffic or AI mention
 
 | Date | ID | Change | Pages |
 |---|---|---|---|
+| 2026-10-22 | C-13, S-01, S-03, S-06 | **Deployed** theme 2.3.0: Sonora FAQ (EN/PL, FAQPage schema), legal name UAB Viezo, client names out of schema/llms, Sonora specs in Product schema and llms-full.txt | Sonora, case studies, llms |
 | 2026-10-14 | T-04 | WebP Express (scope: uploads) + bulk conversion. Same image URLs, WebP sent when the browser accepts it (case-study cards ~60–90% smaller) | all images in uploads |
 | 2026-10-14 | T-01–03, T-05, T-06, S-01–04, S-06, S-07 | **Deployed** theme 2.2.0: robots.txt (theme-served, images unblocked, AI crawlers named; physical file removed over SSH), gzip via .htaccess (home HTML 137 → 22 KB), compressed hero video, x-default, PL archive description, Terms noindex, Organization/Product/Article schema, llms.txt. See releases/2026-10-14-simple-fixes.md | all |
 | 2026-10-14 | — | SEO/GEO audit done; workspace created; 13 competitor profiles, matrix and learnings; 18 tasks added to backlog | — |

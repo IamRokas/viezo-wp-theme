@@ -1,6 +1,6 @@
 # C-03 · New case-study titles and descriptions (draft for approval)
 
-Drafted 2026-10-22 · Status: **waiting for Viezo's approval** · Backlog: C-03 (approved in principle 2026-10-21)
+Drafted 2026-10-22 · Status: **approved 2026-10-29 with edits** (rows 5, 9, 10, 13, 15, 16, 20, 29, 30). The final texts are in `seeds/seo-case-study-titles.php`, which is the source of truth. · Backlog: C-03
 
 ## How to review
 

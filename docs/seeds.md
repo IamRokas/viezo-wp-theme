@@ -25,6 +25,7 @@ These change settings and server files rather than fill empty fields, so they ov
 |---|---|
 | `seo-organization` | Sets Yoast → Site representation to the company **Viezo** with a 600×600 logo (`seeds/assets/seo/viezo-logo.png`), which Yoast requires before it outputs Organization schema |
 | `seo-server` | Renames the physical `robots.txt` to `robots.txt.viezo-backup` so WordPress serves the theme's robots.txt, and writes a **Viezo compression** (gzip) block to `.htaccess`. Then fetches robots.txt, the home page and style.css and reports whether they are right and compressed |
+| `seo-case-study-titles` | Sets the approved title and Google description of all 30 case studies, English and Polish (no client names; URLs unchanged). Stores the previous values in `_vzo_c03_previous` on each post, and rebuilds Yoast's index entry so Google sees the new text at once. Safe to re-run |
 | `seo-sonora-faq` | Adds an **FAQ** block (6 approved questions, English and Polish) before **Case studies** on every page using the Sonora template. Skips pages that already have an FAQ block, so re-running is safe; existing blocks are kept as stored |
 | `seo-home-video` | Imports the compressed hero video (`seeds/assets/seo/home-hero-720.mp4`, 4.8 MB instead of 50 MB) and its poster, and sets them as the header background of the English and Polish home pages. The old video stays in the Media Library |
 

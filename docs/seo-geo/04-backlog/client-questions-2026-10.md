@@ -25,6 +25,17 @@ The questions are in priority order. 1–4 unblock the work with the biggest eff
 | 13 | Lithuania is a target, but Lithuanians read English. EN and PL only for now. | No Lithuanian version (C-07 closed). |
 
 
+## Follow-up answers (2026-10-29)
+
+| Topic | Viezo's answer | What we did |
+|---|---|---|
+| Title table | All approved, with edits: industry prefix added to #9, #10, #15, #20, #29 (footwear and fashion retailer), #30; #5 last sentence removed; #13 "detected on the same day the sensors were installed"; #16 "saving over €46,000". Industry wording is fine. | Seed `seo-case-study-titles` (release 2026-10-29) |
+| `kekava-…` URL | Keep if it helps. | Kept: changing it would only reset its Google history. |
+| Polish texts | Reviewed by Viezo. | — |
+| Terms of Use | Text added (EN). | EN page has 1,160 words and became indexable automatically. The PL page is still empty and stays hidden from Google. |
+| Privacy Policy | Fixed (UAB Viezo). Requested: cookie banner with "Accept all" and "Reject optional", no GA4 cookies before consent, choice can be changed or withdrawn. | New consent banner (release 2026-10-29). |
+| Granulator in Polish | Published by Viezo. | Linked and indexed; new title applied by the seed. |
+
 ---
 
 ## A. The most valuable answers

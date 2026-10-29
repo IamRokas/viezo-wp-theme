@@ -225,6 +225,34 @@ function vzo__seo_pl_case_study_archive_description( $description ) {
 add_filter( 'wpseo_metadesc', 'vzo__seo_pl_case_study_archive_description' );
 add_filter( 'wpseo_opengraph_desc', 'vzo__seo_pl_case_study_archive_description' );
 
+/**
+ * Case-study title in Google: "<title> | Viezo case study" (PL: "| Studium przypadku Viezo").
+ *
+ * Replaces Yoast's "<title> - Viezo" so results say what the page is. A title set by hand in the
+ * Yoast box of a case study still wins.
+ *
+ * @param string $title Title.
+ * @return string
+ */
+function vzo__seo_case_study_title( $title ) {
+	if ( ! is_singular( 'case-study' ) ) {
+		return $title;
+	}
+
+	$post_id = get_queried_object_id();
+
+	if ( '' !== (string) get_post_meta( $post_id, '_yoast_wpseo_title', true ) ) {
+		return $title;
+	}
+
+	$suffix = ( function_exists( 'pll_get_post_language' ) && 'pl' === pll_get_post_language( $post_id ) ) ? 'Studium przypadku Viezo' : 'Viezo case study';
+
+	// Raw title: Yoast escapes the output itself, get_the_title() would double-encode apostrophes.
+	return wp_strip_all_tags( (string) get_post_field( 'post_title', $post_id ) ) . ' | ' . $suffix;
+}
+add_filter( 'wpseo_title', 'vzo__seo_case_study_title' );
+add_filter( 'wpseo_opengraph_title', 'vzo__seo_case_study_title' );
+
 /*
  * Schema (Yoast graph)
  * ---------------------------------------------------------------------------------------------- */

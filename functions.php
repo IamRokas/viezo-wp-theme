@@ -24,6 +24,7 @@ function vzo__get_theme_include_files()
 		'inc/security.php', // WordPress hardening.
 		'inc/scripts.php', // Load styles and scripts.
 		'inc/analytics.php', // Google Analytics 4 + Consent Mode.
+		'inc/consent.php', // Cookie banner, "Cookie settings", Clarity after consent.
 		'inc/template-tags.php', // Custom template tags for this theme.
 		'inc/calculator.php', // Calculator form.
 		'inc/setup-builder.php', // Pricing setup builder funnel.

@@ -31,6 +31,9 @@ viezo/
 ├── inc/                      PHP functionality, loaded from functions.php
 │   ├── acf.php               ACF Local JSON paths + file naming
 │   ├── analytics.php         Google Analytics 4 tag + Consent Mode (ID in Settings → Viezo Settings → Analytics)
+│   ├── seo.php               SEO/GEO: robots.txt, hreflang, schema, case-study titles
+│   ├── llms.php              /llms.txt and /llms-full.txt
+│   ├── consent.php           Cookie banner (Accept all / Reject optional), "Cookie settings" link, Clarity after consent
 │   ├── calculator.php        Savings calculator (pricing page form)
 │   ├── compat.php            Backwards compatibility
 │   ├── customizer/           Customizer panels/settings

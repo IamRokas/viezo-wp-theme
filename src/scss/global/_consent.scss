@@ -1,0 +1,76 @@
+// Cookie consent banner (inc/consent.php)
+// ──────────────────────────────────────────────────
+
+.consent-banner {
+	position: fixed;
+	right: 16px;
+	bottom: 16px;
+	left: 16px;
+	z-index: 9999;
+	max-width: 520px;
+	background: #fff;
+	border: 1px solid black;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+
+	@screen md {
+		left: auto;
+		right: 24px;
+		bottom: 24px;
+	}
+
+	&[hidden] {
+		display: none;
+	}
+
+	&__inner {
+		padding: 24px;
+	}
+
+	&__title {
+		@apply font-osp-din uppercase text-darkest-grey;
+		font-size: 1.375rem;
+		line-height: 1.2;
+		margin-bottom: 8px;
+	}
+
+	&__text {
+		@apply text-darkest-grey;
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		margin-bottom: 20px;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	// Same style for both choices: rejecting is as easy as accepting.
+	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	&__button {
+		flex: 1 1 180px;
+		cursor: pointer;
+		text-align: center;
+	}
+}
+
+// "Cookie settings" in the footer looks like the text around it.
+.consent-settings-link {
+	background: none;
+	border: 0;
+	padding: 0;
+	color: inherit;
+	font: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.consent-settings-sep {
+	margin: 0 6px;
+}

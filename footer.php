@@ -54,6 +54,7 @@ if (!empty($bg)) {
 
             <div class="copyright pt-32 hidden md:block">
                 &copy; <?= date('Y'); ?> Viezo. <?php esc_html_e('All rights reserved.', 'viezo'); ?>
+                <span class="consent-settings-sep" aria-hidden="true">·</span> <?php vzo__consent_settings_link(); ?>
             </div>
         </div>
         <div class="col second-wrap md:w-3/5 md:flex justify-between font-osp-din uppercase">
@@ -126,37 +127,13 @@ if (!empty($bg)) {
 
             <div class="copyright pt-32">
                 &copy; <?= date('Y'); ?> Viezo. <?php esc_html_e('All rights reserved.', 'viezo'); ?>
+                <span class="consent-settings-sep" aria-hidden="true">·</span> <?php vzo__consent_settings_link(); ?>
             </div>
         </div>
     </div>
 </footer><!-- .site-footer container-->
 
 <?php vzo__display_mobile_menu(); ?>
-
-<script src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.7/src/glowCookies.min.js"></script>
-<style>
-.glowCookies__banner__1>h3 {
-    font-size: 22px;
-}
-
-#rejectCookies {
-    display: none;
-}
-
-.glowCookies__banner .accept__btn__styles {
-    width: 100%;
-    padding: 10px 13px;
-}
-</style>
-<script>
-glowCookies.start('en', {
-    style: 1,
-    hideAfterClick: true,
-    'acceptBtnText': 'OK',
-    policyLink: <?= wp_json_encode(get_privacy_policy_url() ?: home_url('/privacy-policy/')); ?>
-});
-</script>
-
 
 <?php wp_footer(); ?>
 
