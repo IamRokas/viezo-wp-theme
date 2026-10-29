@@ -103,6 +103,59 @@ function vzo__robots_txt( $output, $public ) {
 add_filter( 'robots_txt', 'vzo__robots_txt', PHP_INT_MAX, 2 );
 
 /*
+ * Old URLs
+ * ---------------------------------------------------------------------------------------------- */
+
+/**
+ * Pages from the old railway-era site (Powerail, discontinued) that still get clicks or have
+ * links from other sites, mapped to the closest current page. Found in Search Console and the
+ * Wayback Machine, 2026-10-29. Only used when the URL would otherwise be a 404.
+ *
+ * @return array Path => target path (relative to the home URL).
+ */
+function vzo__seo_legacy_redirects() {
+	return [
+		// Sonora datasheet: the Sonora page has the spec table.
+		'/wp-content/uploads/2021/01/Sonora_Sensors_Datasheet.pdf' => '/for-factory-owners-sonora/',
+		// Removed case studies and old categories.
+		'/case-study/planer-bearing-fault/'                         => '/case-studies/',
+		'/case-study-type/sonora/'                                  => '/case-studies/',
+		'/case-study-type/construction-products/'                   => '/case-studies/',
+		'/wagon-maintenance-with-powerail-case-study-in-cost-savings-and-operational-efficiency/' => '/case-studies/',
+		// Railway / Powerail and old company pages: no current equivalent.
+		'/early-detection-of-wheel-defects/'                        => '/',
+		'/running-on-the-edge-why-the-railway-sector-is-rethinking-maintenance/' => '/',
+		'/condition-based-monitoring-vs-predictive-based-monitoring-in-railway-wagons/' => '/',
+		'/technology/'                                              => '/',
+		'/for-wagon-owners/'                                        => '/',
+		'/for-infrastructure-owners/'                               => '/',
+		'/powerail/'                                                => '/',
+		'/about-us/'                                                => '/',
+		'/news/'                                                    => '/',
+		'/wp-content/uploads/2021/01/VIEZO-Railways.pdf'            => '/',
+	];
+}
+
+/**
+ * 301 old URLs to their replacement instead of showing a 404.
+ */
+function vzo__seo_redirect_legacy_urls() {
+	if ( ! is_404() ) {
+		return;
+	}
+
+	$path = (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+	$map  = vzo__seo_legacy_redirects();
+	$key  = isset( $map[ $path ] ) ? $path : trailingslashit( $path );
+
+	if ( isset( $map[ $key ] ) ) {
+		wp_safe_redirect( home_url( $map[ $key ] ), 301, 'Viezo legacy URL' );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'vzo__seo_redirect_legacy_urls', 1 );
+
+/*
  * hreflang
  * ---------------------------------------------------------------------------------------------- */
 

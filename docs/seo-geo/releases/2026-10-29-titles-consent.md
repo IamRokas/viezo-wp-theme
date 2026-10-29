@@ -1,6 +1,6 @@
-# Release 2026-10-29 · Case-study titles + cookie consent (theme 2.4.0 / 2.4.1)
+# Release 2026-10-29 · Case-study titles + cookie consent (theme 2.4.0 – 2.4.2)
 
-**2.4.1** adds a structured-data fix on top of 2.4.0; deploy 2.4.1 either way.
+**2.4.1** adds a structured-data fix and **2.4.2** redirects for old URLs, on top of 2.4.0. Deploy the latest either way.
 
 ## What's in it
 
@@ -14,6 +14,18 @@
 Search Console reported this error on every case study (item name "Sonora"). The cause: Sonora was marked up as a **Product**, both on the Sonora pages and inside each case study's `mentions`. Google validates every Product for a product rich result, which needs a price or reviews. Viezo publishes neither, so it could never pass. Sonora is now a **Service** (sensors plus analysis reviewed by Viezo's analysts), and case studies reference it by `@id` in their own language. No Product items are left on the site. The specs remain on the Sonora page and in llms-full.txt.
 
 **After deploying:** Search Console → Enhancements → Product snippets (or Merchant listings) → open the error → **Validate fix**. Google rechecks over a few days to weeks. The Product report then empties, because there are no products any more; that's expected.
+
+### 2.4.2 · Redirects for old railway-era URLs (backlog T-08)
+
+Powerail is discontinued (Viezo, 2026-10-29). Fifteen old addresses returned 404 but still get clicks or have links from other sites, e.g. /early-detection-of-wheel-defects/ (25 clicks, 1,364 impressions/year) and /technology/ (linked from StartUs Insights). Each now 301-redirects to the closest current page, only when it would otherwise be a 404:
+
+- the Sonora datasheet PDF → Sonora page;
+- the removed planer case study, old case-study categories and the Powerail case study → Case studies;
+- railway articles, Technology, Powerail pages, About and the railway PDF → home page.
+
+The map is `vzo__seo_legacy_redirects()` in `inc/seo.php`; add new entries there.
+
+**Check after deploy:** `curl -sI https://viezo.lt/technology/` and `curl -sI https://viezo.lt/wp-content/uploads/2021/01/Sonora_Sensors_Datasheet.pdf` both return `301` with a `Location`. If the PDF one still returns 404, Apache serves the uploads folder without WordPress; add the PDF redirects in Tools → Redirection instead.
 
 ## Deploy
 
