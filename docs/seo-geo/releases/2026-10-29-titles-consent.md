@@ -1,4 +1,6 @@
-# Release 2026-10-29 · Case-study titles + cookie consent (theme 2.4.0)
+# Release 2026-10-29 · Case-study titles + cookie consent (theme 2.4.0 / 2.4.1)
+
+**2.4.1** adds a structured-data fix on top of 2.4.0; deploy 2.4.1 either way.
 
 ## What's in it
 
@@ -6,6 +8,12 @@
 |---|---|---|
 | C-03 | Approved titles and Google descriptions for all 30 case studies, EN + PL, no client names, URLs unchanged. In Google: "<title> \| Viezo case study" / "\| Studium przypadku Viezo" | seed `seo-case-study-titles`, `vzo__seo_case_study_title()` in `inc/seo.php` |
 | M-05 | Cookie banner (EN/PL) with equal "Accept all" / "Reject optional" buttons; "Cookie settings" link in the footer reopens it; GA4 analytics cookies and Microsoft Clarity only after "Accept all"; "Reject optional" later revokes consent and deletes the analytics cookies; asks again after 12 months. Replaces the GlowCookies banner (CDN, English only, single "OK"). Visitors who clicked "OK" before count as accepted. | `inc/consent.php`, `inc/analytics.php`, `footer.php`, `src/scss/global/_consent.scss` |
+
+### 2.4.1 · Search Console "Either 'offers', 'review' or 'aggregateRating' should be specified"
+
+Search Console reported this error on every case study (item name "Sonora"). The cause: Sonora was marked up as a **Product**, both on the Sonora pages and inside each case study's `mentions`. Google validates every Product for a product rich result, which needs a price or reviews. Viezo publishes neither, so it could never pass. Sonora is now a **Service** (sensors plus analysis reviewed by Viezo's analysts), and case studies reference it by `@id` in their own language. No Product items are left on the site. The specs remain on the Sonora page and in llms-full.txt.
+
+**After deploying:** Search Console → Enhancements → Product snippets (or Merchant listings) → open the error → **Validate fix**. Google rechecks over a few days to weeks. The Product report then empties, because there are no products any more; that's expected.
 
 ## Deploy
 

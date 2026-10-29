@@ -6,7 +6,7 @@
  * - hreflang x-default
  * - noindex for empty legal pages until they get content
  * - Polish meta description fallback for the case-study archive
- * - Yoast schema: Organization details, Sonora Product, Article on case studies
+ * - Yoast schema: Organization details, Sonora Service (not Product: no prices or reviews), Article on case studies
  *
  * WebP images are handled by the WebP Express plugin, not the theme.
  *
@@ -301,7 +301,7 @@ add_filter( 'wpseo_schema_organization', 'vzo__schema_organization' );
 
 /**
  * Sonora facts approved by Viezo (2026-10-21): the spec table on the Sonora page plus answers to
- * common buyer questions. Used in Product schema and llms-full.txt. Prices, client numbers,
+ * common buyer questions. Used in llms-full.txt. Prices, client numbers,
  * data ownership, integrations and contract terms are not public: don't add them here.
  *
  * @return array{specs: array<string,string>, facts: string[]}
@@ -335,57 +335,87 @@ function vzo__seo_sonora_facts() {
 }
 
 /**
- * Add a Product piece for Sonora on the Sonora pages (EN and PL).
+ * URL of the Sonora page in a language (the page using templates/powertrack.php).
  *
- * No offers or ratings yet: prices need Viezo's approval (backlog C-14), and ratings must only
- * appear once there are real reviews.
+ * @param string $lang Polylang language slug; '' for the current/default language.
+ * @return string
+ */
+function vzo__seo_sonora_url( $lang = '' ) {
+	static $cache = [];
+
+	if ( isset( $cache[ $lang ] ) ) {
+		return $cache[ $lang ];
+	}
+
+	$args = [
+		'post_type'      => 'page',
+		'post_status'    => 'publish',
+		'posts_per_page' => 1,
+		'fields'         => 'ids',
+		'meta_key'       => '_wp_page_template', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+		'meta_value'     => 'templates/powertrack.php', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+	];
+
+	if ( function_exists( 'pll_default_language' ) ) {
+		$args['lang'] = $lang ?: pll_default_language();
+	}
+
+	$ids = get_posts( $args );
+
+	return $cache[ $lang ] = $ids ? (string) get_permalink( $ids[0] ) : '';
+}
+
+/**
+ * Sonora as a Service on the Sonora pages (EN and PL).
  *
- * @param array                            $graph   Schema graph.
- * @param Yoast\WP\SEO\Context\Meta_Tags_Context $context Yoast context.
+ * Deliberately not a Product: Google validates every Product item for a product rich result,
+ * which requires a price (offers) or reviews. Viezo publishes neither (no prices, no reviews), so
+ * Product markup only produced "Either 'offers', 'review' or 'aggregateRating' should be specified"
+ * errors in Search Console. Sonora is sensors plus analysis reviewed by Viezo's analysts, which
+ * Service describes accurately; the specs stay on the page and in llms-full.txt.
+ *
+ * @param array $graph Schema graph.
  * @return array
  */
-function vzo__schema_sonora_product( $graph, $context ) {
+function vzo__schema_sonora_service( $graph ) {
 	if ( ! vzo__seo_is_sonora_page() ) {
 		return $graph;
 	}
 
 	$url         = get_permalink( get_queried_object_id() );
-	$org_id      = home_url( '/#organization' );
 	$description = ( function_exists( 'YoastSEO' ) ? YoastSEO()->meta->for_current_page()->description : '' );
 
-	$product = [
-		'@type'        => 'Product',
-		'@id'          => $url . '#product',
-		'name'         => 'Sonora',
+	$service = [
+		'@type'         => 'Service',
+		'@id'           => $url . '#sonora',
+		'name'          => 'Sonora',
 		'alternateName' => 'Sonora wireless vibration monitoring system',
-		'description'  => $description ?: 'Sonora is a wireless vibration monitoring system for predictive maintenance of industrial rotating equipment.',
-		'url'          => $url,
-		'category'     => 'Wireless vibration monitoring system',
-		'brand'        => [ '@type' => 'Brand', 'name' => 'Viezo' ],
-		'manufacturer' => [ '@id' => $org_id ],
+		'description'   => $description ?: 'Sonora is a wireless vibration monitoring system for predictive maintenance of industrial rotating equipment.',
+		'url'           => $url,
+		'serviceType'   => 'Wireless vibration monitoring and predictive maintenance',
+		'category'      => 'Condition monitoring',
+		'brand'         => [ '@type' => 'Brand', 'name' => 'Viezo' ],
+		'provider'      => [ '@id' => home_url( '/#organization' ) ],
+		'areaServed'    => 'Europe',
 	];
 
-	foreach ( vzo__seo_sonora_facts()['specs'] as $name => $value ) {
-		$product['additionalProperty'][] = [ '@type' => 'PropertyValue', 'name' => $name, 'value' => $value ];
-	}
-
 	if ( has_post_thumbnail( get_queried_object_id() ) ) {
-		$product['image'] = get_the_post_thumbnail_url( get_queried_object_id(), 'large' );
+		$service['image'] = get_the_post_thumbnail_url( get_queried_object_id(), 'large' );
 	}
 
-	$graph[] = $product;
+	$graph[] = $service;
 
-	// Point the WebPage at the product so the relationship is explicit.
+	// Point the WebPage at Sonora so the relationship is explicit.
 	foreach ( $graph as &$piece ) {
 		if ( isset( $piece['@type'] ) && 'WebPage' === $piece['@type'] ) {
-			$piece['about'] = [ '@id' => $product['@id'] ];
+			$piece['about'] = [ '@id' => $service['@id'] ];
 		}
 	}
 	unset( $piece );
 
 	return $graph;
 }
-add_filter( 'wpseo_schema_graph', 'vzo__schema_sonora_product', 10, 2 );
+add_filter( 'wpseo_schema_graph', 'vzo__schema_sonora_service', 10 );
 
 /**
  * FAQPage piece built from the page's FAQ blocks (partials/blocks/faq.php).
@@ -519,7 +549,10 @@ function vzo__schema_case_study_article( $data ) {
 		[ '@type' => 'Thing', 'name' => 'Predictive maintenance' ],
 	];
 
-	$mentions = [ [ '@type' => 'Product', 'name' => 'Sonora', 'brand' => [ '@type' => 'Brand', 'name' => 'Viezo' ] ] ];
+	// A reference to the Sonora Service (not an inline Product: see vzo__schema_sonora_service()).
+	$lang       = function_exists( 'pll_get_post_language' ) ? (string) pll_get_post_language( $post_id ) : '';
+	$sonora_url = vzo__seo_sonora_url( $lang );
+	$mentions   = [ array_filter( [ '@type' => 'Service', '@id' => $sonora_url ? $sonora_url . '#sonora' : '', 'name' => 'Sonora' ] ) ];
 
 	$terms = get_the_terms( $post_id, 'case-study-type' );
 
