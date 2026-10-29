@@ -67,6 +67,7 @@ Added from `02-insights/learnings.md`.
 | S-09 | 2–3 engineer author pages, Person schema, linked as author | Viezo + Dev | S | M | dropped 2026-10-21: no named engineers | comp/icare |
 | A-04 | Ask ~10 case-study clients for G2/Capterra reviews (after A-01) | Viezo | M | M | on hold 2026-10-21: no client reviews for now | comp/assetwatch |
 | A-05 | 2 releases/year to PL maintenance trade media + LT/Baltic tech media | Viezo | M | M | todo | comp/schaeffler-optime, sensoteq |
+| C-20 | Rename the 4–5 vague case-study URLs (bearing-fault, pump-failure, fan-fault, motor-defect; kekava-… if Viezo wants the client name out), with 301s and setup-builder slug references updated in the same release. Only after the C-03 title results are measured (Search Console, 4–6 weeks) | Dev | S | L | later (after C-03 measured) | decision 2026-10-29 |
 | M-05 | Cookie consent: Accept all / Reject optional, Cookie settings link, GA4 + Clarity only after consent (Viezo request 2026-10-29) | Dev | S | H | ready in 2.4.0 | client |
 | M-04 | Quarterly competitor re-check (profiles + matrix) | Dev | S | L | todo | comp |
 
