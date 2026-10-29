@@ -2,7 +2,26 @@
 
 Sąrašas darbų, kuriuos atlieka Viezo (reikia jūsų paskyrų, prieigų ar sprendimų). Jie padeda Google ir AI asistentams (ChatGPT, Copilot, Perplexity, Gemini) atpažinti Viezo kaip patikimą įmonę ir atvesti daugiau lankytojų. Visur naudojame tik jau patvirtintą informaciją: jokių kainų, jokių klientų pavadinimų, jokių atsiliepimų prašymų.
 
-**Svarbiausia taisyklė:** visur naudokite tą patį pavadinimą ir adresą: **Viezo** (teisinis pavadinimas **UAB Viezo**), svetainė **https://viezo.lt**. Niekur nenurodykite viezo.com: tai kita, su jumis nesusijusi svetainė, ir Google jau painioja Viezo su kitomis panašiai pavadintomis įmonėmis.
+**Svarbiausia taisyklė:** visur naudokite tą patį pavadinimą ir adresą: **Viezo** (teisinis pavadinimas **UAB Viezo**), svetainė **https://viezo.lt**. Niekur nenurodykite viezo.com ar viezo.co: tai kitos, su jumis nesusijusios svetainės, ir Google jau painioja Viezo su kitomis panašiai pavadintomis įmonėmis.
+
+## Kas jau yra: patikrinta 2026-10-29
+
+| Kur | Būsena | Ką daryti |
+|---|---|---|
+| LinkedIn | Yra, nuoroda į viezo.lt teisinga. **Aprašymas senas** („a startup, established in early 2018… powering the sensing equipment“, apie energijos surinkimą, ne apie Sonora) | Atnaujinti aprašymą (žr. 2 punktą) |
+| Google Business Profile | Paieškose nerasta, iš išorės nepatikrinama | Patikrinti Google Maps paieškoje „Viezo“ ir, jei nėra, sukurti (3 punktas) |
+| Bing Webmaster Tools | Iš išorės nepatikrinama | Prijungti (1 punktas) |
+| Crunchbase | Profilio nerasta | Sukurti (6 punktas) |
+| Dealroom | **Yra**, bet su senu aprašymu (energijos surinkimas, geležinkeliai) | Perimti profilį („Claim“) ir atnaujinti aprašymą ilguoju EN tekstu |
+| Wikidata | Įmonės įrašo nėra (rasti du „Viezo“ įrašai, bet su jumis nesusiję) | Sukurti (7 punktas); įkūrimo metai 2018 |
+| YouTube | Kanalo nerasta | Sukurti (9 punktas) |
+| Sujan Industries | Turi puslapį apie Viezo (sujanindustries.com/viezo/), **bet be nuorodos į viezo.lt** | Paprašyti pridėti nuorodą |
+| Ruven | Turi lenkišką straipsnį apie Viezo Sonora diegimą (ruven.pl/wdrozenie-systemu-predykcyjnego-utrzymania-ruchu/, 38 paminėjimai), **bet be nuorodos** | Paprašyti pridėti nuorodą į https://viezo.lt/pl/sonora/. Vertingiausia trūkstama nuoroda |
+| Techvitas, TGD, IMA Schelling | Viezo svetainėse nepaminėta | Jei bendradarbiaujate, paprašyti trumpo paminėjimo su nuoroda |
+| LINPRA | Narių sąraše (linpra.lt/nariai/) Viezo nėra, nors LinkedIn skelbiate narystę | Paprašyti LINPRA įtraukti Viezo į narių sąrašą su nuoroda |
+| Seni straipsniai | AIN.ua ir IoT For All nuoroda į viezo.lt teisinga. Compasslist ir ArcticStartup Viezo mini be nuorodos. **Elektor** (electronica Fast Forward 2020 profilis) nurodo **viezo.co**: tai ne jūsų svetainė (parduodamas domenas) | Elektor paprašyti pakeisti adresą į viezo.lt (neskubu) |
+| StartUs Insights | Nuoroda į viezo.lt/technology/, kurio **nebėra (404)** | Sutvarkysime mes: nukreipimu (redirect) |
+| Registrų duomenys | Scoris rodo registruotą adresą Varėnoje, svetainėje nurodytas Lentvario g. 33, Vilnius | Tai normalu (buveinė ir biuras), bet Google Business Profile naudokite tikrąjį biuro adresą |
 
 ---
 
@@ -21,8 +40,8 @@ Sąrašas darbų, kuriuos atlieka Viezo (reikia jūsų paskyrų, prieigų ar spr
 
 ### 2. LinkedIn įmonės puslapis · ~10 min.
 
-Svetainės nuoroda jau teisinga (viezo.lt). Verta patikrinti tik du dalykus:
-- **Description:** kad sutaptų su svetainės aprašymu. Jei skiriasi, įklijuokite ilgąjį EN tekstą iš skyriaus „Paruošti tekstai“ apačioje. Tas pats aprašymas visur padeda Google ir AI susieti profilius su viena įmone.
+Svetainės nuoroda jau teisinga (viezo.lt). Tačiau **aprašymas pasenęs**: jame vis dar rašoma apie 2018 m. startuolį ir energijos surinkimą jutikliams, o ne apie Sonora ir vibracijų stebėseną.
+- **Description:** pakeiskite ilguoju EN tekstu iš skyriaus „Paruošti tekstai“ apačioje. Tas pats aprašymas visur padeda Google ir AI susieti profilius su viena įmone ir supratimą, ką Viezo daro dabar.
 - **Įrašai:** kartą per 1–2 savaites įkelkite įrašą su nuoroda į vieną atvejo aprašymą (pavadinimai jau nauji ir aiškūs).
 
 ### 3. Google Business Profile · ~30 min. + patvirtinimas
@@ -80,7 +99,7 @@ Atsiliepimų prašyti nereikia (kaip sutarėme), tačiau jei kas nors parašys p
    - Name: Viezo; Legal name: UAB Viezo;
    - Website: https://viezo.lt; LinkedIn nuoroda;
    - Headquarters: Vilnius, Lithuania;
-   - Founded: *(jūsų įkūrimo metai)*;
+   - Founded: 2018;
    - Industries: Industrial IoT, Predictive Maintenance, Manufacturing, Sensor;
    - Description: trumpasis ir ilgasis EN tekstai žemiau.
 4. Jei gavote ES finansavimą ar investicijas ir norite jas rodyti, galite įrašyti. Tai neprivaloma.
@@ -98,16 +117,16 @@ Atsiliepimų prašyti nereikia (kaip sutarėme), tačiau jei kas nors parašys p
    - *headquarters location* = Vilnius;
    - *official website* = https://viezo.lt;
    - *LinkedIn company ID* = viezo;
-   - *inception* = įkūrimo metai.
+   - *inception* = 2018.
 4. **Svarbu:** prie faktų pridėkite šaltinius (pvz., įrašą Registrų centre, ES projekto puslapį). Be šaltinių įrašas gali būti ištrintas.
 
-Jei norite, kad tai padarytume mes, užtenka parašyti „sutinkame“ ir nurodyti įkūrimo metus.
+Jei norite, kad tai padarytume mes, užtenka parašyti „sutinkame“.
 
 ### 8. Nuorodos iš partnerių ir platintojų svetainių · laiškai, ~30 min.
 
 **Kodėl:** nuorodos iš kitų patikimų svetainių yra vienas stipriausių Google pasitikėjimo signalų. Šiuo metu į viezo.lt beveik niekas nenurodo.
 
-**Kaip:** parašykite partneriams ir platintojams (Techvitas, Ruven, Sujan Industries, TGD ir kitiems), kurie jau pristato Sonora ar Viezo, ir paprašykite pridėti nuorodą. Laiško pavyzdys:
+**Kaip:** pirmiausia **Ruven** (straipsnis apie Sonora diegimą) ir **Sujan Industries** (puslapis apie Viezo): abu jau rašo apie jus, tik be nuorodos. Taip pat **LINPRA** (narių sąrašas). Kitiems partneriams (Techvitas, TGD), jei bendradarbiaujate, paprašykite trumpo paminėjimo su nuoroda. Laiško pavyzdys:
 
 > Sveiki, atnaujinome viezo.lt svetainę. Ar galėtumėte savo puslapyje, kuriame minite Viezo / Sonora, pridėti nuorodą į https://viezo.lt/for-factory-owners-sonora/ (lenkiškai: https://viezo.lt/pl/sonora/)? Jei reikia, galime atsiųsti trumpą aprašymą ir logotipą. Ačiū!
 
